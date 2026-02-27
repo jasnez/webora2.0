@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/usluge`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/portfolio`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/kontakt`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/izrada-web-stranica-bih`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   ];
 }

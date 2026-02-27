@@ -16,44 +16,49 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
     default:
-      "Webora | Web stranice koje pretvaraju posjete u upite",
+      "Webora – Web development studio | Brze, sigurne i SEO-optimizovane stranice",
     template: "%s | Webora",
   },
   description:
-    "Dizajn, Next.js razvoj i tehnički SEO optimizovani za brzinu, sigurnost i rast poslovanja. Web development studio — Bosna i Hercegovina.",
+    "Webora izrađuje moderne, brze i sigurne web stranice uz Next.js tehnologiju. Fokusirani smo na performanse, tehnički SEO i konverzije za mala i srednja preduzeća.",
   keywords: [
     "web development",
+    "Next.js",
+    "SEO optimizacija",
+    "web stranice BiH",
+    "izrada web stranica",
     "web dizajn",
     "React",
-    "Next.js",
-    "izrada web stranica",
     "Bosna i Hercegovina",
     "web developer BiH",
-    "SEO optimizacija",
   ],
   authors: [{ name: "Webora" }],
   creator: "Webora",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "bs_BA",
     url: SITE.url,
     siteName: SITE.name,
-    title: "Webora | Web stranice koje pretvaraju posjete u upite",
+    title: "Webora – Web development studio",
     description:
-      "Dizajn, Next.js i tehnički SEO. Brzina, sigurnost i mjerljivi rezultati.",
+      "Brze, sigurne i SEO-optimizovane web stranice za profesionalce i mala preduzeća.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Webora - Web Development Studio",
+        alt: "Webora Web Development Studio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webora | Web stranice koje pretvaraju posjete u upite",
-    description: "Dizajn, Next.js i tehnički SEO. Brzina i sigurnost.",
+    title: "Webora – Web development studio",
+    description:
+      "Brze, sigurne i SEO-optimizovane web stranice uz Next.js.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -69,21 +74,39 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
+const jsonLdOrganization = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: SITE.name,
-  description:
-    "Web development studio specijaliziran za React i Next.js. Dizajn, razvoj i tehnički SEO.",
   url: SITE.url,
+  logo: `${SITE.url}/logo.png`,
   email: SITE.email,
-  telephone: SITE.phone,
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    email: SITE.email,
+  },
   address: {
     "@type": "PostalAddress",
     addressLocality: SITE.city,
     addressCountry: "BA",
   },
   sameAs: SOCIAL_LINKS.map((s) => s.href),
+};
+
+const jsonLdWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.name,
+  url: SITE.url,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE.url}/?s={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
 };
 
 export default function RootLayout({
@@ -99,7 +122,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
         />
       </head>
       <body className="min-h-screen flex flex-col font-sans antialiased">
