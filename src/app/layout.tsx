@@ -1,29 +1,15 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SITE } from "@/lib/constants";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const outfit = Outfit({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-plus-jakarta",
+  variable: "--font-outfit",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
-  display: "swap",
-  weight: ["400", "500", "600"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  display: "swap",
-  weight: ["400", "500"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -112,7 +98,7 @@ export default function RootLayout({
   return (
     <html
       lang="bs"
-      className={`${plusJakarta.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={outfit.variable}
     >
       <head>
         <script
@@ -120,7 +106,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col font-body">
+      <body className="min-h-screen flex flex-col font-sans antialiased">
         <a href="#main-content" className="skip-link">
           Preskoči na sadržaj
         </a>

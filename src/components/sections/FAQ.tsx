@@ -10,12 +10,12 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="bg-[#F0F4FF] py-20 md:py-28 scroll-mt-24 md:scroll-mt-32"
+      className="py-[88px] bg-[#F0F4FF] scroll-mt-24"
       aria-labelledby="faq-heading"
     >
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <p className="text-sm uppercase tracking-widest text-indigo-500 font-medium mb-3 flex items-center justify-center gap-2.5">
+      <div className="max-w-container mx-auto px-6">
+        <div className="text-left mb-12">
+          <p className="text-sm uppercase tracking-widest text-indigo-500 font-medium mb-3 flex items-center gap-2.5">
             <span className="w-5 h-px bg-indigo-500" />
             FAQ
           </p>

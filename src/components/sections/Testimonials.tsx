@@ -31,10 +31,10 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-20 md:py-28 bg-[#F9F7F4] scroll-mt-24 md:scroll-mt-32"
+      className="py-22 bg-[#F9F7F4] scroll-mt-24"
       aria-labelledby="testimonials-heading"
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-container mx-auto px-6">
         <SectionHeading
           id="testimonials-heading"
           label="Iskustva"
@@ -48,7 +48,7 @@ export function Testimonials() {
                 key={t.initials}
                 className="flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-14px)] min-w-0"
               >
-                <div className="bg-white border border-[#EDE8E3] rounded-2xl p-6 h-full flex flex-col">
+                <div className="bg-white border border-[#EDE8E3] rounded-[14px] p-7 h-full flex flex-col transition-all duration-300 hover:shadow-[0_12px_28px_rgba(0,0,0,0.05)]">
                   <div className="flex gap-1 mb-3" aria-hidden>
                     {Array.from({ length: t.rating }).map((_, i) => (
                       <Star
@@ -61,7 +61,7 @@ export function Testimonials() {
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-indigo-50 text-indigo-500 flex items-center justify-center text-sm font-semibold flex-shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-[#EEF2FF] text-[#6366F1] flex items-center justify-center text-xs font-semibold flex-shrink-0">
                       {t.initials}
                     </div>
                     <div>
@@ -75,16 +75,16 @@ export function Testimonials() {
           </div>
         </div>
 
-        <div className="flex justify-center gap-2.5 mt-8">
+            <div className="flex justify-center gap-2.5 mt-6">
           {scrollSnaps.map((_, i) => (
             <button
               key={i}
               type="button"
               onClick={() => emblaApi?.scrollTo(i)}
-              className={`h-2 rounded-full transition-all ${
+              className={`h-2 transition-all duration-200 cursor-pointer ${
                 i === selectedIndex
-                  ? "w-6 bg-indigo-500"
-                  : "w-2 bg-[#D4CDC5] hover:bg-slate-400"
+                  ? "w-6 bg-[#6366F1] rounded-[4px]"
+                  : "w-2 rounded-full bg-[#D4CDC5] hover:bg-slate-400"
               }`}
               aria-label={`Prikaži iskustvo ${i + 1}`}
             />

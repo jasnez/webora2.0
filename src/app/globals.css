@@ -12,7 +12,7 @@
   --color-text-primary: #0f172a;
   --color-text-secondary: #475569;
   --color-border: #e2e8f0;
-  --max-container: 1280px;
+  --max-container: 1120px;
   --section-gap-mobile: 6rem;
   --section-gap-desktop: 8rem;
   --radius-card: 12px;
@@ -38,7 +38,7 @@ html {
 body {
   background-color: var(--color-surface);
   color: var(--color-text-primary);
-  @apply font-body antialiased;
+  font-family: var(--font-outfit), system-ui, sans-serif;
 }
 
 /* Focus vidljivost za pristupačnost */

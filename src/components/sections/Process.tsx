@@ -1,64 +1,43 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { MessageCircle, PenTool, CheckCircle2, Rocket } from "lucide-react";
 import { PROCESS } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-
-const icons = [MessageCircle, PenTool, CheckCircle2, Rocket];
 
 export function Process() {
   return (
     <section
       id="proces"
-      className="py-section lg:py-section-lg bg-[#EEF2FF] scroll-mt-24 md:scroll-mt-32"
+      className="py-22 bg-[#EEF2FF] scroll-mt-24"
       aria-labelledby="process-heading"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
+      <div className="max-w-container mx-auto px-6">
         <SectionHeading
           id="process-heading"
           label="Proces"
           title={PROCESS.title}
           subtitle={PROCESS.subtitle}
         />
-        <div className="relative">
-            <div
-              className="hidden md:block absolute left-4 right-4 top-1/2 h-px bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent -translate-y-1/2"
-              aria-hidden
-            />
-          <div className="flex flex-col md:flex-row md:items-stretch gap-8 md:gap-6">
-            {PROCESS.steps.map((step, index) => {
-              const Icon = icons[index] ?? MessageCircle;
-              return (
-                <motion.article
-                  key={step.step}
-                  className="relative flex-1"
-                  initial={{ opacity: 0, y: 32 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -6, scale: 1.02 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.45, delay: index * 0.1 }}
-                >
-                  <div className="relative flex flex-col items-start rounded-3xl bg-white border border-slate-200/80 px-6 py-6 shadow-soft">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-500/10 text-indigo-500">
-                        <Icon className="h-5 w-5" aria-hidden />
-                      </div>
-                      <div className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
-                        Korak {step.step}
-                      </div>
-                    </div>
-                    <h3 className="font-display font-bold text-lg text-slate-900 mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </motion.article>
-              );
-            })}
-          </div>
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+          <div
+            className="hidden lg:block absolute top-7 left-[14%] right-[14%] h-[1.5px] bg-[#C7D2FE] -translate-y-1/2 pointer-events-none"
+            aria-hidden
+          />
+          {PROCESS.steps.map((step) => (
+            <article
+              key={step.step}
+              className="relative text-center"
+            >
+              <div className="w-14 h-14 rounded-full bg-[#6366F1] text-white flex items-center justify-center text-lg font-bold mx-auto mb-4 shadow-[0_6px_20px_rgba(99,102,241,0.2)] relative z-[2]">
+                {step.step}
+              </div>
+              <h3 className="text-[15px] font-semibold text-[#0F172A] mb-1.5">
+                {step.title}
+              </h3>
+              <p className="text-[13px] text-[#64748B] leading-[1.55]">
+                {step.description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

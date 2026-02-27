@@ -3,74 +3,42 @@ import { SITE, NAV_LINKS, CTA } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="bg-[#080E1C] text-slate-400 mt-auto">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <Link
-              href="/#hero"
-              className="font-display font-bold text-2xl flex items-center gap-1.5 text-white"
-            >
+    <footer className="bg-[#080E1C] text-[#94A3B8] mt-auto border-t border-white/[0.04]">
+      <div className="max-w-container mx-auto px-6 py-11">
+        <div className="flex flex-col md:flex-row justify-between gap-10 pb-7 border-b border-white/[0.04]">
+          <div className="max-w-[280px]">
+            <Link href="/#hero" className="text-[20px] font-bold text-[#F1F5F9] flex items-center gap-1">
               {SITE.name}
-              <span className="w-2 h-2 rounded-full bg-indigo-400" aria-hidden />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6366F1] shadow-[0_0_10px_#6366F1]" aria-hidden />
             </Link>
-            <p className="mt-4 text-slate-400 text-sm leading-relaxed max-w-md">
+            <p className="mt-2.5 text-[13px] text-[#64748B] leading-[1.55]">
               {SITE.footerDescription}
             </p>
-            <p className="mt-6 text-slate-500 text-sm">{SITE.madeWith}</p>
           </div>
-
-          {/* Links */}
           <div>
-            <h3 className="font-display font-semibold text-sm uppercase tracking-wider text-slate-500 mb-4">
-              Navigacija
-            </h3>
-            <ul className="space-y-3">
+            <h3 className="text-[11px] uppercase tracking-[1.5px] text-[#475569] mb-3.5">Navigacija</h3>
+            <ul className="space-y-2">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-slate-400 hover:text-white transition-colors"
-                >
+                  <Link href={link.href} className="block text-[13px] text-[#94A3B8] hover:text-[#F1F5F9] transition-colors">
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Contact */}
           <div>
-            <h3 className="font-display font-semibold text-sm uppercase tracking-wider text-slate-500 mb-4">
-              Kontakt
-            </h3>
-            <ul className="space-y-3 text-slate-400 text-sm">
-              <li>
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="hover:text-white transition-colors"
-                >
-                  {SITE.email}
-                </a>
-              </li>
+            <h3 className="text-[11px] uppercase tracking-[1.5px] text-[#475569] mb-3.5">Kontakt</h3>
+            <ul className="space-y-2 text-[13px] text-[#94A3B8]">
+              <li><a href={`mailto:${SITE.email}`} className="hover:text-[#F1F5F9] transition-colors">{SITE.email}</a></li>
               <li>{SITE.phone}</li>
               <li>{SITE.location}</li>
-              <li>{SITE.workingHours}</li>
             </ul>
           </div>
         </div>
-
-        <div className="mt-12 pt-8 border-t border-slate-700 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} {SITE.name}. Sva prava zadržana.
-          </p>
-          <Link
-            href="#hero"
-            className="text-slate-500 hover:text-white text-sm transition-colors"
-          >
-            {CTA.backHome}
-          </Link>
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-5 text-[12px] text-[#475569]">
+          <span>© {new Date().getFullYear()} {SITE.name}. Sva prava zadržana.</span>
+          <span>{SITE.madeWith}</span>
         </div>
       </div>
     </footer>

@@ -56,43 +56,49 @@ export const SERVICES = {
       id: "web-dev",
       title: "Web Development",
       icon: "Code2",
+      emoji: "💻",
       description:
-        "Moderne, brze web stranice izgrađene sa React i Next.js. Optimizirane za performanse, SEO i konverzije.",
+        "Moderne, brze stranice sa React i Next.js. Optimizirane za performanse i konverzije.",
     },
     {
       id: "web-design",
       title: "Web Dizajn",
       icon: "Palette",
+      emoji: "🎨",
       description:
-        "Vizuelno upečatljiv dizajn prilagođen vašem brendu. Responsivan na svim uređajima, od mobitela do desktopa.",
+        "Vizuelno upečatljiv dizajn prilagođen brendu. Responsivan na svim uređajima.",
     },
     {
       id: "seo",
       title: "SEO Optimizacija",
       icon: "Search",
+      emoji: "📈",
       description:
-        "Tehnički SEO, meta tagovi, schema markup i optimizacija brzine. Budite vidljivi na Google-u od prvog dana.",
+        "Tehnički SEO, meta tagovi, schema markup. Budite vidljivi na Google-u.",
     },
     {
       id: "maintenance",
-      title: "Održavanje i Podrška",
+      title: "Održavanje",
       icon: "Shield",
+      emoji: "🛡️",
       description:
-        "Redovno ažuriranje, sigurnosne zakrpe i tehnička podrška. Vaš sajt je uvijek u sigurnim rukama.",
+        "Ažuriranje, sigurnosne zakrpe i tehnička podrška. Sajt u sigurnim rukama.",
     },
     {
       id: "web-apps",
       title: "Web Aplikacije",
       icon: "AppWindow",
+      emoji: "📱",
       description:
-        "Custom web aplikacije za specifične poslovne potrebe. Dashboardi, portali, booking sistemi i više.",
+        "Custom aplikacije za specifične potrebe. Dashboardi, portali, booking sistemi.",
     },
     {
       id: "hosting",
       title: "Hosting i Domena",
       icon: "Cloud",
+      emoji: "☁️",
       description:
-        "Pomoć pri odabiru i postavljanju domene, hostinga i SSL certifikata. Kompletno rješenje.",
+        "Postavljanje domene, hostinga i SSL certifikata. Kompletno rješenje.",
     },
   ],
 } as const;
@@ -196,7 +202,7 @@ export const WHY_US = {
       title: "Bez mjesečnih naknada za plugin-e",
       description:
         "Nema WordPress plugin pretplata, nema bloatware-a. Čist, lagan kod.",
-      icon: "🧩",
+      icon: "💰",
     },
     {
       title: "SEO od prvog dana",
@@ -214,7 +220,7 @@ export const WHY_US = {
       title: "Siguran i pouzdan",
       description:
         "Statički sajt = manja površina za napade. Plus HTTPS, moderno hostovanje na Vercelu.",
-      icon: "🛡️",
+      icon: "🔒",
     },
     {
       title: "Personaliziran pristup",

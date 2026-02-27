@@ -21,16 +21,18 @@ export default {
         border: "#E2E8F0",
       },
       fontFamily: {
-        display: ["var(--font-plus-jakarta)", "system-ui", "sans-serif"],
-        body: ["var(--font-inter)", "system-ui", "sans-serif"],
-        mono: ["var(--font-jetbrains)", "monospace"],
+        sans: ["var(--font-outfit)", "system-ui", "sans-serif"],
+        display: ["var(--font-outfit)", "system-ui", "sans-serif"],
+        body: ["var(--font-outfit)", "system-ui", "sans-serif"],
+        mono: ["ui-monospace", "monospace"],
       },
       maxWidth: {
-        container: "1280px",
+        container: "1120px",
       },
       spacing: {
         section: "6rem",
         "section-lg": "8rem",
+        "22": "5.5rem",
       },
       borderRadius: {
         card: "12px",
