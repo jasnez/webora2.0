@@ -40,7 +40,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="py-section lg:py-section-lg"
+      className="py-section lg:py-section-lg scroll-mt-24 md:scroll-mt-32"
       aria-labelledby="faq-heading"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">

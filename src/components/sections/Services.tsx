@@ -39,7 +39,7 @@ export function Services() {
   return (
     <section
       id="usluge"
-      className="py-section lg:py-section-lg bg-surface/60 dark:bg-slate-950"
+      className="py-section lg:py-section-lg bg-surface/60 dark:bg-slate-950 scroll-mt-24 md:scroll-mt-32"
       aria-labelledby="services-heading"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">

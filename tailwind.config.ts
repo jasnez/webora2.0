@@ -11,13 +11,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#0F172A",
-        accent: "#3B82F6",
+        primary: "#166534",
+        accent: "#2563EB",
         "accent-light": "#60A5FA",
-        success: "#10B981",
+        success: "#22C55E",
         surface: "#F8FAFC",
         "text-primary": "#0F172A",
-        "text-secondary": "#64748B",
+        "text-secondary": "#475569",
         border: "#E2E8F0",
       },
       fontFamily: {

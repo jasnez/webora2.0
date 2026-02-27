@@ -59,7 +59,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] flex items-center pt-24 pb-20 md:pt-28 md:pb-28 overflow-hidden"
+      className="relative min-h-[90vh] flex items-center pt-24 pb-20 md:pt-28 md:pb-28 overflow-hidden scroll-mt-24 md:scroll-mt-32"
       aria-labelledby="hero-title"
     >
       {/* Background gradient + blobs */}

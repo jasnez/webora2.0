@@ -35,15 +35,15 @@ export const CTA = {
 
 /** Hero sekcija */
 export const HERO = {
-  title: "Gradimo webove koji prave razliku.",
+  title: "Premium web iskustva za moderni biznis.",
   subtitle:
-    "Fokusirani smo na brzinu, SEO i konverzije — ne samo na lijep dizajn.",
+    "Sajtovi koji se učitavaju brzo, rangiraju bolje i pretvaraju posjetioce u klijente.",
   description:
-    "Kreiramo moderne, brze i sigurne web stranice koristeći React i Next.js — tehnologije koje nadmašuju klasične WordPress sisteme u performansama, sigurnosti i dugoročnoj skalabilnosti.",
+    "Gradimo custom web rješenja na modernom stacku (Next.js) — bez teških tema, nepotrebnih pluginova i skrivenog bloatware‑a.",
   stats: [
-    { value: "5+", label: "Projekata isporučeno" },
-    { value: "100%", label: "Zadovoljnih klijenata" },
-    { value: "3x", label: "Prosječno poboljšanje brzine" },
+    { value: "5+", label: "Realizovanih projekata" },
+    { value: "100%", label: "Klijenata koji bi ponovo radili s nama" },
+    { value: "3x", label: "Često brži od starog WordPress sajta" },
   ],
 } as const;
 

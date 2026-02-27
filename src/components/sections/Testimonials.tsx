@@ -23,7 +23,7 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-section lg:py-section-lg bg-surface/60 dark:bg-slate-950"
+      className="py-section lg:py-section-lg bg-surface/60 dark:bg-slate-950 scroll-mt-24 md:scroll-mt-32"
       aria-labelledby="testimonials-heading"
     >
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-16">
