@@ -20,11 +20,11 @@ export function WhyUs() {
           subtitle="Ono što nas izdvaja od ostalih."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        <div className="flex md:grid overflow-x-auto md:overflow-visible snap-x md:snap-none gap-3.5 md:grid-cols-2 lg:grid-cols-3 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide">
           {WHY_US.items.map((r, i) => (
             <motion.div
               key={r.title}
-              className="bg-[#FAFBFF] border border-[#E8ECF4] rounded-[14px] p-7 transition-all duration-300 group relative overflow-hidden hover:shadow-[0_12px_32px_rgba(0,0,0,0.05)] hover:-translate-y-0.5 hover:border-[#C7D2FE]"
+              className="flex-[0_0_85%] sm:flex-[0_0_70%] md:flex-none min-w-0 snap-center snap-always bg-[#FAFBFF] border border-[#E8ECF4] rounded-[14px] p-7 transition-all duration-300 group relative overflow-hidden hover:shadow-[0_12px_32px_rgba(0,0,0,0.05)] hover:-translate-y-0.5 hover:border-[#C7D2FE]"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
