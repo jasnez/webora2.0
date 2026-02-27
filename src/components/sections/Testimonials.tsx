@@ -31,13 +31,14 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-22 bg-[#F9F7F4] scroll-mt-24"
+      className="section-pad bg-surface-dark scroll-mt-24 border-t border-border-dark"
       aria-labelledby="testimonials-heading"
     >
       <div className="max-w-container mx-auto px-6">
         <SectionHeading
           id="testimonials-heading"
           label="Iskustva"
+          variant="dark"
           title={TESTIMONIALS.title}
         />
 
@@ -48,7 +49,7 @@ export function Testimonials() {
                 key={t.initials}
                 className="flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-14px)] min-w-0"
               >
-                <div className="bg-white border border-[#EDE8E3] rounded-[14px] p-7 h-full flex flex-col transition-all duration-300 hover:shadow-[0_12px_28px_rgba(0,0,0,0.05)]">
+                <div className="bg-bg-dark/60 border border-border-dark rounded-card p-6 h-full flex flex-col transition-all duration-300 hover:shadow-soft-lg hover:border-accent/20">
                   <div className="flex gap-1 mb-3" aria-hidden>
                     {Array.from({ length: t.rating }).map((_, i) => (
                       <Star
@@ -57,16 +58,19 @@ export function Testimonials() {
                       />
                     ))}
                   </div>
-                  <p className="text-slate-900 leading-relaxed mb-4 flex-1">
+                  <p className="text-white-text leading-relaxed mb-4 flex-1">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-[#EEF2FF] text-[#6366F1] flex items-center justify-center text-xs font-semibold flex-shrink-0">
+                  <div className="flex items-center gap-3 pt-3 border-t border-border-dark">
+                    <div className="w-10 h-10 rounded-full bg-accent/20 text-accent flex items-center justify-center text-sm font-semibold flex-shrink-0">
                       {t.initials}
                     </div>
                     <div>
-                      <p className="font-medium text-slate-900">{t.name}</p>
-                      <p className="text-sm text-slate-500">{t.loc}</p>
+                      <p className="font-medium text-white-text">{t.name}</p>
+                      <p className="text-sm text-text-muted">
+                        {t.loc}
+                        {t.industry ? ` · ${t.industry}` : ""}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -75,7 +79,7 @@ export function Testimonials() {
           </div>
         </div>
 
-            <div className="flex justify-center gap-2.5 mt-6">
+        <div className="flex justify-center gap-2.5 mt-6">
           {scrollSnaps.map((_, i) => (
             <button
               key={i}
@@ -83,8 +87,8 @@ export function Testimonials() {
               onClick={() => emblaApi?.scrollTo(i)}
               className={`h-2 transition-all duration-200 cursor-pointer ${
                 i === selectedIndex
-                  ? "w-6 bg-[#6366F1] rounded-[4px]"
-                  : "w-2 rounded-full bg-[#D4CDC5] hover:bg-slate-400"
+                  ? "w-6 bg-accent rounded-[4px]"
+                  : "w-2 rounded-full bg-white/15 hover:bg-white/25"
               }`}
               aria-label={`Prikaži iskustvo ${i + 1}`}
             />

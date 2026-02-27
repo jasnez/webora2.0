@@ -26,13 +26,13 @@ export function SectionHeading({
   const isDark = variant === "dark";
   const isLeft = align === "left";
   const labelClass = isDark
-    ? `text-sm uppercase tracking-widest font-medium mb-3 flex items-center gap-2.5 ${isLeft ? "text-indigo-400 justify-start" : "text-indigo-400 justify-center"}`
-    : `text-sm uppercase tracking-widest font-medium mb-3 flex items-center gap-2.5 ${isLeft ? "text-indigo-500 justify-start" : "text-indigo-500 justify-center"}`;
+    ? `text-sm uppercase tracking-widest font-medium mb-3 flex items-center gap-2.5 ${isLeft ? "text-accent justify-start" : "text-accent justify-center"}`
+    : `text-sm uppercase tracking-widest font-medium mb-3 flex items-center gap-2.5 ${isLeft ? "text-accent justify-start" : "text-accent justify-center"}`;
   const titleClass = isDark
-    ? "font-display font-bold text-white text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight"
+    ? "font-display font-bold text-white-text text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight"
     : "font-display font-bold text-slate-900 text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight";
   const subtitleClass = isDark
-    ? "mt-3 text-lg text-slate-400 leading-relaxed"
+    ? "mt-3 text-lg text-text-secondary leading-relaxed"
     : "mt-3 text-lg text-slate-500 leading-relaxed";
 
   return (
@@ -45,7 +45,7 @@ export function SectionHeading({
     >
       {label && (
         <p className={labelClass}>
-          <span className="w-5 h-px bg-indigo-500 flex-shrink-0" />
+          <span className="w-5 h-px bg-accent flex-shrink-0" />
           {label}
         </p>
       )}

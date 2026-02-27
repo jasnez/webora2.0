@@ -11,19 +11,16 @@ export function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-[100] py-3.5 px-6 md:px-10 flex items-center justify-between backdrop-blur-[16px] bg-[rgba(15,23,42,0.85)] border-b border-white/[0.06]"
+      className="fixed top-0 left-0 right-0 z-[100] py-3.5 px-6 md:px-10 flex items-center justify-between backdrop-blur-[16px] bg-bg-dark/90 border-b border-border-dark"
       aria-label="Glavna navigacija"
     >
       <Link
-        href="/#hero"
-        className="text-[20px] font-bold text-[#F1F5F9] flex items-center gap-0.5"
+        href="/"
+        className="text-[20px] font-bold text-white-text flex items-center gap-0.5"
         onClick={() => setIsOpen(false)}
       >
         {SITE.name}
-        <span
-          className="w-1.5 h-1.5 rounded-full bg-[#6366F1] shadow-[0_0_10px_#6366F1]"
-          aria-hidden
-        />
+        <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-cta" aria-hidden />
       </Link>
 
       <nav className="hidden lg:flex items-center gap-7">
@@ -31,14 +28,14 @@ export function Header() {
           <Link
             key={link.href}
             href={link.href}
-            className="text-[13.5px] text-[#94A3B8] hover:text-[#F1F5F9] transition-colors duration-200"
+            className="text-[13.5px] text-text-secondary hover:text-white-text transition-colors duration-200"
           >
             {link.label}
           </Link>
         ))}
         <Link
-          href="#kontakt"
-          className="py-2 px-[18px] bg-[#6366F1] text-white rounded-lg font-semibold text-[12.5px] shadow-[0_4px_16px_rgba(99,102,241,0.3)] hover:bg-[#818CF8] transition-all duration-[0.25s]"
+          href="/kontakt"
+          className="py-2 px-[18px] bg-accent hover:bg-accent-hover text-white rounded-button font-semibold text-[12.5px] shadow-cta hover:shadow-cta-hover transition-all duration-200"
         >
           {CTA.primary}
         </Link>
@@ -47,7 +44,7 @@ export function Header() {
       {/* Mobile menu button */}
       <button
         type="button"
-        className="lg:hidden p-2 rounded-lg text-[#F1F5F9] hover:bg-white/10 transition-colors"
+        className="lg:hidden p-2 rounded-button text-white-text hover:bg-white/10 transition-colors"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
@@ -63,22 +60,22 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden absolute top-full left-0 right-0 overflow-hidden bg-[rgba(15,23,42,0.98)] border-b border-white/[0.06] backdrop-blur-xl"
+            className="lg:hidden absolute top-full left-0 right-0 overflow-hidden bg-bg-dark/98 border-b border-border-dark backdrop-blur-xl"
           >
             <div className="max-w-container mx-auto px-6 py-6 flex flex-col gap-4">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block py-2 text-[#94A3B8] hover:text-[#F1F5F9] font-medium transition-colors"
+                  className="block py-2 text-text-secondary hover:text-white-text font-medium transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="#kontakt"
-                className="py-2.5 px-[18px] bg-[#6366F1] text-white rounded-lg font-semibold text-center shadow-[0_4px_16px_rgba(99,102,241,0.3)]"
+                <Link
+                href="/kontakt"
+                className="py-2.5 px-[18px] bg-accent text-white rounded-button font-semibold text-center shadow-cta"
                 onClick={() => setIsOpen(false)}
               >
                 {CTA.primary}

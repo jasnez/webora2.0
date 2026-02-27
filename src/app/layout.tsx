@@ -3,7 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { SITE } from "@/lib/constants";
+import { SITE, SOCIAL_LINKS } from "@/lib/constants";
 
 const outfit = Outfit({
   subsets: ["latin", "latin-ext"],
@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
     default:
-      "Webora | Moderni web development studio — React & Next.js",
+      "Webora | Web stranice koje pretvaraju posjete u upite",
     template: "%s | Webora",
   },
   description:
-    "Kreiramo brze, sigurne i SEO-optimizirane web stranice koristeći React i Next.js. Web development studio iz Bosne i Hercegovine.",
+    "Dizajn, Next.js razvoj i tehnički SEO optimizovani za brzinu, sigurnost i rast poslovanja. Web development studio — Bosna i Hercegovina.",
   keywords: [
     "web development",
     "web dizajn",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     locale: "bs_BA",
     url: SITE.url,
     siteName: SITE.name,
-    title: "Webora | Moderni web development studio",
+    title: "Webora | Web stranice koje pretvaraju posjete u upite",
     description:
-      "Brze, sigurne web stranice sa React i Next.js. 2-5x brže od WordPressa.",
+      "Dizajn, Next.js i tehnički SEO. Brzina, sigurnost i mjerljivi rezultati.",
     images: [
       {
         url: "/og-image.png",
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webora | Moderni web development studio",
-    description: "Brze, sigurne web stranice sa React i Next.js.",
+    title: "Webora | Web stranice koje pretvaraju posjete u upite",
+    description: "Dizajn, Next.js i tehnički SEO. Brzina i sigurnost.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -71,23 +71,19 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
   name: SITE.name,
   description:
-    "Moderni web development studio specijaliziran za React i Next.js rješenja.",
+    "Web development studio specijaliziran za React i Next.js. Dizajn, razvoj i tehnički SEO.",
   url: SITE.url,
   email: SITE.email,
   telephone: SITE.phone,
   address: {
     "@type": "PostalAddress",
+    addressLocality: SITE.city,
     addressCountry: "BA",
   },
-  priceRange: "$$",
-  serviceType: [
-    "Web Development",
-    "Web Design",
-    "SEO Optimization",
-  ],
+  sameAs: SOCIAL_LINKS.map((s) => s.href),
 };
 
 export default function RootLayout({

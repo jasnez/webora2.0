@@ -10,27 +10,27 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="py-[88px] bg-[#F0F4FF] scroll-mt-24"
+      className="section-pad bg-bg-dark scroll-mt-24 border-t border-border-dark"
       aria-labelledby="faq-heading"
     >
       <div className="max-w-container mx-auto px-6">
         <div className="text-left mb-12">
-          <p className="text-sm uppercase tracking-widest text-indigo-500 font-medium mb-3 flex items-center gap-2.5">
-            <span className="w-5 h-px bg-indigo-500" />
+          <p className="text-sm uppercase tracking-widest text-accent font-medium mb-3 flex items-center gap-2.5">
+            <span className="w-5 h-px bg-accent" />
             FAQ
           </p>
           <h2
             id="faq-heading"
-            className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-3"
+            className="text-3xl md:text-4xl font-bold tracking-tight text-white-text mb-3"
           >
             Česta pitanja
           </h2>
-          <p className="text-slate-500 text-lg">
+          <p className="text-text-secondary text-lg">
             Odgovori na najčešća pitanja o našim uslugama.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
           {FAQ_DATA.items.map((faq, i) => (
             <div
               key={faq.question}
@@ -43,17 +43,17 @@ export function FAQ() {
                   setOpen(open === i ? null : i);
                 }
               }}
-              className={`bg-white border rounded-2xl p-6 cursor-pointer transition-all duration-300 ${
+              className={`bg-surface-dark border rounded-card p-6 cursor-pointer transition-all duration-300 ${
                 open === i
-                  ? "border-indigo-500 shadow-md shadow-indigo-500/5"
-                  : "border-[#DDE3F0] hover:border-indigo-200 hover:shadow-sm"
+                  ? "border-accent shadow-cta"
+                  : "border-border-dark hover:border-accent/50 hover:shadow-soft"
               }`}
               aria-expanded={open === i}
             >
               <div className="flex justify-between items-start gap-3">
                 <span
                   className={`font-medium text-[15px] transition-colors ${
-                    open === i ? "text-indigo-600" : "text-slate-900"
+                    open === i ? "text-accent" : "text-white-text"
                   }`}
                 >
                   {faq.question}
@@ -61,15 +61,15 @@ export function FAQ() {
                 <div
                   className={`w-7 h-7 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                     open === i
-                      ? "bg-indigo-500 border-indigo-500 text-white rotate-45"
-                      : "border-slate-200 text-slate-400"
+                      ? "bg-accent border-accent text-white rotate-45"
+                      : "border-border-dark text-text-muted"
                   }`}
                 >
                   <Plus className="w-3.5 h-3.5" aria-hidden />
                 </div>
               </div>
               {open === i && (
-                <p className="mt-4 pt-4 border-t border-indigo-50 text-slate-500 text-sm leading-relaxed">
+                <p className="mt-4 pt-4 border-t border-border-dark text-text-secondary text-sm leading-relaxed">
                   {faq.answer}
                 </p>
               )}

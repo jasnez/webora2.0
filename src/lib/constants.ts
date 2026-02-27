@@ -5,100 +5,94 @@
 
 export const SITE = {
   name: "Webora",
-  url: "https://www.webora.cc",
-  email: "info@webora.cc",
+  url: "https://www.webora.ba",
+  email: "info@webora.ba",
   phone: "+387 XX XXX XXX",
   location: "Bosna i Hercegovina",
+  city: "Sarajevo",
+  country: "BiH",
   workingHours: "Pon–Pet, 09:00–17:00",
-  tagline: "Moderne web stranice koje donose rezultate.",
+  tagline: "Web stranice koje pretvaraju posjete u upite.",
   shortDescription:
-    "Kreiramo brze, sigurne i SEO-optimizirane web stranice koristeći React i Next.js.",
+    "Dizajn, Next.js razvoj i tehnički SEO optimizovani za brzinu, sigurnost i rast poslovanja.",
   footerDescription:
     "Web development studio specijaliziran za React i Next.js. Brze stranice, bez kompromisa.",
   madeWith: "Napravljeno sa ❤️ u BiH",
+  privacyUrl: "/privacy",
 } as const;
 
+export const SOCIAL_LINKS = [
+  { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
+  { label: "Twitter", href: "https://twitter.com", icon: "twitter" },
+] as const;
+
 export const NAV_LINKS = [
-  { label: "Početna", href: "#hero" },
-  { label: "Usluge", href: "#usluge" },
-  { label: "Proces", href: "#proces" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Početna", href: "/" },
+  { label: "Usluge", href: "/usluge" },
+  { label: "Proces", href: "/#proces" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Kontakt", href: "/kontakt" },
 ] as const;
 
 export const CTA = {
-  primary: "Započni projekat",
-  secondary: "Pogledaj radove",
-  contact: "Pošalji upit",
+  primary: "Zatraži besplatnu procjenu",
+  secondary: "Pogledaj studije slučaja",
+  contact: "Započni projekat",
   backHome: "Nazad na početnu",
+  learnMore: "Saznaj više",
 } as const;
 
 /** Hero sekcija */
 export const HERO = {
-  title: "Premium web iskustva za moderni biznis.",
+  title: "Web stranice koje pretvaraju posjete u upite.",
   subtitle:
-    "Sajtovi koji se učitavaju brzo, rangiraju bolje i pretvaraju posjetioce u klijente.",
-  description:
-    "Gradimo custom web rješenja na modernom stacku (Next.js) — bez teških tema, nepotrebnih pluginova i skrivenog bloatware‑a.",
-  stats: [
-    { value: "5+", label: "Realizovanih projekata" },
-    { value: "100%", label: "Klijenata koji bi ponovo radili s nama" },
-    { value: "3x", label: "Često brži od starog WordPress sajta" },
+    "Dizajn, Next.js razvoj i tehnički SEO optimizovani za brzinu, sigurnost i rast poslovanja.",
+  primaryCta: "Zatraži besplatnu procjenu",
+  secondaryCta: "Pogledaj studije slučaja",
+  trustCopy: "Odgovaramo u roku od 24h · Bez obaveza",
+  metricBadges: [
+    { icon: "⚡", label: "Lighthouse 90+" },
+    { icon: "🔐", label: "Enterprise sigurnost" },
+    { icon: "📈", label: "SEO optimizacija" },
   ],
 } as const;
 
-/** Usluge */
+/** Usluge – 3 paketa */
 export const SERVICES = {
   title: "Šta radimo",
-  subtitle: "Od ideje do gotovog sajta — sve na jednom mjestu.",
-  items: [
+  subtitle: "Jasni paketi prilagođeni vašim ciljevima.",
+  packages: [
     {
-      id: "web-dev",
-      title: "Web Development",
-      icon: "Code2",
-      emoji: "💻",
-      description:
-        "Moderne, brze stranice sa React i Next.js. Optimizirane za performanse i konverzije.",
+      id: "poslovna",
+      title: "Poslovna web stranica",
+      icon: "🌐",
+      bullets: [
+        "5–10 stranica",
+        "SEO osnovna optimizacija",
+        "Kontakt forma",
+        "CMS ako je potreban",
+      ],
     },
     {
-      id: "web-design",
-      title: "Web Dizajn",
-      icon: "Palette",
-      emoji: "🎨",
-      description:
-        "Vizuelno upečatljiv dizajn prilagođen brendu. Responsivan na svim uređajima.",
+      id: "seo-perf",
+      title: "SEO + Performance paket",
+      icon: "📊",
+      bullets: [
+        "Tehnički SEO audit",
+        "Optimizacija brzine",
+        "Schema implementacija",
+        "Analytics setup",
+      ],
     },
     {
-      id: "seo",
-      title: "SEO Optimizacija",
-      icon: "Search",
-      emoji: "📈",
-      description:
-        "Tehnički SEO, meta tagovi, schema markup. Budite vidljivi na Google-u.",
-    },
-    {
-      id: "maintenance",
-      title: "Održavanje",
-      icon: "Shield",
-      emoji: "🛡️",
-      description:
-        "Ažuriranje, sigurnosne zakrpe i tehnička podrška. Sajt u sigurnim rukama.",
-    },
-    {
-      id: "web-apps",
-      title: "Web Aplikacije",
-      icon: "AppWindow",
-      emoji: "📱",
-      description:
-        "Custom aplikacije za specifične potrebe. Dashboardi, portali, booking sistemi.",
-    },
-    {
-      id: "hosting",
-      title: "Hosting i Domena",
-      icon: "Cloud",
-      emoji: "☁️",
-      description:
-        "Postavljanje domene, hostinga i SSL certifikata. Kompletno rješenje.",
+      id: "custom",
+      title: "Custom Web Rješenja",
+      icon: "⚙️",
+      bullets: [
+        "Web aplikacije",
+        "Interni sistemi",
+        "Automatizacije",
+      ],
     },
   ],
 } as const;
@@ -135,7 +129,7 @@ export const PROCESS = {
   ],
 } as const;
 
-/** Portfolio projekti */
+/** Portfolio projekti – sa metrikama */
 export const PORTFOLIO = {
   title: "Naši radovi",
   subtitle: "Projekti koji govore za sebe.",
@@ -148,6 +142,7 @@ export const PORTFOLIO = {
       technologies: ["Next.js", "Tailwind"],
       category: "Poslovne stranice",
       image: "",
+      metrics: ["+38% više upita", "1.9s LCP", "95 Lighthouse"],
     },
     {
       id: "klinika-zdravlje",
@@ -157,6 +152,7 @@ export const PORTFOLIO = {
       technologies: ["Next.js", "React"],
       category: "Zdravstvo",
       image: "",
+      metrics: ["+25% konverzija", "2.1s LCP", "92 Lighthouse"],
     },
     {
       id: "restoran-dolina",
@@ -166,6 +162,7 @@ export const PORTFOLIO = {
       technologies: ["Next.js", "Tailwind"],
       category: "Ugostiteljstvo",
       image: "",
+      metrics: ["+40% rezervacija", "1.7s LCP", "94 Lighthouse"],
     },
     {
       id: "autoservis-pro",
@@ -175,6 +172,7 @@ export const PORTFOLIO = {
       technologies: ["React", "GSAP"],
       category: "Usluge",
       image: "",
+      metrics: ["+30% upita", "2.0s LCP", "93 Lighthouse"],
     },
     {
       id: "studio-forma",
@@ -184,54 +182,39 @@ export const PORTFOLIO = {
       technologies: ["Next.js", "Three.js"],
       category: "Arhitektura",
       image: "",
+      metrics: ["+50% engagement", "2.2s LCP", "91 Lighthouse"],
     },
   ],
 } as const;
 
-/** Zašto mi */
+/** Zašto Webora – 4 diferencijacije */
 export const WHY_US = {
   title: "Zašto Webora?",
   items: [
     {
-      title: "Brže od WordPressa",
-      description:
-        "React/Next.js stranice se učitavaju 2-5x brže. Brzina = bolje rangiranje na Google-u + bolji UX.",
+      title: "Brzina bez kompromisa",
+      description: "Bez plugin overloada i WP bloata.",
       icon: "⚡",
     },
     {
-      title: "Bez mjesečnih naknada za plugin-e",
-      description:
-        "Nema WordPress plugin pretplata, nema bloatware-a. Čist, lagan kod.",
-      icon: "💰",
+      title: "Sigurnost na prvom mjestu",
+      description: "Next.js + server-side kontrola.",
+      icon: "🔐",
     },
     {
-      title: "SEO od prvog dana",
-      description:
-        "Svaki sajt gradimo sa SEO-om u temelju, ne kao naknadnu misao.",
-      icon: "🔍",
+      title: "Mjerljivi rezultati",
+      description: "Analytics, konverzije i performance tracking.",
+      icon: "📊",
     },
     {
-      title: "Potpuno prilagođeno",
-      description:
-        "Nema šablona. Svaki sajt je dizajniran i kodiran specifično za vaš biznis.",
-      icon: "✨",
-    },
-    {
-      title: "Siguran i pouzdan",
-      description:
-        "Statički sajt = manja površina za napade. Plus HTTPS, moderno hostovanje na Vercelu.",
-      icon: "🔒",
-    },
-    {
-      title: "Personaliziran pristup",
-      description:
-        "Mali studio, direktna komunikacija. Bez slanja između odjela i agenata.",
+      title: "Direktna komunikacija",
+      description: "Bez posrednika, bez outsourcinga.",
       icon: "🤝",
     },
   ],
 } as const;
 
-/** Testimonials (placeholder) */
+/** Testimonials – grad + industrija */
 export const TESTIMONIALS = {
   title: "Šta kažu naši klijenti",
   items: [
@@ -240,6 +223,7 @@ export const TESTIMONIALS = {
         "Profesionalan pristup i brza isporuka. Preporučujem svima koji traže kvalitetan web.",
       name: "Amina S.",
       loc: "Sarajevo",
+      industry: "Pravo",
       initials: "AS",
       rating: 5,
     },
@@ -248,6 +232,7 @@ export const TESTIMONIALS = {
         "Komunikacija na visokom nivou, sajt radi savršeno. Zadovoljni smo rezultatom.",
       name: "Marko K.",
       loc: "Banja Luka",
+      industry: "Zdravstvo",
       initials: "MK",
       rating: 5,
     },
@@ -256,6 +241,7 @@ export const TESTIMONIALS = {
         "Od ideje do objave — sve transparentno i na vrijeme. Hvala Webora timu!",
       name: "Emir H.",
       loc: "Mostar",
+      industry: "Ugostiteljstvo",
       initials: "EH",
       rating: 5,
     },
@@ -264,6 +250,7 @@ export const TESTIMONIALS = {
         "Sajt nam je donio značajno više upita. Investicija se isplatila u prvom mjesecu.",
       name: "Jasna N.",
       loc: "Tuzla",
+      industry: "Usluge",
       initials: "JN",
       rating: 5,
     },
@@ -272,6 +259,7 @@ export const TESTIMONIALS = {
         "Konačno imamo moderan sajt koji izgleda profesionalno. Klijenti nas ozbiljnije shvataju.",
       name: "Dragan B.",
       loc: "Zenica",
+      industry: "Arhitektura",
       initials: "DB",
       rating: 5,
     },
@@ -318,6 +306,7 @@ export const FAQ = {
 export const CONTACT = {
   title: "Započnimo razgovor",
   subtitle: "Javite se — odgovaramo u roku od 24 sata.",
+  submitLabel: "Započni projekat",
   projectTypes: [
     "Nova web stranica",
     "Redizajn",
@@ -325,7 +314,10 @@ export const CONTACT = {
     "Ostalo",
   ] as const,
   formAction: "https://formspree.io/f/YOUR_FORM_ID",
+  howWeWork: [
+    "Kratki uvodni poziv (15 min)",
+    "Procjena i plan",
+    "Implementacija",
+  ],
 } as const;
 
-/** Social links (dodati kada budu dostupni) */
-export const SOCIAL_LINKS: { label: string; href: string; icon: string }[] = [];

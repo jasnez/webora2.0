@@ -1,13 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { SERVICES } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { CTA } from "@/lib/constants";
 
 export function Services() {
   return (
     <section
       id="usluge"
-      className="py-22 bg-white scroll-mt-24"
+      className="section-pad bg-bg-dark scroll-mt-24"
       aria-labelledby="services-heading"
     >
       <div className="max-w-container mx-auto px-6">
@@ -16,23 +18,36 @@ export function Services() {
           label="Usluge"
           title={SERVICES.title}
           subtitle={SERVICES.subtitle}
+          variant="dark"
         />
-        <div className="flex md:grid overflow-x-auto md:overflow-visible snap-x md:snap-none gap-3.5 md:grid-cols-2 lg:grid-cols-3 pb-2 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide">
-          {SERVICES.items.map((service) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {SERVICES.packages.map((pkg) => (
             <article
-              key={service.id}
-              className="flex-[0_0_85%] sm:flex-[0_0_70%] md:flex-none min-w-0 snap-center snap-always group relative bg-white border border-[#E2E8F0] rounded-[14px] p-7 transition-all duration-300 overflow-hidden hover:shadow-[0_16px_40px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 hover:border-[#CBD5E1]"
+              key={pkg.id}
+              className="group relative bg-surface-dark border border-border-dark rounded-card p-6 transition-all duration-300 hover:shadow-soft-lg hover:scale-[1.02] hover:border-accent/30"
             >
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#6366F1] to-[#38BDF8] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              <div className="w-11 h-11 rounded-[10px] bg-[#EEF2FF] flex items-center justify-center mb-4 text-[20px] transition-all duration-300 group-hover:bg-[#6366F1]">
-                <span className="group-hover:brightness-[10]">{service.emoji}</span>
-              </div>
-              <h3 className="text-[15.5px] font-semibold text-[#0F172A] mb-1.5">
-                {service.title}
+              <div className="text-2xl mb-4">{pkg.icon}</div>
+              <h3 className="text-lg font-semibold text-white-text mb-4">
+                {pkg.title}
               </h3>
-              <p className="text-[13.5px] text-[#64748B] leading-[1.55]">
-                {service.description}
-              </p>
+              <ul className="space-y-2 mb-6">
+                {pkg.bullets.map((bullet) => (
+                  <li
+                    key={bullet}
+                    className="text-sm text-text-secondary flex items-center gap-2"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-accent flex-shrink-0" />
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/usluge"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors group/link"
+              >
+                {CTA.learnMore}
+                <span className="group-hover/link:translate-x-0.5 transition-transform" aria-hidden>→</span>
+              </Link>
             </article>
           ))}
         </div>
