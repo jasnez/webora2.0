@@ -35,11 +35,11 @@ export const CTA = {
 
 /** Hero sekcija */
 export const HERO = {
-  title: "Moderne web stranice koje donose rezultate.",
+  title: "Gradimo webove koji prave razliku.",
   subtitle:
-    "Web stranice koje rade za vaš biznis. Ne samo da izgledaju dobro.",
+    "Fokusirani smo na brzinu, SEO i konverzije — ne samo na lijep dizajn.",
   description:
-    "Kreiramo brze, sigurne i SEO-optimizirane web stranice koristeći React i Next.js — tehnologije koje su 2-5x brže od WordPressa.",
+    "Kreiramo moderne, brze i sigurne web stranice koristeći React i Next.js — tehnologije koje nadmašuju klasične WordPress sisteme u performansama, sigurnosti i dugoročnoj skalabilnosti.",
   stats: [
     { value: "5+", label: "Projekata isporučeno" },
     { value: "100%", label: "Zadovoljnih klijenata" },
@@ -135,12 +135,49 @@ export const PORTFOLIO = {
   subtitle: "Projekti koji govore za sebe.",
   items: [
     {
-      id: "advokat-vk",
+      id: "advokat-vk-1",
       title: "Advokat Velika Kladuša",
       description: "Profesionalna web prezentacija za advokatsku kancelariju.",
       url: "https://www.advokatvelikakladusa.ba",
       technologies: ["Next.js", "Tailwind CSS"],
+      category: "Poslovne stranice",
       image: "", // Dodaj: "/images/portfolio/advokat-vk.jpg" kada postaviš sliku
+    },
+    {
+      id: "advokat-vk-2",
+      title: "Advokat Velika Kladuša",
+      description: "Profesionalna web prezentacija za advokatsku kancelariju.",
+      url: "https://www.advokatvelikakladusa.ba",
+      technologies: ["Next.js", "Tailwind CSS"],
+      category: "Poslovne stranice",
+      image: "",
+    },
+    {
+      id: "advokat-vk-3",
+      title: "Advokat Velika Kladuša",
+      description: "Profesionalna web prezentacija za advokatsku kancelariju.",
+      url: "https://www.advokatvelikakladusa.ba",
+      technologies: ["Next.js", "Tailwind CSS"],
+      category: "Poslovne stranice",
+      image: "",
+    },
+    {
+      id: "advokat-vk-4",
+      title: "Advokat Velika Kladuša",
+      description: "Profesionalna web prezentacija za advokatsku kancelariju.",
+      url: "https://www.advokatvelikakladusa.ba",
+      technologies: ["Next.js", "Tailwind CSS"],
+      category: "Poslovne stranice",
+      image: "",
+    },
+    {
+      id: "advokat-vk-5",
+      title: "Advokat Velika Kladuša",
+      description: "Profesionalna web prezentacija za advokatsku kancelariju.",
+      url: "https://www.advokatvelikakladusa.ba",
+      technologies: ["Next.js", "Tailwind CSS"],
+      category: "Poslovne stranice",
+      image: "",
     },
   ],
 } as const;

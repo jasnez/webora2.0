@@ -45,7 +45,7 @@ export function Contact() {
   return (
     <section
       id="kontakt"
-      className="py-section lg:py-section-lg bg-surface/50"
+      className="py-section lg:py-section-lg bg-surface/60 dark:bg-slate-950"
       aria-labelledby="contact-heading"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
@@ -54,7 +54,7 @@ export function Contact() {
           title={CONTACT.title}
           subtitle={CONTACT.subtitle}
         />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -65,6 +65,9 @@ export function Contact() {
               <div className="rounded-card bg-success/10 border border-success/20 p-8 text-center">
                 <p className="font-display font-semibold text-success">
                   Hvala! Javit ćemo vam se u roku od 24 sata.
+                </p>
+                <p className="mt-2 text-sm text-text-secondary">
+                  Uobičajeni vremenski raspon odgovora je između 2 i 8 radnih sati.
                 </p>
               </div>
             ) : (
@@ -84,6 +87,23 @@ export function Contact() {
                     className="w-full px-4 py-3 rounded-button border border-border bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
                     placeholder="Vaše ime"
                   />
+                </div>
+                <div>
+                  <label
+                    htmlFor="contact-slot"
+                    className="block text-sm font-medium text-primary mb-1.5"
+                  >
+                    Predloženi termin za sastanak
+                  </label>
+                  <input
+                    id="contact-slot"
+                    name="preferredTime"
+                    type="datetime-local"
+                    className="w-full px-4 py-3 rounded-button border border-border bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                  />
+                  <p className="mt-1 text-xs text-text-secondary">
+                    Opcionalno — predložite vrijeme za kratki online sastanak.
+                  </p>
                 </div>
                 <div>
                   <label
@@ -170,10 +190,10 @@ export function Contact() {
             transition={{ duration: 0.4 }}
           >
             <div>
-              <h3 className="font-display font-semibold text-primary mb-4">
+              <h3 className="font-display font-semibold text-primary dark:text-white mb-4">
                 Kontakt informacije
               </h3>
-              <ul className="space-y-4 text-text-secondary">
+              <ul className="space-y-4 text-text-secondary dark:text-slate-300">
                 <li className="flex items-center gap-3">
                   <Mail
                     className="w-5 h-5 text-accent flex-shrink-0"

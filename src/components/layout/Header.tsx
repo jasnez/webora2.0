@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { clsx } from "clsx";
 import { SITE, NAV_LINKS, CTA } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,8 +24,8 @@ export function Header() {
       className={clsx(
         "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-soft"
-          : "bg-white/80 backdrop-blur-sm"
+          ? "bg-white/90 dark:bg-slate-950/90 backdrop-blur-md shadow-soft"
+          : "bg-white/80 dark:bg-slate-950/70 backdrop-blur-sm"
       )}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
@@ -34,7 +35,7 @@ export function Header() {
         >
           <Link
             href="/#hero"
-            className="font-display font-bold text-xl text-primary flex items-center gap-1.5"
+            className="font-display font-bold text-xl text-primary dark:text-white flex items-center gap-1.5"
             onClick={() => setIsOpen(false)}
           >
             <span>{SITE.name}</span>
@@ -42,32 +43,39 @@ export function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-text-secondary hover:text-primary font-medium transition-colors relative after:absolute after:left-0 after:bottom-[-2px] after:h-0.5 after:bg-accent after:transition-transform after:origin-right after:scale-x-0 hover:after:scale-x-100 after:w-full"
+                className="text-text-secondary dark:text-slate-300 hover:text-primary dark:hover:text-white font-medium transition-colors relative after:absolute after:left-0 after:bottom-[-2px] after:h-0.5 after:bg-accent after:transition-transform after:origin-right after:scale-x-0 hover:after:scale-x-100 after:w-full"
               >
                 {link.label}
               </Link>
             ))}
+            <Button href="#portfolio" variant="ghost" size="sm" className="hidden xl:inline-flex">
+              {CTA.secondary}
+            </Button>
             <Button href="#kontakt" variant="primary" size="sm">
               {CTA.primary} →
             </Button>
+            <ThemeToggle />
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            type="button"
-            className="lg:hidden p-2 rounded-button text-primary hover:bg-surface transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-expanded={isOpen}
-            aria-controls="mobile-menu"
-            aria-label={isOpen ? "Zatvori meni" : "Otvori meni"}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile actions */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <button
+              type="button"
+              className="p-2 rounded-button text-primary dark:text-white hover:bg-surface/80 dark:hover:bg-slate-900 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label={isOpen ? "Zatvori meni" : "Otvori meni"}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </nav>
       </div>
 

@@ -19,12 +19,25 @@
   --radius-button: 8px;
 }
 
+.dark {
+  --color-primary: #020617;
+  --color-accent: #6366f1;
+  --color-accent-light: #818cf8;
+  --color-success: #22c55e;
+  --color-surface: #020617;
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #e5e7eb;
+  --color-border: #1f2937;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-white text-[var(--color-text-primary)] font-body antialiased;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  @apply font-body antialiased;
 }
 
 /* Focus vidljivost za pristupačnost */
@@ -35,4 +48,12 @@ body {
 /* Skip to content link (sakriven vizuelno, vidljiv na fokusu) */
 .skip-link {
   @apply absolute left-4 -top-12 z-[100] rounded-button bg-accent px-4 py-2 text-white transition-all focus:top-4;
+}
+
+/* Utility: sakrij scroll bar gdje nije potreban */
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

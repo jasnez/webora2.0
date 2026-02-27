@@ -25,11 +25,14 @@ export function SectionHeading({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4 }}
     >
-      <Component id={id} className="font-display font-bold text-primary text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight">
+      <Component
+        id={id}
+        className="font-display font-bold text-primary dark:text-white text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight"
+      >
         {title}
       </Component>
       {subtitle && (
-        <p className="mt-4 text-lg text-text-secondary leading-relaxed">
+        <p className="mt-4 text-lg text-text-secondary dark:text-slate-300 leading-relaxed">
           {subtitle}
         </p>
       )}
