@@ -45,12 +45,15 @@ export function Contact() {
   return (
     <section
       id="kontakt"
-      className="py-section lg:py-section-lg bg-surface/60 dark:bg-slate-950 scroll-mt-24 md:scroll-mt-32"
+      className="relative py-section lg:py-section-lg bg-[#0F172A] overflow-hidden scroll-mt-24 md:scroll-mt-32"
       aria-labelledby="contact-heading"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '28px 28px' }} aria-hidden />
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 relative z-10">
         <SectionHeading
           id="contact-heading"
+          label="Kontakt"
+          variant="dark"
           title={CONTACT.title}
           subtitle={CONTACT.subtitle}
         />
@@ -66,7 +69,7 @@ export function Contact() {
                 <p className="font-display font-semibold text-success">
                   Hvala! Javit ćemo vam se u roku od 24 sata.
                 </p>
-                <p className="mt-2 text-sm text-text-secondary">
+                <p className="mt-2 text-sm text-slate-400">
                   Uobičajeni vremenski raspon odgovora je između 2 i 8 radnih sati.
                 </p>
               </div>
@@ -75,7 +78,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="contact-name"
-                    className="block text-sm font-medium text-primary mb-1.5"
+                    className="block text-sm font-medium text-slate-300 mb-1.5"
                   >
                     Ime i prezime *
                   </label>
@@ -84,14 +87,14 @@ export function Contact() {
                     name="name"
                     type="text"
                     required
-                    className="w-full px-4 py-3 rounded-button border border-border bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-button border border-white/10 bg-white/5 text-white placeholder-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all"
                     placeholder="Vaše ime"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="contact-slot"
-                    className="block text-sm font-medium text-primary mb-1.5"
+                    className="block text-sm font-medium text-slate-300 mb-1.5"
                   >
                     Predloženi termin za sastanak
                   </label>
@@ -99,16 +102,16 @@ export function Contact() {
                     id="contact-slot"
                     name="preferredTime"
                     type="datetime-local"
-                    className="w-full px-4 py-3 rounded-button border border-border bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-button border border-white/10 bg-white/5 text-white placeholder-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all"
                   />
-                  <p className="mt-1 text-xs text-text-secondary">
+                  <p className="mt-1 text-xs text-slate-400">
                     Opcionalno — predložite vrijeme za kratki online sastanak.
                   </p>
                 </div>
                 <div>
                   <label
                     htmlFor="contact-email"
-                    className="block text-sm font-medium text-primary mb-1.5"
+                    className="block text-sm font-medium text-slate-300 mb-1.5"
                   >
                     Email *
                   </label>
@@ -117,14 +120,14 @@ export function Contact() {
                     name="email"
                     type="email"
                     required
-                    className="w-full px-4 py-3 rounded-button border border-border bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-button border border-white/10 bg-white/5 text-white placeholder-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all"
                     placeholder="email@primjer.ba"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="contact-phone"
-                    className="block text-sm font-medium text-primary mb-1.5"
+                    className="block text-sm font-medium text-slate-300 mb-1.5"
                   >
                     Telefon
                   </label>
@@ -132,21 +135,21 @@ export function Contact() {
                     id="contact-phone"
                     name="phone"
                     type="tel"
-                    className="w-full px-4 py-3 rounded-button border border-border bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-button border border-white/10 bg-white/5 text-white placeholder-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all"
                     placeholder="+387 XX XXX XXX"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="contact-type"
-                    className="block text-sm font-medium text-primary mb-1.5"
+                    className="block text-sm font-medium text-slate-300 mb-1.5"
                   >
                     Tip projekta
                   </label>
                   <select
                     id="contact-type"
                     name="projectType"
-                    className="w-full px-4 py-3 rounded-button border border-border bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-button border border-white/10 bg-white/5 text-white placeholder-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all"
                   >
                     {CONTACT.projectTypes.map((type) => (
                       <option key={type} value={type}>
@@ -158,7 +161,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="contact-message"
-                    className="block text-sm font-medium text-primary mb-1.5"
+                    className="block text-sm font-medium text-slate-300 mb-1.5"
                   >
                     Poruka *
                   </label>
@@ -167,7 +170,7 @@ export function Contact() {
                     name="message"
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded-button border border-border bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-y min-h-[120px]"
+                    className="w-full px-4 py-3 rounded-button border border-white/10 bg-white/5 text-white placeholder-slate-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all resize-y min-h-[120px]"
                     placeholder="Opišite vaš projekat ili pitanje..."
                   />
                 </div>
@@ -175,7 +178,7 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={pending}
-                  className="w-full sm:w-auto px-8 py-3 rounded-button bg-success text-white font-display font-semibold hover:bg-emerald-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+                  className="w-full sm:w-auto px-8 py-3 rounded-button bg-success text-white font-display font-semibold hover:bg-emerald-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-500"
                 >
                   {pending ? "Šaljem..." : "Pošalji upit"}
                 </button>
@@ -190,39 +193,39 @@ export function Contact() {
             transition={{ duration: 0.4 }}
           >
             <div>
-              <h3 className="font-display font-semibold text-primary dark:text-white mb-4">
+              <h3 className="font-display font-semibold text-white mb-4">
                 Kontakt informacije
               </h3>
-              <ul className="space-y-4 text-text-secondary dark:text-slate-300">
+              <ul className="space-y-4 text-slate-400">
                 <li className="flex items-center gap-3">
                   <Mail
-                    className="w-5 h-5 text-accent flex-shrink-0"
+                    className="w-5 h-5 text-indigo-400 flex-shrink-0"
                     aria-hidden
                   />
                   <a
                     href={`mailto:${SITE.email}`}
-                    className="hover:text-accent transition-colors"
+                    className="hover:text-indigo-300 transition-colors"
                   >
                     {SITE.email}
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone
-                    className="w-5 h-5 text-accent flex-shrink-0"
+                    className="w-5 h-5 text-indigo-400 flex-shrink-0"
                     aria-hidden
                   />
                   <span>{SITE.phone}</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin
-                    className="w-5 h-5 text-accent flex-shrink-0"
+                    className="w-5 h-5 text-indigo-400 flex-shrink-0"
                     aria-hidden
                   />
                   <span>{SITE.location}</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Clock
-                    className="w-5 h-5 text-accent flex-shrink-0"
+                    className="w-5 h-5 text-indigo-400 flex-shrink-0"
                     aria-hidden
                   />
                   <span>{SITE.workingHours}</span>

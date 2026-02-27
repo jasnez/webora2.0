@@ -135,48 +135,48 @@ export const PORTFOLIO = {
   subtitle: "Projekti koji govore za sebe.",
   items: [
     {
-      id: "advokat-vk-1",
+      id: "advokat-vk",
       title: "Advokat Velika Kladuša",
-      description: "Profesionalna web prezentacija za advokatsku kancelariju.",
+      description: "Web prezentacija za advokatsku kancelariju.",
       url: "https://www.advokatvelikakladusa.ba",
-      technologies: ["Next.js", "Tailwind CSS"],
-      category: "Poslovne stranice",
-      image: "", // Dodaj: "/images/portfolio/advokat-vk.jpg" kada postaviš sliku
-    },
-    {
-      id: "advokat-vk-2",
-      title: "Advokat Velika Kladuša",
-      description: "Profesionalna web prezentacija za advokatsku kancelariju.",
-      url: "https://www.advokatvelikakladusa.ba",
-      technologies: ["Next.js", "Tailwind CSS"],
+      technologies: ["Next.js", "Tailwind"],
       category: "Poslovne stranice",
       image: "",
     },
     {
-      id: "advokat-vk-3",
-      title: "Advokat Velika Kladuša",
-      description: "Profesionalna web prezentacija za advokatsku kancelariju.",
-      url: "https://www.advokatvelikakladusa.ba",
-      technologies: ["Next.js", "Tailwind CSS"],
-      category: "Poslovne stranice",
+      id: "klinika-zdravlje",
+      title: "Klinika Zdravlje",
+      description: "Moderna stranica za privatnu kliniku.",
+      url: "#",
+      technologies: ["Next.js", "React"],
+      category: "Zdravstvo",
       image: "",
     },
     {
-      id: "advokat-vk-4",
-      title: "Advokat Velika Kladuša",
-      description: "Profesionalna web prezentacija za advokatsku kancelariju.",
-      url: "https://www.advokatvelikakladusa.ba",
-      technologies: ["Next.js", "Tailwind CSS"],
-      category: "Poslovne stranice",
+      id: "restoran-dolina",
+      title: "Restoran Dolina",
+      description: "Elegantna stranica sa digitalnim menijima.",
+      url: "#",
+      technologies: ["Next.js", "Tailwind"],
+      category: "Ugostiteljstvo",
       image: "",
     },
     {
-      id: "advokat-vk-5",
-      title: "Advokat Velika Kladuša",
-      description: "Profesionalna web prezentacija za advokatsku kancelariju.",
-      url: "https://www.advokatvelikakladusa.ba",
-      technologies: ["Next.js", "Tailwind CSS"],
-      category: "Poslovne stranice",
+      id: "autoservis-pro",
+      title: "AutoServis Pro",
+      description: "Landing page za auto servis sa booking-om.",
+      url: "#",
+      technologies: ["React", "GSAP"],
+      category: "Usluge",
+      image: "",
+    },
+    {
+      id: "studio-forma",
+      title: "Studio Forma",
+      description: "Portfolio za arhitektonski studio.",
+      url: "#",
+      technologies: ["Next.js", "Three.js"],
+      category: "Arhitektura",
       image: "",
     },
   ],
@@ -190,31 +190,37 @@ export const WHY_US = {
       title: "Brže od WordPressa",
       description:
         "React/Next.js stranice se učitavaju 2-5x brže. Brzina = bolje rangiranje na Google-u + bolji UX.",
+      icon: "⚡",
     },
     {
       title: "Bez mjesečnih naknada za plugin-e",
       description:
         "Nema WordPress plugin pretplata, nema bloatware-a. Čist, lagan kod.",
+      icon: "🧩",
     },
     {
       title: "SEO od prvog dana",
       description:
         "Svaki sajt gradimo sa SEO-om u temelju, ne kao naknadnu misao.",
+      icon: "🔍",
     },
     {
       title: "Potpuno prilagođeno",
       description:
         "Nema šablona. Svaki sajt je dizajniran i kodiran specifično za vaš biznis.",
+      icon: "✨",
     },
     {
       title: "Siguran i pouzdan",
       description:
         "Statički sajt = manja površina za napade. Plus HTTPS, moderno hostovanje na Vercelu.",
+      icon: "🛡️",
     },
     {
       title: "Personaliziran pristup",
       description:
         "Mali studio, direktna komunikacija. Bez slanja između odjela i agenata.",
+      icon: "🤝",
     },
   ],
 } as const;
@@ -226,19 +232,41 @@ export const TESTIMONIALS = {
     {
       quote:
         "Profesionalan pristup i brza isporuka. Preporučujem svima koji traže kvalitetan web.",
-      author: "Klijent, Sarajevo",
+      name: "Amina S.",
+      loc: "Sarajevo",
+      initials: "AS",
       rating: 5,
     },
     {
       quote:
         "Komunikacija na visokom nivou, sajt radi savršeno. Zadovoljni smo rezultatom.",
-      author: "Klijent, Banja Luka",
+      name: "Marko K.",
+      loc: "Banja Luka",
+      initials: "MK",
       rating: 5,
     },
     {
       quote:
         "Od ideje do objave — sve transparentno i na vrijeme. Hvala Webora timu!",
-      author: "Klijent, Mostar",
+      name: "Emir H.",
+      loc: "Mostar",
+      initials: "EH",
+      rating: 5,
+    },
+    {
+      quote:
+        "Sajt nam je donio značajno više upita. Investicija se isplatila u prvom mjesecu.",
+      name: "Jasna N.",
+      loc: "Tuzla",
+      initials: "JN",
+      rating: 5,
+    },
+    {
+      quote:
+        "Konačno imamo moderan sajt koji izgleda profesionalno. Klijenti nas ozbiljnije shvataju.",
+      name: "Dragan B.",
+      loc: "Zenica",
+      initials: "DB",
       rating: 5,
     },
   ],
@@ -251,7 +279,7 @@ export const FAQ = {
     {
       question: "Koliko košta izrada web stranice?",
       answer:
-        "Cijena zavisi od složenosti projekta. Jednostavne prezentacione stranice počinju od XXX KM, dok složeniji projekti s custom funkcionalnostima koštaju više. Kontaktirajte nas za besplatnu procjenu.",
+        "Cijena zavisi od složenosti projekta. Kontaktirajte nas za besplatnu procjenu — rado ćemo razgovarati o vašim potrebama i budžetu.",
     },
     {
       question: "Koliko traje izrada?",

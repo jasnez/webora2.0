@@ -12,8 +12,8 @@ export default {
     extend: {
       colors: {
         primary: "#166534",
-        accent: "#2563EB",
-        "accent-light": "#60A5FA",
+        accent: "#6366F1",
+        "accent-light": "#818CF8",
         success: "#22C55E",
         surface: "#F8FAFC",
         "text-primary": "#0F172A",

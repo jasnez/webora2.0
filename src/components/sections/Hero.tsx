@@ -1,186 +1,139 @@
 "use client";
 
-import { useEffect } from "react";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { Zap, SearchCheck } from "lucide-react";
-import { HERO, CTA } from "@/lib/constants";
-import { Button } from "@/components/ui/Button";
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.15,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0 },
-};
-
-function StatCounter({ value, label }: { value: string; label: string }) {
-  const numeric = Number.parseInt(value);
-  const suffix = value.replace(String(numeric), "");
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.floor(latest));
-
-  useEffect(() => {
-    const controls = animate(count, Number.isNaN(numeric) ? 0 : numeric, {
-      duration: 1.6,
-      ease: "easeOut",
-    });
-    return controls.stop;
-  }, [count, numeric]);
-
-  return (
-    <div>
-      <motion.span
-        className="font-display font-bold text-2xl md:text-3xl text-primary dark:text-white block"
-      >
-        {Number.isNaN(numeric) ? (
-          value
-        ) : (
-          <>
-            <motion.span>{rounded}</motion.span>
-            {suffix}
-          </>
-        )}
-      </motion.span>
-      <span className="text-sm text-text-secondary">{label}</span>
-    </div>
-  );
-}
+const techStack = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Tailwind",
+  "Vercel",
+  "Framer Motion",
+];
 
 export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] flex items-center pt-24 pb-20 md:pt-28 md:pb-28 overflow-hidden scroll-mt-24 md:scroll-mt-32"
+      className="relative bg-[#131B2E] min-h-screen flex items-center overflow-hidden scroll-mt-24 md:scroll-mt-32"
       aria-labelledby="hero-title"
     >
-      {/* Background gradient + blobs */}
+      {/* Dekoracije */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-[#1d4ed8] via-[#4f46e5] to-[#0f172a] dark:from-[#020617] dark:via-[#1e293b] dark:to-black"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+        }}
         aria-hidden
       />
-      <div
-        className="pointer-events-none absolute -left-32 -top-40 h-80 w-80 rounded-full bg-fuchsia-500/40 blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -right-24 top-1/3 h-72 w-72 rounded-full bg-sky-400/40 blur-3xl"
-        aria-hidden
-      />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.24),transparent_55%),radial-gradient(circle_at_bottom,_rgba(15,23,42,0.9),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.24),transparent_55%),radial-gradient(circle_at_bottom,_rgba(15,23,42,0.95),transparent_55%)]" />
+      <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-indigo-500/[0.08] rounded-full blur-[120px] pointer-events-none" aria-hidden />
+      <div className="absolute bottom-[15%] right-[15%] w-[350px] h-[350px] bg-sky-400/[0.06] rounded-full blur-[100px] pointer-events-none" aria-hidden />
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 w-full grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] items-center">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="max-w-3xl text-white"
-        >
-          <motion.p
-            variants={item}
-            className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-sky-100 backdrop-blur"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Web development studio · BiH
-          </motion.p>
-          <motion.h1
-            id="hero-title"
-            variants={item}
-            className="mt-4 font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tight text-white"
-          >
-            {HERO.title}
-          </motion.h1>
-          <motion.p
-            variants={item}
-            className="mt-5 text-lg md:text-xl text-slate-100/90 max-w-2xl leading-relaxed"
-          >
-            {HERO.subtitle}
-          </motion.p>
-          <motion.p
-            variants={item}
-            className="mt-3 text-sm md:text-base text-slate-200/80 max-w-2xl"
-          >
-            {HERO.description}
-          </motion.p>
-
-          <motion.div
-            variants={item}
-            className="mt-10 flex flex-col sm:flex-row gap-4"
-          >
-            <Button href="#kontakt" variant="primary" size="lg">
-              {CTA.primary} →
-            </Button>
-            <Button href="#portfolio" variant="outline" size="lg">
-              {CTA.secondary}
-            </Button>
-          </motion.div>
-
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 40, scale: 0.96 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="relative space-y-4"
-        >
-          <div className="grid grid-cols-3 gap-3">
-            {HERO.stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl bg-white/90 text-slate-900 dark:bg-slate-900/80 dark:text-slate-50 border border-white/40 dark:border-slate-800 px-4 py-4 shadow-[0_14px_35px_rgba(15,23,42,0.4)]"
+      <div className="max-w-6xl mx-auto px-6 relative z-10 py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Lijeva strana — tekst */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-indigo-300 text-sm mb-6">
+              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
+              Dostupni za nove projekte
+            </div>
+            <h1
+              id="hero-title"
+              className="text-5xl lg:text-[52px] font-bold tracking-tight leading-[1.08] text-white mb-5"
+            >
+              Pravimo web koji{" "}
+              <span className="bg-gradient-to-r from-indigo-300 to-sky-300 bg-clip-text text-transparent">
+                donosi rezultate.
+              </span>
+            </h1>
+            <p className="text-slate-400 text-base leading-relaxed mb-8 max-w-lg">
+              Brze, sigurne i SEO-optimizirane web stranice izgrađene sa React i
+              Next.js. Bez šablona — svaki projekat je kodiran od nule, za vaš
+              biznis.
+            </p>
+            <div className="flex gap-3">
+              <a
+                href="#kontakt"
+                className="px-7 py-3.5 bg-indigo-500 text-white rounded-xl font-semibold text-[15px] shadow-lg shadow-indigo-500/25 hover:bg-indigo-400 hover:shadow-indigo-400/30 transition-all hover:-translate-y-0.5 inline-flex items-center gap-2"
               >
-                <StatCounter value={stat.value} label={stat.label} />
-              </div>
-            ))}
+                Započni projekat <span>→</span>
+              </a>
+              <a
+                href="#portfolio"
+                className="px-7 py-3.5 border border-white/12 text-slate-400 rounded-xl text-[15px] hover:text-white hover:border-white/25 transition-all"
+              >
+                Pogledaj radove
+              </a>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div className="rounded-2xl bg-white/90 text-slate-900 dark:bg-slate-900/80 dark:text-slate-50 border border-white/40 dark:border-slate-800 px-4 py-4 flex flex-col gap-2 shadow-[0_16px_40px_rgba(15,23,42,0.45)]">
-              <div className="inline-flex items-center gap-2 text-xs font-medium text-emerald-500">
-                <Zap className="h-4 w-4" aria-hidden />
+          {/* Desna strana — Bento Grid */}
+          <div className="grid grid-cols-2 gap-3">
+            {/* Stats — span 2 */}
+            <div className="col-span-2 bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 hover:border-white/15 transition-all">
+              <div className="flex justify-around text-center">
+                <div>
+                  <div className="text-3xl font-bold text-white">5+</div>
+                  <div className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">
+                    Projekata
+                  </div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white">100%</div>
+                  <div className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">
+                    Zadovoljstvo
+                  </div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white">3x</div>
+                  <div className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">
+                    Brže od WP
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Performanse */}
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 hover:border-white/15 transition-all">
+              <div className="w-9 h-9 rounded-lg bg-indigo-500/15 flex items-center justify-center mb-3 text-indigo-300 text-base">
+                ⚡
+              </div>
+              <h4 className="text-sm font-semibold text-white mb-1">
                 Performanse
-              </div>
-              <p className="text-sm">
-                Lighthouse score 95+ na ključnim metrikama Core Web Vitals.
+              </h4>
+              <p className="text-xs text-slate-500">
+                Lighthouse 95+ na svim metrikama
               </p>
             </div>
-            <div className="rounded-2xl bg-white/90 text-slate-900 dark:bg-slate-900/80 dark:text-slate-50 border border-white/40 dark:border-slate-800 px-4 py-4 flex flex-col gap-2 shadow-[0_16px_40px_rgba(15,23,42,0.45)]">
-              <div className="inline-flex items-center gap-2 text-xs font-medium text-sky-400">
-                <SearchCheck className="h-4 w-4" aria-hidden />
+            {/* SEO */}
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 hover:border-white/15 transition-all">
+              <div className="w-9 h-9 rounded-lg bg-sky-400/15 flex items-center justify-center mb-3 text-sky-300 text-base">
+                🔍
+              </div>
+              <h4 className="text-sm font-semibold text-white mb-1">
                 SEO Ready
-              </div>
-              <p className="text-sm">
-                Optimizirano za Google od prvog dana — čisto HTML, schema i brzi TTFB.
+              </h4>
+              <p className="text-xs text-slate-500">
+                Optimizirano za Google od prvog dana
               </p>
             </div>
-          </div>
-
-          <div className="rounded-2xl bg-slate-950/70 text-slate-100 border border-white/10 px-4 py-3 text-xs flex flex-wrap gap-2 items-center">
-            <span className="text-[11px] uppercase tracking-[0.18em] text-slate-400">
-              Tech stack koji koristimo
-            </span>
-            <div className="flex flex-wrap gap-2">
-              {["React", "Next.js", "TypeScript", "Tailwind", "Vercel", "Framer Motion"].map(
-                (tech) => (
+            {/* Tech stack — span 2 */}
+            <div className="col-span-2 bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 hover:border-white/15 transition-all">
+              <p className="text-xs text-slate-600 font-mono mb-3">
+                // Tech stack koji koristimo
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {techStack.map((t) => (
                   <span
-                    key={tech}
-                    className="rounded-full bg-slate-900/70 px-3 py-1 text-[11px] font-medium text-slate-100 border border-slate-700"
+                    key={t}
+                    className="px-3 py-1 bg-white/[0.04] border border-white/[0.08] rounded-md text-[11px] text-slate-500 font-mono hover:border-indigo-500/30 hover:text-indigo-300 transition-all"
                   >
-                    {tech}
+                    {t}
                   </span>
-                )
-              )}
+                ))}
+              </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -3,36 +3,36 @@ import { SITE, NAV_LINKS, CTA } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-white mt-auto">
+    <footer className="bg-[#080E1C] text-slate-400 mt-auto">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link
               href="/#hero"
-              className="font-display font-bold text-2xl flex items-center gap-1.5"
+              className="font-display font-bold text-2xl flex items-center gap-1.5 text-white"
             >
               {SITE.name}
-              <span className="w-2 h-2 rounded-full bg-accent" aria-hidden />
+              <span className="w-2 h-2 rounded-full bg-indigo-400" aria-hidden />
             </Link>
-            <p className="mt-4 text-slate-300 text-sm leading-relaxed max-w-md">
+            <p className="mt-4 text-slate-400 text-sm leading-relaxed max-w-md">
               {SITE.footerDescription}
             </p>
-            <p className="mt-6 text-slate-400 text-sm">{SITE.madeWith}</p>
+            <p className="mt-6 text-slate-500 text-sm">{SITE.madeWith}</p>
           </div>
 
           {/* Links */}
           <div>
-            <h3 className="font-display font-semibold text-sm uppercase tracking-wider text-slate-400 mb-4">
+            <h3 className="font-display font-semibold text-sm uppercase tracking-wider text-slate-500 mb-4">
               Navigacija
             </h3>
             <ul className="space-y-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-slate-300 hover:text-white transition-colors"
-                  >
+                <Link
+                  href={link.href}
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
                     {link.label}
                   </Link>
                 </li>
@@ -42,10 +42,10 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-display font-semibold text-sm uppercase tracking-wider text-slate-400 mb-4">
+            <h3 className="font-display font-semibold text-sm uppercase tracking-wider text-slate-500 mb-4">
               Kontakt
             </h3>
-            <ul className="space-y-3 text-slate-300 text-sm">
+            <ul className="space-y-3 text-slate-400 text-sm">
               <li>
                 <a
                   href={`mailto:${SITE.email}`}
@@ -67,7 +67,7 @@ export function Footer() {
           </p>
           <Link
             href="#hero"
-            className="text-slate-400 hover:text-white text-sm transition-colors"
+            className="text-slate-500 hover:text-white text-sm transition-colors"
           >
             {CTA.backHome}
           </Link>

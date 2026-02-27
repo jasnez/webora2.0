@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
 import { WHY_US } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -9,33 +8,37 @@ export function WhyUs() {
   return (
     <section
       id="zasto-mi"
-      className="py-section lg:py-section-lg bg-surface/70 dark:bg-slate-950 scroll-mt-24 md:scroll-mt-32"
+      className="bg-white py-20 md:py-28 relative scroll-mt-24 md:scroll-mt-32"
       aria-labelledby="why-heading"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
-        <SectionHeading id="why-heading" title={WHY_US.title} />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {WHY_US.items.map((item, index) => (
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" aria-hidden />
+      <div className="max-w-6xl mx-auto px-6">
+        <SectionHeading
+          id="why-heading"
+          label="Prednosti"
+          title={WHY_US.title}
+          subtitle="Ono što nas izdvaja od ostalih."
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {WHY_US.items.map((r, i) => (
             <motion.div
-              key={item.title}
-              className="flex gap-4 p-6 rounded-3xl border border-white/40 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl hover:border-accent/40 hover:shadow-soft-lg transition-all duration-300"
+              key={r.title}
+              className="bg-[#FAFBFF] border border-slate-200 rounded-2xl p-7 hover:shadow-lg hover:-translate-y-0.5 hover:border-indigo-200 transition-all duration-300 group relative overflow-hidden"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -4, scale: 1.02 }}
-              viewport={{ once: true, margin: '-30px' }}
-              transition={{ duration: 0.35, delay: index * 0.05 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.35, delay: i * 0.05 }}
             >
-              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400/40 to-sky-500/40 flex items-center justify-center">
-                <CheckCircle2 className="w-5 h-5 text-emerald-50" aria-hidden />
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-primary dark:text-white mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-text-secondary dark:text-slate-300 text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
+              {/* Bottom accent line on hover */}
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 to-sky-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
+              <div className="text-2xl mb-3">{r.icon}</div>
+              <h3 className="text-base font-semibold text-slate-900 mb-2">
+                {r.title}
+              </h3>
+              <p className="text-sm text-slate-500 leading-relaxed">
+                {r.description}
+              </p>
             </motion.div>
           ))}
         </div>

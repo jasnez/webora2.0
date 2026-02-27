@@ -1,87 +1,94 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { Star } from "lucide-react";
 import { TESTIMONIALS } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-const AUTOPLAY_MS = 5000;
-
 export function Testimonials() {
-  const [index, setIndex] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: "start",
+    slidesToScroll: 1,
+    containScroll: "trimSnaps",
+  });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
 
   useEffect(() => {
-    const id = window.setInterval(() => {
-      setIndex((prev) => (prev + 1) % TESTIMONIALS.items.length);
-    }, AUTOPLAY_MS);
-    return () => window.clearInterval(id);
-  }, []);
-
-  const active = TESTIMONIALS.items[index];
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    onSelect();
+  }, [emblaApi, onSelect]);
 
   return (
     <section
       id="testimonials"
-      className="py-section lg:py-section-lg bg-surface/60 dark:bg-slate-950 scroll-mt-24 md:scroll-mt-32"
+      className="py-20 md:py-28 bg-[#F9F7F4] scroll-mt-24 md:scroll-mt-32"
       aria-labelledby="testimonials-heading"
     >
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-16">
+      <div className="max-w-6xl mx-auto px-6">
         <SectionHeading
           id="testimonials-heading"
+          label="Iskustva"
           title={TESTIMONIALS.title}
         />
-        <div className="relative">
-          <AnimatePresence mode="wait">
-            <motion.blockquote
-              key={index}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.35 }}
-              className="relative rounded-3xl bg-white dark:bg-slate-900 border border-border/70 dark:border-slate-800 px-6 py-8 md:px-10 md:py-10 shadow-soft"
-            >
-              <Quote
-                className="absolute top-4 right-4 w-8 h-8 text-accent/20"
-                aria-hidden
-              />
-              <p className="text-text-primary dark:text-white leading-relaxed mb-4 relative z-10 text-base md:text-lg">
-                &ldquo;{active.quote}&rdquo;
-              </p>
-              <div className="flex items-center gap-1 mb-2" aria-hidden>
-                {Array.from({ length: active.rating }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-4 h-4 fill-amber-400 text-amber-400"
-                  />
-                ))}
-              </div>
-              <footer className="text-sm text-text-secondary dark:text-slate-300">
-                — {active.author}
-              </footer>
-            </motion.blockquote>
-          </AnimatePresence>
 
-          <div className="mt-6 flex items-center justify-between gap-4">
-            <div className="flex gap-2">
-              {TESTIMONIALS.items.map((_, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => setIndex(i)}
-                  className={`h-2.5 rounded-full transition-all ${
-                    i === index
-                      ? "w-6 bg-accent"
-                      : "w-2.5 bg-border hover:bg-accent/60"
-                  }`}
-                  aria-label={`Prikaži testimonial ${i + 1}`}
-                />
-              ))}
-            </div>
-            <div className="text-xs text-text-secondary dark:text-slate-400">
-              Automatsko pomjeranje svakih 5 sekundi
-            </div>
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-5">
+            {TESTIMONIALS.items.map((t) => (
+              <div
+                key={t.initials}
+                className="flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-14px)] min-w-0"
+              >
+                <div className="bg-white border border-[#EDE8E3] rounded-2xl p-6 h-full flex flex-col">
+                  <div className="flex gap-1 mb-3" aria-hidden>
+                    {Array.from({ length: t.rating }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-amber-400 text-amber-400"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-slate-900 leading-relaxed mb-4 flex-1">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-indigo-50 text-indigo-500 flex items-center justify-center text-sm font-semibold flex-shrink-0">
+                      {t.initials}
+                    </div>
+                    <div>
+                      <p className="font-medium text-slate-900">{t.name}</p>
+                      <p className="text-sm text-slate-500">{t.loc}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
+        </div>
+
+        <div className="flex justify-center gap-2.5 mt-8">
+          {scrollSnaps.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => emblaApi?.scrollTo(i)}
+              className={`h-2 rounded-full transition-all ${
+                i === selectedIndex
+                  ? "w-6 bg-indigo-500"
+                  : "w-2 bg-[#D4CDC5] hover:bg-slate-400"
+              }`}
+              aria-label={`Prikaži iskustvo ${i + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
