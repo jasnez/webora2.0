@@ -42,13 +42,13 @@ export const CTA = {
   learnMore: "Saznaj više",
 } as const;
 
-/** Hero sekcija */
+/** Hero sekcija – usklađeno sa vizualom */
 export const HERO = {
-  title: "Web stranice koje pretvaraju posjete u upite.",
+  title: "Izrada web stranica koje donose rezultate.",
   subtitle:
-    "Dizajn, Next.js razvoj i tehnički SEO optimizovani za brzinu, sigurnost i rast poslovanja.",
+    "Moderni web sajtovi za profesionalce i male biznise koji žele više upita i kredibiliteta online.",
   primaryCta: "Zatraži besplatnu procjenu",
-  secondaryCta: "Pogledaj studije slučaja",
+  secondaryCta: "Pogledaj portfolio",
   trustCopy: "Odgovaramo u roku od 24h · Bez obaveza",
   metricBadges: [
     { icon: "⚡", label: "Lighthouse 90+" },
