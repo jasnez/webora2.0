@@ -14,18 +14,12 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[85vh] flex-col justify-center overflow-hidden bg-bg-dark noise-overlay scroll-mt-24 py-12 md:py-16 lg:py-24"
+      className="hero-podloga relative flex min-h-[85vh] flex-col justify-center overflow-hidden scroll-mt-24 py-12 md:py-16 lg:py-24 noise-overlay"
       aria-labelledby="hero-title"
     >
-      {/* Background gradient glow */}
+      {/* Svjetlosne čestice (starfield) */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.14]"
-        style={{
-          background: `
-            radial-gradient(circle at 20% 30%, #1D4ED8 0%, transparent 45%),
-            radial-gradient(circle at 80% 70%, #06B6D4 0%, transparent 45%)
-          `,
-        }}
+        className="pointer-events-none absolute inset-0 hero-particles"
         aria-hidden
       />
 
