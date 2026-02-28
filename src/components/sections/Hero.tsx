@@ -19,7 +19,7 @@ export function Hero() {
     >
       {/* Background gradient glow */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.14]"
+        className="pointer-events-none absolute inset-0 opacity-[0.14]"
         style={{
           background: `
             radial-gradient(circle at 20% 30%, #1D4ED8 0%, transparent 45%),
@@ -31,7 +31,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-container px-6">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left column: copy */}
+          {/* Left column: text, CTAs, microcopy only */}
           <div>
             <h1
               id="hero-title"
@@ -62,25 +62,15 @@ export function Hero() {
             <p className="mt-5 text-sm text-text-muted">{HERO.trustCopy}</p>
           </div>
 
-          {/* Right column: hero visual in glass frame + floating badges */}
-          <div>
-            <div className="relative w-full max-w-[min(100%,680px)] lg:mx-0">
-              {/* Gradient glow behind frame */}
-              <div
-                className="absolute -inset-4 -z-10 rounded-3xl opacity-60 blur-2xl lg:-inset-6"
-                style={{
-                  background:
-                    "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(37, 99, 235, 0.25) 0%, rgba(6, 182, 212, 0.15) 50%, transparent 100%)",
-                }}
-                aria-hidden
-              />
-
-              {/* Glass frame */}
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-soft-lg backdrop-blur-sm ring-1 ring-white/5">
-                <div className="relative aspect-[1200/630] w-full">
+          {/* Right column: clean hero image in glass frame + badges outside image */}
+          <div className="w-full">
+            <div className="relative mx-auto w-full max-w-[min(100%,680px)]">
+              {/* Glass frame: rounded 24px, border, backdrop blur, soft shadow */}
+              <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-white/5 shadow-soft-lg backdrop-blur-md ring-1 ring-white/5">
+                <div className="relative aspect-[16/9] w-full">
                   <Image
-                    src="/hero-visual.png"
-                    alt="Webora – SEO & Growth dashboard, Lighthouse 90+, Core Web Vitals, profesionalna web stranica"
+                    src="/hero-visual-clean.png"
+                    alt=""
                     fill
                     className="object-cover object-center"
                     priority
@@ -89,9 +79,9 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Floating badges */}
+              {/* Metric badges: HTML components positioned around the frame (not inside image) */}
               <div
-                className="absolute -right-2 top-[12%] hidden rounded-xl border border-success/40 bg-success/10 px-3 py-2 backdrop-blur-md sm:flex lg:-right-3"
+                className="absolute -right-2 top-[8%] hidden rounded-xl border border-success/40 bg-success/10 px-3 py-2 backdrop-blur-md md:flex lg:-right-4 lg:top-[10%]"
                 aria-hidden
               >
                 <span className="mr-2 text-lg">{FLOATING_BADGES[0].icon}</span>
@@ -103,7 +93,7 @@ export function Hero() {
                 </div>
               </div>
               <div
-                className="absolute -right-1 top-[45%] hidden rounded-xl border border-success/40 bg-success/10 px-3 py-2 backdrop-blur-md sm:flex lg:right-2"
+                className="absolute right-2 top-[42%] hidden rounded-xl border border-success/40 bg-success/10 px-3 py-2 backdrop-blur-md md:flex lg:right-0 lg:top-[44%]"
                 aria-hidden
               >
                 <span className="mr-2 text-lg text-success">✓</span>
@@ -115,7 +105,7 @@ export function Hero() {
                 </div>
               </div>
               <div
-                className="absolute bottom-[18%] -left-2 hidden rounded-xl border border-success/40 bg-success/10 px-3 py-2 backdrop-blur-md sm:flex lg:-left-3"
+                className="absolute -left-2 bottom-[22%] hidden rounded-xl border border-success/40 bg-success/10 px-3 py-2 backdrop-blur-md md:flex lg:-left-4 lg:bottom-[24%]"
                 aria-hidden
               >
                 <span className="mr-2 text-lg text-success">✓</span>
