@@ -42,12 +42,12 @@ export const CTA = {
   learnMore: "Saznaj više",
 } as const;
 
-/** Hero sekcija – usklađeno sa vizualom */
+/** Hero sekcija – benefit-oriented, vrijednost za posjetitelja */
 export const HERO = {
-  title: "Izrada web stranica koje donose rezultate.",
-  headlineShort: "Web stranice koje donose rezultate.",
+  title: "Profesionalne web stranice za više upita i kredibiliteta online.",
+  headlineShort: "Profesionalne web stranice za više upita i kredibiliteta online.",
   subtitle:
-    "Moderni web sajtovi za profesionalce i male biznise koji žele više upita i kredibiliteta online.",
+    "Brza isporuka · SEO optimizirano · Mobilno optimizirano",
   primaryCta: "Zatraži besplatnu procjenu",
   secondaryCta: "Pogledaj portfolio",
   trustCopy: "Odgovaramo u roku od 24h · Bez obaveza",
