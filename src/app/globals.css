@@ -3,42 +3,42 @@
 @tailwind utilities;
 
 :root {
-  /* Section background system – light mode */
-  --color-bg-base: #f8fafc;
-  --color-bg-alt-a: #f1f5f9;
-  --color-bg-alt-b: #e8eef4;
+  /* Section background system – light mode (suptilan indigo tint za harmoniju s Hero) */
+  --color-bg-base: #faf9fc;
+  --color-bg-alt-a: #f3f1f9;
+  --color-bg-alt-b: #ebe7f5;
   --color-surface: #ffffff;
-  --color-border: #e2e8f0;
+  --color-border: #e2e0ec;
   /* Legacy / body */
-  --color-bg-dark: #f8fafc;
+  --color-bg-dark: #faf9fc;
   --color-surface-dark: #ffffff;
-  --color-accent: #2563eb;
-  --color-accent-hover: #1d4ed8;
+  --color-accent: #4f46e5;
+  --color-accent-hover: #4338ca;
   --color-accent-cyan: #06b6d4;
   --color-success: #10b981;
-  --color-white-text: #0f172a;
-  --color-text-secondary: #475569;
-  --color-text-muted: #64748b;
-  --color-border-dark: #e2e8f0;
-  /* CTA system – light mode */
-  --cta-primary-bg: #2563eb;
-  --cta-primary-bg-hover: #1d4ed8;
-  --cta-primary-bg-active: #1e40af;
-  --cta-primary-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-  --cta-primary-shadow-hover: 0 6px 20px rgba(37, 99, 235, 0.4);
-  --cta-secondary-border: #2563eb;
-  --cta-secondary-text: #2563eb;
-  --cta-secondary-bg-hover: rgba(37, 99, 235, 0.08);
-  --cta-ghost-text: #475569;
-  --cta-ghost-bg-hover: rgba(15, 23, 42, 0.06);
+  --color-white-text: #0f0a1e;
+  --color-text-secondary: #4c4863;
+  --color-text-muted: #6b6580;
+  --color-border-dark: #e2e0ec;
+  /* CTA system – light mode (indigo za harmoniju s Hero) */
+  --cta-primary-bg: #4f46e5;
+  --cta-primary-bg-hover: #4338ca;
+  --cta-primary-bg-active: #3730a3;
+  --cta-primary-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+  --cta-primary-shadow-hover: 0 6px 20px rgba(79, 70, 229, 0.4);
+  --cta-secondary-border: #4f46e5;
+  --cta-secondary-text: #4f46e5;
+  --cta-secondary-bg-hover: rgba(79, 70, 229, 0.08);
+  --cta-ghost-text: #4c4863;
+  --cta-ghost-bg-hover: rgba(79, 70, 229, 0.06);
   --cta-destructive-bg: #dc2626;
   --cta-destructive-bg-hover: #b91c1c;
-  --cta-disabled-bg: #e2e8f0;
-  --cta-disabled-text: #94a3b8;
-  --link-color: #2563eb;
-  --link-underline: #2563eb;
-  --link-hover-underline: #1d4ed8;
-  --focus-ring: 2px solid #2563eb;
+  --cta-disabled-bg: #e2e0ec;
+  --cta-disabled-text: #8b85a0;
+  --link-color: #4f46e5;
+  --link-underline: #4f46e5;
+  --link-hover-underline: #4338ca;
+  --focus-ring: 2px solid #4f46e5;
   --focus-ring-offset: 2px;
   --max-container: 1120px;
   --hero-card-bg: rgba(255, 255, 255, 0.85);
@@ -56,39 +56,39 @@
 }
 
 .dark {
-  /* Section background system – dark mode (deep charcoal/slate, no flat black) */
-  --color-bg-base: #0f172a;
-  --color-bg-alt-a: #1e293b;
-  --color-bg-alt-b: #172033;
-  --color-surface: #1e293b;
-  --color-border: #334155;
+  /* Section background system – dark mode (indigo/purple family, suptilna tranzicija s Hero) */
+  --color-bg-base: #1e1b4b;
+  --color-bg-alt-a: #252042;
+  --color-bg-alt-b: #2d2a52;
+  --color-surface: #2d2a52;
+  --color-border: rgba(255, 255, 255, 0.08);
   /* Legacy */
-  --color-bg-dark: #0f172a;
-  --color-bg-alt: #1e293b;
-  --color-surface-dark: #1e293b;
-  --color-white-text: #f9fafb;
-  --color-text-secondary: #9ca3af;
-  --color-text-muted: #6b7280;
-  --color-border-dark: #334155;
-  /* CTA system – dark mode (glow but not neon) */
-  --cta-primary-bg: #3b82f6;
-  --cta-primary-bg-hover: #60a5fa;
-  --cta-primary-bg-active: #2563eb;
-  --cta-primary-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
-  --cta-primary-shadow-hover: 0 6px 24px rgba(59, 130, 246, 0.45);
-  --cta-secondary-border: #60a5fa;
-  --cta-secondary-text: #93c5fd;
-  --cta-secondary-bg-hover: rgba(59, 130, 246, 0.15);
-  --cta-ghost-text: #9ca3af;
+  --color-bg-dark: #1e1b4b;
+  --color-bg-alt: #252042;
+  --color-surface-dark: #2d2a52;
+  --color-white-text: #f5f3ff;
+  --color-text-secondary: #c4b5fd;
+  --color-text-muted: #a78bfa;
+  --color-border-dark: rgba(255, 255, 255, 0.1);
+  /* CTA system – dark mode (indigo/violet glow) */
+  --cta-primary-bg: #6366f1;
+  --cta-primary-bg-hover: #818cf8;
+  --cta-primary-bg-active: #4f46e5;
+  --cta-primary-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+  --cta-primary-shadow-hover: 0 6px 28px rgba(129, 140, 248, 0.45);
+  --cta-secondary-border: #818cf8;
+  --cta-secondary-text: #c4b5fd;
+  --cta-secondary-bg-hover: rgba(99, 102, 241, 0.18);
+  --cta-ghost-text: #a78bfa;
   --cta-ghost-bg-hover: rgba(255, 255, 255, 0.08);
   --cta-destructive-bg: #ef4444;
   --cta-destructive-bg-hover: #f87171;
-  --cta-disabled-bg: #334155;
-  --cta-disabled-text: #64748b;
-  --link-color: #93c5fd;
-  --link-underline: #60a5fa;
-  --link-hover-underline: #93c5fd;
-  --focus-ring: 2px solid #60a5fa;
+  --cta-disabled-bg: #2d2a52;
+  --cta-disabled-text: #6b6580;
+  --link-color: #c4b5fd;
+  --link-underline: #818cf8;
+  --link-hover-underline: #c4b5fd;
+  --focus-ring: 2px solid #818cf8;
   --focus-ring-offset: 2px;
 }
 
@@ -171,24 +171,49 @@ a.link-text:focus-visible,
 /* Section background system – design tokens */
 .section-bg-base {
   background-color: var(--color-bg-base);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.35s ease;
 }
 .section-bg-alt-a {
   background-color: var(--color-bg-alt-a);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.35s ease;
 }
 .section-bg-alt-b {
   background-color: var(--color-bg-alt-b);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.35s ease;
 }
-/* Subtle 1px separator between sections */
+/* Suptilna tranzicija između sekcija – 1px border */
 .section-separator {
   border-top: 1px solid var(--color-border);
-  transition: border-color 0.2s ease;
+  transition: border-color 0.35s ease;
+}
+/* Prva sekcija ispod Heroja – blagi gradient “most” za mekši prijelaz */
+.section-after-hero {
+  position: relative;
+}
+.section-after-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 27, 75, 0.4) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+.dark .section-after-hero::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 27, 75, 0.5) 0%,
+    transparent 100%
+  );
 }
 /* Legacy alias – map to new tokens */
-.section-bg-alt { background-color: var(--color-bg-alt-a); transition: background-color 0.2s ease; }
-.section-border { border-top: 1px solid var(--color-border); transition: border-color 0.2s ease; }
+.section-bg-alt { background-color: var(--color-bg-alt-a); transition: background-color 0.35s ease; }
+.section-border { border-top: 1px solid var(--color-border); transition: border-color 0.35s ease; }
 
 /* Subtle noise overlay (optional, use in hero) */
 .noise-overlay::after {

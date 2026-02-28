@@ -45,7 +45,7 @@ export function Services() {
   return (
     <section
       id="usluge"
-      className="section-pad section-bg-alt-a section-separator scroll-mt-24"
+      className="section-pad section-bg-alt-a section-separator section-after-hero scroll-mt-24"
       aria-labelledby="services-heading"
     >
       <div className="max-w-container mx-auto px-6">
