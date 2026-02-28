@@ -22,9 +22,11 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] py-3 px-6 md:px-10 flex items-center justify-between transition-all duration-300 min-h-touch bg-bg-dark/90 border-b border-border-dark ${
-        scrolled ? "backdrop-blur-xl shadow-nav-scrolled" : "backdrop-blur-[16px]"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-[100] py-3 px-6 md:px-10 flex items-center justify-between transition-all duration-300 min-h-touch border-b ${
+        theme === "light"
+          ? "bg-white/95 backdrop-blur-xl border-border-dark shadow-sm"
+          : `bg-bg-dark/90 border-border-dark ${scrolled ? "backdrop-blur-xl shadow-nav-scrolled" : "backdrop-blur-[16px]"}`
+      } ${theme === "dark" && scrolled ? "shadow-nav-scrolled" : ""}`}
       aria-label="Glavna navigacija"
     >
       <Link
@@ -46,9 +48,13 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={`min-h-touch inline-flex items-center px-3 py-2 rounded-button text-[13.5px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
-                isActive
+                theme === "light"
+                  ? isActive
+                    ? "text-accent font-medium bg-accent/10"
+                    : "text-text-secondary hover:text-white-text hover:bg-gray-100"
+                  : isActive
                   ? "text-white-text font-medium bg-white/10"
-                  : "text-text-secondary hover:text-white-text"
+                  : "text-text-secondary hover:text-white-text hover:bg-white/10"
               }`}
             >
               {link.label}
@@ -58,7 +64,9 @@ export function Header() {
         <button
           type="button"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="min-h-touch min-w-[44px] flex items-center justify-center rounded-button text-white-text hover:bg-white/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className={`min-h-touch min-w-[44px] flex items-center justify-center rounded-button transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
+            theme === "light" ? "text-text-secondary hover:text-white-text hover:bg-gray-100" : "text-white-text hover:bg-white/10"
+          }`}
           aria-label={theme === "dark" ? "Prebaci na svijetlu temu" : "Prebaci na tamnu temu"}
         >
           {theme === "dark" ? <Sun className="w-5 h-5" aria-hidden /> : <Moon className="w-5 h-5" aria-hidden />}
@@ -73,7 +81,9 @@ export function Header() {
 
       <button
         type="button"
-        className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-button text-white-text hover:bg-white/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        className={`lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-button transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
+          theme === "light" ? "text-text-secondary hover:bg-gray-100" : "text-white-text hover:bg-white/10"
+        }`}
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
@@ -89,14 +99,20 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden absolute top-full left-0 right-0 overflow-hidden bg-bg-dark border-b border-border-dark backdrop-blur-xl shadow-nav-scrolled"
+            className={`lg:hidden absolute top-full left-0 right-0 overflow-hidden border-b backdrop-blur-xl shadow-nav-scrolled ${
+              theme === "light" ? "bg-white border-border-dark" : "bg-bg-dark border-border-dark"
+            }`}
           >
             <div className="max-w-container mx-auto px-6 py-5 flex flex-col gap-1">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="min-h-touch flex items-center py-3 text-text-secondary hover:text-white-text font-medium transition-colors border-b border-border-dark/50 last:border-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button"
+                  className={`min-h-touch flex items-center py-3 font-medium transition-colors border-b last:border-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button ${
+                    theme === "light"
+                      ? "text-text-secondary hover:text-white-text border-border-dark/50 hover:bg-gray-50"
+                      : "text-text-secondary hover:text-white-text border-border-dark/50"
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
@@ -105,7 +121,11 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="min-h-touch flex items-center gap-2 py-3 text-text-secondary hover:text-white-text font-medium transition-colors border-b border-border-dark/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button"
+                className={`min-h-touch flex items-center gap-2 py-3 font-medium transition-colors border-b focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button ${
+                  theme === "light"
+                    ? "text-text-secondary hover:text-white-text border-border-dark/50 hover:bg-gray-50"
+                    : "text-text-secondary hover:text-white-text border-border-dark/50"
+                }`}
                 aria-label={theme === "dark" ? "Prebaci na svijetlu temu" : "Prebaci na tamnu temu"}
               >
                 {theme === "dark" ? <Sun className="w-5 h-5" aria-hidden /> : <Moon className="w-5 h-5" aria-hidden />}
