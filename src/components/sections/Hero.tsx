@@ -30,7 +30,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="hero-v2-bg relative flex min-h-[85vh] flex-col justify-center overflow-hidden scroll-mt-24 py-8 sm:py-12 md:py-16 lg:py-20"
+      className="hero-v2-bg relative flex min-h-[85vh] flex-col justify-center overflow-hidden scroll-mt-24 py-8 sm:py-12 md:py-16 lg:py-20 pb-12 md:pb-20 lg:pb-24"
       aria-labelledby="hero-title"
     >
       {/* Nebula sweep preko sredine */}
@@ -76,7 +76,7 @@ export function Hero() {
               </Link>
               <Link
                 href="/portfolio"
-                className="hero-v2-link min-h-touch inline-flex items-center py-2 text-[15px] font-medium sm:ml-1"
+                className="hero-v2-link min-h-touch inline-flex items-center py-2 text-[14px] font-medium text-white/70 hover:text-white sm:ml-1"
               >
                 {HERO.secondaryCta}
               </Link>

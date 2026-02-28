@@ -43,18 +43,18 @@ export function Testimonials() {
         />
 
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-5">
+          <div className="flex gap-6 md:gap-8">
             {TESTIMONIALS.items.map((t) => (
               <div
                 key={t.initials}
-                className="flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-14px)] min-w-0"
+                className="flex-[0_0_100%] md:flex-[0_0_calc(50%-16px)] lg:flex-[0_0_calc(33.333%-22px)] min-w-0"
               >
-                <div className="bg-surface border border-border-dark rounded-card p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/20">
+                <div className="bg-surface border border-border-dark rounded-card p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/20 card-interactive">
                   <div className="flex gap-1 mb-3" aria-hidden>
                     {Array.from({ length: t.rating }).map((_, i) => (
                       <Star
                         key={i}
-                        className="w-4 h-4 fill-amber-400 text-amber-400"
+                        className="w-5 h-5 fill-amber-400 text-amber-400 drop-shadow-sm"
                       />
                     ))}
                   </div>

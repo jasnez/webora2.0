@@ -121,6 +121,9 @@ body {
   .cta-transition {
     transition-duration: 0.01ms;
   }
+  .card-interactive:hover {
+    transform: none;
+  }
 }
 
 /* In-text links – hover underline, brand color */

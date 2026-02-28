@@ -275,6 +275,7 @@ export const TESTIMONIALS = {
 /** FAQ — SEO i jasnoća */
 export const FAQ = {
   title: "Česta pitanja o izradi web stranica",
+  subtitle: "Odgovori na najčešća pitanja o izradi web stranica i našim uslugama.",
   items: [
     {
       question: "Koliko košta izrada web stranice?",

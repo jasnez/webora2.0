@@ -58,7 +58,7 @@ export function Services() {
         />
         <div
           ref={containerRef}
-          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6 gap-4 md:overflow-visible md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-6"
+          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6 gap-4 md:overflow-visible md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-6 md:items-stretch"
         >
           {SERVICES.packages.map((pkg, i) => (
             <article
@@ -66,13 +66,13 @@ export function Services() {
               ref={(el) => {
                 cardRefs.current[i] = el;
               }}
-              className="group relative flex-shrink-0 snap-center w-[85vw] min-w-[280px] max-w-[340px] md:w-auto md:min-w-0 md:max-w-none bg-surface border border-border-dark rounded-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30"
+              className="group relative flex-shrink-0 snap-center w-[85vw] min-w-[280px] max-w-[340px] md:w-auto md:min-w-0 md:max-w-none md:h-full flex flex-col bg-surface border border-border-dark rounded-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 card-interactive"
             >
               <div className="text-2xl mb-4">{pkg.icon}</div>
               <h3 className="text-lg font-semibold text-white-text mb-4">
                 {pkg.title}
               </h3>
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-2 mb-6 flex-1">
                 {pkg.bullets.map((bullet) => (
                   <li
                     key={bullet}

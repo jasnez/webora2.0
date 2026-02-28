@@ -88,15 +88,16 @@ export function Contact() {
           title={CONTACT.title}
           subtitle={CONTACT.subtitle}
         />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 items-stretch">
           <motion.div
+            className="h-full flex flex-col"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
             {submitted ? (
-              <div className="rounded-card bg-success/10 border border-success/30 p-8 text-center">
+              <div className="rounded-2xl border border-border-dark bg-surface p-6 md:p-8 shadow-soft-lg h-full flex flex-col items-center justify-center text-center min-h-[320px]">
                 <div className="w-14 h-14 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-4 animate-check-pop">
                   <Check className="w-7 h-7 text-success" strokeWidth={2.5} />
                 </div>
@@ -108,12 +109,12 @@ export function Contact() {
                 </p>
               </div>
             ) : (
-              <form action={handleSubmit} className="space-y-3.5" noValidate>
+              <form action={handleSubmit} className="space-y-3.5 h-full flex flex-col" noValidate>
                 <div className="absolute -left-[9999px] top-0" aria-hidden>
                   <label htmlFor="contact-website">Website</label>
                   <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
                 </div>
-                <div className="rounded-2xl border border-border-dark bg-surface p-6 md:p-8 shadow-soft-lg space-y-4">
+                <div className="rounded-2xl border border-border-dark bg-surface p-6 md:p-8 shadow-soft-lg space-y-4 flex-1 flex flex-col min-h-0">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <label htmlFor="contact-name" className="block text-xs text-text-secondary mb-1.5">Ime i prezime *</label>
@@ -143,59 +144,63 @@ export function Contact() {
                   <textarea id="contact-message" name="message" required rows={4} placeholder="Opišite vaš projekat..." disabled={pending} className={`w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm resize-none h-[110px] ${inputFocus}`} />
                 </div>
                 {error && <p className="text-red-400 text-sm">{error}</p>}
-                <Button
-                  type="submit"
-                  variant="primary"
-                  disabled={pending}
-                  className="w-full mt-1.5 py-3.5 text-[15px]"
-                >
-                  {pending ? "Šaljem..." : CONTACT.submitLabel}
-                </Button>
+                <div className="mt-auto pt-2">
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    disabled={pending}
+                    className="w-full py-3.5 text-[15px]"
+                  >
+                    {pending ? "Šaljem..." : CONTACT.submitLabel}
+                  </Button>
+                </div>
                 </div>
               </form>
             )}
           </motion.div>
           <motion.div
-            className="flex flex-col justify-center"
+            className="h-full flex flex-col"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <h3 className="text-lg font-semibold text-white-text mb-5">Kontakt informacije</h3>
-            <ul className="space-y-0">
-              <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-surface/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">✉️</div>
-                <a href={`mailto:${SITE.email}`} className="min-h-touch inline-flex items-center py-1 hover:text-white-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">{SITE.email}</a>
-              </li>
-              <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-surface/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">📞</div>
-                <span>{SITE.phone}</span>
-              </li>
-              <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-surface/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">📍</div>
-                <span>{SITE.location}</span>
-              </li>
-              <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-surface/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">🕐</div>
-                <span>{SITE.workingHours}</span>
-              </li>
-            </ul>
-            <div className="h-px bg-border-dark my-1.5 mb-5" />
-            <div className="bg-surface/80 border border-border-dark rounded-card p-4 mb-5">
-              <p className="text-accent text-sm font-semibold mb-0.5">⚡ Brzi odgovor</p>
-              <p className="text-text-muted text-xs leading-relaxed">Odgovaramo na svaki upit u roku od 24 sata, obično i brže.</p>
-            </div>
-            <div className="bg-surface/80 border border-border-dark rounded-card p-4">
-              <h4 className="text-white-text font-semibold text-sm mb-3">Kako radimo</h4>
-              <ol className="space-y-2">
-                {CONTACT.howWeWork.map((step, i) => (
-                  <li key={i} className="flex gap-2 text-text-secondary text-sm">
-                    <span className="text-accent font-mono text-xs">{i + 1}.</span>
-                    {step}
-                  </li>
-                ))}
-              </ol>
+            <div className="rounded-2xl border border-border-dark bg-surface p-6 md:p-8 shadow-soft-lg h-full flex flex-col min-h-0">
+              <h3 className="text-lg font-semibold text-white-text mb-6">Kontakt informacije</h3>
+              <ul className="space-y-0">
+                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-surface-dark/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">✉️</div>
+                  <a href={`mailto:${SITE.email}`} className="min-h-touch inline-flex items-center py-1 hover:text-white-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">{SITE.email}</a>
+                </li>
+                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-surface-dark/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">📞</div>
+                  <span>{SITE.phone}</span>
+                </li>
+                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-surface-dark/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">📍</div>
+                  <span>{SITE.location}</span>
+                </li>
+                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-surface-dark/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">🕐</div>
+                  <span>{SITE.workingHours}</span>
+                </li>
+              </ul>
+              <div className="h-px bg-border-dark my-2 flex-shrink-0" />
+              <div className="bg-accent/10 border border-accent/20 rounded-xl p-4 mb-5 flex-shrink-0">
+                <p className="text-accent text-sm font-semibold mb-0.5">⚡ Brzi odgovor</p>
+                <p className="text-text-muted text-xs leading-relaxed">Odgovaramo na svaki upit u roku od 24 sata, obično i brže.</p>
+              </div>
+              <div className="bg-surface-dark/60 border border-border-dark rounded-xl p-4 flex-1 min-h-0">
+                <h4 className="text-white-text font-semibold text-sm mb-3">Kako radimo</h4>
+                <ol className="space-y-2">
+                  {CONTACT.howWeWork.map((step, i) => (
+                    <li key={i} className="flex gap-2 text-text-secondary text-sm">
+                      <span className="text-accent font-mono text-xs">{i + 1}.</span>
+                      {step}
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
           </motion.div>
         </div>

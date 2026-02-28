@@ -56,7 +56,7 @@ export function WhyUs() {
         />
         <div
           ref={containerRef}
-          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6 gap-4 md:overflow-visible md:mx-0 md:px-0 md:grid md:grid-cols-2 md:gap-6"
+          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6 gap-4 md:overflow-visible md:mx-0 md:px-0 md:grid md:grid-cols-2 md:gap-6 md:items-stretch"
         >
           {WHY_US.items.map((r, i) => (
             <motion.div
@@ -64,7 +64,7 @@ export function WhyUs() {
               ref={(el) => {
                 cardRefs.current[i] = el;
               }}
-              className="flex-shrink-0 snap-center w-[85vw] min-w-[280px] max-w-[340px] md:w-auto md:min-w-0 md:max-w-none bg-surface border border-border-dark rounded-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 group"
+              className="flex-shrink-0 snap-center w-[85vw] min-w-[280px] max-w-[340px] md:w-auto md:min-w-0 md:max-w-none md:h-full flex flex-col bg-surface border border-border-dark rounded-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 group card-interactive"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
@@ -74,7 +74,7 @@ export function WhyUs() {
               <h3 className="text-lg font-semibold text-white-text mb-2">
                 {r.title}
               </h3>
-              <p className="text-sm text-text-secondary leading-relaxed">
+              <p className="text-sm text-text-secondary leading-relaxed flex-1">
                 {r.description}
               </p>
             </motion.div>
@@ -89,7 +89,7 @@ export function WhyUs() {
               aria-selected={activeIndex === i}
               aria-label={`Slajd ${i + 1}`}
               onClick={() => scrollTo(i)}
-              className={`h-2 rounded-full transition-all duration-200 ${
+              className={`min-h-touch min-w-[44px] flex items-center justify-center rounded-full transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                 activeIndex === i ? "w-6 bg-accent" : "w-2 bg-border-dark hover:bg-text-muted"
               }`}
             />

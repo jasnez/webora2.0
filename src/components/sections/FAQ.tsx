@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
 import { FAQ as FAQ_DATA } from "@/lib/constants";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
@@ -14,28 +15,22 @@ export function FAQ() {
       aria-labelledby="faq-heading"
     >
       <div className="max-w-container mx-auto px-6">
-        <div className="text-left mb-12">
-          <p className="text-sm uppercase tracking-widest text-accent font-medium mb-3 flex items-center gap-2.5">
-            <span className="w-5 h-px bg-accent" />
-            FAQ
-          </p>
-          <h2
-            id="faq-heading"
-            className="text-3xl md:text-4xl font-bold tracking-tight text-white-text mb-3"
-          >
-            {FAQ_DATA.title}
-          </h2>
-          <p className="text-text-secondary text-lg">
-            Odgovori na najčešća pitanja o izradi web stranica i našim uslugama.
-          </p>
-        </div>
+        <SectionHeading
+          id="faq-heading"
+          label="FAQ"
+          variant="dark"
+          title={FAQ_DATA.title}
+          subtitle={FAQ_DATA.subtitle}
+          align="left"
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
           {FAQ_DATA.items.map((faq, i) => (
             <div
               key={faq.question}
               role="button"
               tabIndex={0}
+              id={`faq-question-${i}`}
               onClick={() => setOpen(open === i ? null : i)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
@@ -43,12 +38,13 @@ export function FAQ() {
                   setOpen(open === i ? null : i);
                 }
               }}
-              className={`bg-surface border rounded-card p-6 cursor-pointer transition-all duration-300 hover:-translate-y-0.5 ${
+              className={`bg-surface border rounded-card p-6 cursor-pointer transition-all duration-300 hover:-translate-y-0.5 card-interactive ${
                 open === i
                   ? "border-accent shadow-cta"
                   : "border-border-dark hover:border-accent/50 hover:shadow-card-hover"
               }`}
               aria-expanded={open === i}
+              aria-controls={open === i ? `faq-answer-${i}` : undefined}
             >
               <div className="flex justify-between items-start gap-3">
                 <span
@@ -69,7 +65,12 @@ export function FAQ() {
                 </div>
               </div>
               {open === i && (
-                <p className="mt-4 pt-4 border-t border-border-dark text-text-secondary text-sm leading-relaxed">
+                <p
+                  id={`faq-answer-${i}`}
+                  role="region"
+                  aria-labelledby={`faq-question-${i}`}
+                  className="mt-4 pt-4 border-t border-border-dark text-text-secondary text-sm leading-relaxed"
+                >
                   {faq.answer}
                 </p>
               )}

@@ -57,13 +57,13 @@ export function Portfolio() {
         />
 
         <div className="overflow-hidden" ref={emblaRef} role="region" aria-roledescription="carousel" aria-label="Portfolio projekti">
-          <div className="flex gap-5">
+          <div className="flex gap-6 md:gap-8">
             {PORTFOLIO.items.map((p) => (
               <div
                 key={p.id}
-                className="flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-14px)] min-w-0"
+                className="flex-[0_0_100%] md:flex-[0_0_calc(50%-16px)] lg:flex-[0_0_calc(33.333%-22px)] min-w-0 h-full flex flex-col"
               >
-                <div className="bg-surface border border-border-dark rounded-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 group">
+                <div className="bg-surface border border-border-dark rounded-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 group card-interactive h-full flex flex-col active:scale-[0.99]">
                   {/* Screenshot – hover zoom */}
                   <div className="aspect-[16/10] bg-bg-dark flex flex-col items-center justify-center p-4 overflow-hidden">
                     <div className="w-[85%] rounded-md overflow-hidden shadow-lg transition-transform duration-500 group-hover:scale-105">
@@ -82,11 +82,11 @@ export function Portfolio() {
                       </div>
                     </div>
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex-1 flex flex-col min-h-0">
                     <h3 className="text-base font-semibold text-white-text mb-1">
                       {p.title}
                     </h3>
-                    <p className="text-sm text-text-secondary mb-4">{p.description}</p>
+                    <p className="text-sm text-text-secondary mb-4 flex-1">{p.description}</p>
                     {/* 3 metrike */}
                     {p.metrics && p.metrics.length >= 3 && (
                       <div className="flex flex-wrap gap-2 mb-4">
@@ -131,7 +131,7 @@ export function Portfolio() {
           <button
             type="button"
             onClick={() => emblaApi?.scrollPrev()}
-            className="min-h-touch min-w-[44px] flex items-center justify-center rounded-button border border-border-dark bg-surface-dark text-white-text hover:bg-white/10 hover:border-accent/50 transition-all"
+            className="min-h-touch min-w-[44px] flex items-center justify-center rounded-button border border-border-dark bg-surface-dark text-white-text hover:bg-white/10 hover:border-accent/50 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             aria-label="Prethodni slajd"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -142,7 +142,7 @@ export function Portfolio() {
               key={i}
               type="button"
               onClick={() => emblaApi?.scrollTo(i)}
-              className="min-h-touch min-w-[44px] flex items-center justify-center rounded-full transition-colors duration-200 cursor-pointer"
+              className="min-h-touch min-w-[44px] flex items-center justify-center rounded-full transition-colors duration-200 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               aria-label={`Pogledaj slajd ${i + 1}`}
               aria-current={i === selectedIndex ? "true" : undefined}
             >
@@ -159,7 +159,7 @@ export function Portfolio() {
           <button
             type="button"
             onClick={() => emblaApi?.scrollNext()}
-            className="min-h-touch min-w-[44px] flex items-center justify-center rounded-button border border-border-dark bg-surface-dark text-white-text hover:bg-white/10 hover:border-accent/50 transition-all"
+            className="min-h-touch min-w-[44px] flex items-center justify-center rounded-button border border-border-dark bg-surface-dark text-white-text hover:bg-white/10 hover:border-accent/50 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             aria-label="Sljedeći slajd"
           >
             <ChevronRight className="w-5 h-5" />
