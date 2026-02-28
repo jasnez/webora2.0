@@ -25,8 +25,6 @@ export default {
         "text-secondary": "var(--color-text-secondary)",
         "text-muted": "var(--color-text-muted)",
         "border-dark": "var(--color-border-dark)",
-        primary: "#166534",
-        surface: "#F8FAFC",
         "text-primary": "#0F172A",
       },
       fontFamily: {
@@ -63,6 +61,9 @@ export default {
         "nav-scrolled": "0 4px 24px -4px rgba(0,0,0,0.35)",
         "cta": "0 4px 14px rgba(37, 99, 235, 0.4)",
         "cta-hover": "0 6px 20px rgba(37, 99, 235, 0.5)",
+      },
+      transitionDuration: {
+        cta: "200ms",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out forwards",

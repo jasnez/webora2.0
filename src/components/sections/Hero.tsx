@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { HERO } from "@/lib/constants";
+import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   return (
@@ -35,32 +36,24 @@ export function Hero() {
               {HERO.subtitle}
             </p>
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
-              <Link
+              <Button
                 href="/kontakt"
-                className="group inline-flex items-center justify-center gap-2 rounded-xl px-7 py-4 font-semibold text-white shadow-lg transition-all duration-200 hover:scale-[1.02] min-h-touch text-base"
-                style={{
-                  background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
-                  boxShadow: "0 4px 14px rgba(37, 99, 235, 0.45)",
-                }}
+                variant="primary"
+                size="lg"
+                className="group gap-2 shadow-[var(--cta-primary-shadow)] hover:shadow-[var(--cta-primary-shadow-hover)]"
               >
                 {HERO.primaryCta}
-                <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+                <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-0.5">
                   &gt;
                 </span>
-              </Link>
+              </Button>
               <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/usluge"
-                  className="min-h-touch inline-flex items-center rounded-xl border border-border-dark bg-white/10 px-5 py-3 font-medium text-white-text hover:bg-white/15 transition-all"
-                >
+                <Button href="/usluge" variant="secondary" size="md">
                   Usluge
-                </Link>
-                <Link
-                  href="/portfolio"
-                  className="min-h-touch inline-flex items-center rounded-xl border border-border-dark bg-white/10 px-5 py-3 font-medium text-white-text hover:bg-white/15 transition-all"
-                >
+                </Button>
+                <Button href="/portfolio" variant="secondary" size="md">
                   {HERO.secondaryCta}
-                </Link>
+                </Button>
               </div>
             </div>
             <p className="mt-6 text-sm text-text-muted">{HERO.trustCopy}</p>

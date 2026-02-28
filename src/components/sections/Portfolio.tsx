@@ -115,7 +115,7 @@ export function Portfolio() {
                         href={p.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-accent text-sm font-medium hover:text-accent-hover transition-colors"
+                        className="link-text text-sm font-medium"
                       >
                         Pogledaj →
                       </Link>

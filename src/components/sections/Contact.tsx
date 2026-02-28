@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { SITE, CONTACT } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
 
 export function Contact() {
   const [pending, startTransition] = useTransition();
@@ -139,13 +140,14 @@ export function Contact() {
                   <textarea id="contact-message" name="message" required rows={4} placeholder="Opišite vaš projekat..." disabled={pending} className="w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted resize-none h-[110px] disabled:opacity-60 disabled:cursor-not-allowed" />
                 </div>
                 {error && <p className="text-red-400 text-sm">{error}</p>}
-                <button
+                <Button
                   type="submit"
+                  variant="primary"
                   disabled={pending}
-                  className="w-full min-h-touch py-3.5 mt-1.5 bg-accent hover:bg-accent-hover text-white rounded-button font-semibold text-[15px] shadow-cta hover:shadow-cta-hover transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-accent"
+                  className="w-full mt-1.5 py-3.5 text-[15px]"
                 >
                   {pending ? "Šaljem..." : CONTACT.submitLabel}
-                </button>
+                </Button>
                 </div>
               </form>
             )}

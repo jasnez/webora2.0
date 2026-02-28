@@ -85,10 +85,10 @@ export function Services() {
               </ul>
               <Link
                 href="/usluge"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors group/link"
+                className="link-text inline-flex items-center gap-1.5 text-sm font-medium group/link"
               >
                 {CTA.learnMore}
-                <span className="group-hover/link:translate-x-0.5 transition-transform" aria-hidden>→</span>
+                <span className="group-hover/link:translate-x-0.5 transition-transform duration-200" aria-hidden>→</span>
               </Link>
             </article>
           ))}

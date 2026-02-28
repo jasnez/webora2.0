@@ -1,7 +1,7 @@
-import { SITE } from "@/lib/constants";
-import { CTA } from "@/lib/constants";
+import { SITE, CTA } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Izrada web stranica BiH | Web development BiH – Webora",
@@ -63,7 +63,7 @@ export default function IzradaWebStranicaBihPage() {
             Poslovna web stranica (5–10 stranica), SEO osnova, kontakt forma i po želji CMS za
             ažuriranje sadržaja. Za složenije projekte nudimo i <strong>SEO + Performance paket</strong> te
             custom web aplikacije. Pogledajte detalje u sekciji{" "}
-            <Link href="/usluge" className="text-accent hover:text-accent-hover underline">
+            <Link href="/usluge" className="link-text">
               Usluge
             </Link>
             .
@@ -71,30 +71,24 @@ export default function IzradaWebStranicaBihPage() {
         </section>
 
         <div className="mt-12 flex flex-wrap gap-4">
-          <Link
-            href="/kontakt"
-            className="inline-flex items-center justify-center rounded-button bg-accent px-6 py-3 font-medium text-white shadow-cta transition hover:bg-accent-hover hover:shadow-cta-hover"
-          >
+          <Button href="/kontakt" variant="primary" size="md">
             {CTA.primary}
-          </Link>
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center justify-center rounded-button border border-accent px-6 py-3 font-medium text-accent transition hover:bg-accent/10"
-          >
+          </Button>
+          <Button href="/portfolio" variant="secondary" size="md">
             {CTA.secondary}
-          </Link>
+          </Button>
         </div>
 
         <p className="mt-8 text-sm text-text-muted">
-          <Link href="/" className="text-accent hover:text-accent-hover underline">
+          <Link href="/" className="link-text">
             ← Nazad na početnu
           </Link>
           {" · "}
-          <Link href="/usluge" className="text-accent hover:text-accent-hover underline">
+          <Link href="/usluge" className="link-text">
             Usluge
           </Link>
           {" · "}
-          <Link href="/kontakt" className="text-accent hover:text-accent-hover underline">
+          <Link href="/kontakt" className="link-text">
             Kontakt
           </Link>
         </p>

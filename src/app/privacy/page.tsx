@@ -43,7 +43,7 @@ export default function PrivacyPage() {
             Za pitanja o privatnosti pišite na{" "}
             <a
               href={`mailto:${SITE.email}`}
-              className="text-accent hover:text-accent-hover"
+              className="link-text"
             >
               {SITE.email}
             </a>
@@ -51,10 +51,7 @@ export default function PrivacyPage() {
           </p>
         </div>
         <p className="mt-12">
-          <Link
-            href="/"
-            className="text-accent hover:text-accent-hover underline"
-          >
+          <Link href="/" className="link-text">
             ← Nazad na početnu
           </Link>
         </p>

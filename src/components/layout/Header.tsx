@@ -65,7 +65,7 @@ export function Header() {
         </button>
         <Link
           href="/kontakt"
-          className="min-h-touch inline-flex items-center py-2.5 px-5 bg-accent hover:bg-accent-hover text-white rounded-button font-semibold text-[13px] shadow-cta hover:shadow-cta-hover transition-all duration-200 ml-2"
+          className="min-h-touch inline-flex items-center justify-center rounded-button font-semibold text-[13px] px-5 py-2.5 cta-transition text-white bg-[var(--cta-primary-bg)] hover:bg-[var(--cta-primary-bg-hover)] active:bg-[var(--cta-primary-bg-active)] shadow-[var(--cta-primary-shadow)] hover:shadow-[var(--cta-primary-shadow-hover)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 ml-2 border-0"
         >
           {CTA.primary}
         </Link>
@@ -113,7 +113,7 @@ export function Header() {
               </button>
               <Link
                 href="/kontakt"
-                className="min-h-touch flex items-center justify-center py-3.5 mt-3 bg-accent text-white rounded-button font-semibold shadow-cta"
+                className="min-h-touch flex items-center justify-center py-3.5 mt-3 rounded-button font-semibold text-[15px] cta-transition text-white bg-[var(--cta-primary-bg)] hover:bg-[var(--cta-primary-bg-hover)] shadow-[var(--cta-primary-shadow)] hover:shadow-[var(--cta-primary-shadow-hover)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 border-0"
                 onClick={() => setIsOpen(false)}
               >
                 {CTA.primary}

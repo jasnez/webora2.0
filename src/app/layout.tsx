@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { StickyCta } from "@/components/layout/StickyCta";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { SITE, SOCIAL_LINKS } from "@/lib/constants";
 
@@ -140,6 +141,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <StickyCta />
         </ThemeProvider>
       </body>
     </html>
