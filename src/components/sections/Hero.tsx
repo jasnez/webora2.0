@@ -1,136 +1,136 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { HERO } from "@/lib/constants";
-import { Button } from "@/components/ui/Button";
 
 const container = {
   hidden: { opacity: 0 },
-  visible: {
+  visible: (reduced: boolean) => ({
     opacity: 1,
-    transition: { staggerChildren: 0.08, delayChildren: 0.12 },
-  },
+    transition: reduced
+      ? { duration: 0.2 }
+      : { staggerChildren: 0.06, delayChildren: 0.1 },
+  }),
 };
 
-const item = {
-  hidden: { opacity: 0, y: 14 },
+const item = (reduced: boolean) => ({
+  hidden: { opacity: 0, y: reduced ? 0 : 12 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: reduced ? 0.15 : 0.3, ease: [0.25, 0.46, 0.45, 0.94] },
   },
-};
+});
 
 export function Hero() {
+  const reducedMotion = useReducedMotion();
+
   return (
     <section
       id="hero"
-      className="hero-podloga relative flex min-h-[80vh] flex-col justify-center overflow-hidden scroll-mt-24 py-12 md:py-16 lg:py-24 noise-overlay"
+      className="hero-v2-bg relative flex min-h-[85vh] flex-col justify-center overflow-hidden scroll-mt-24 py-8 sm:py-12 md:py-16 lg:py-20"
       aria-labelledby="hero-title"
     >
-      {/* Layered depth: particles (dark only) */}
-      <div className="pointer-events-none absolute inset-0 hero-particles" aria-hidden />
+      {/* Nebula sweep preko sredine */}
+      <div className="hero-v2-nebula" aria-hidden />
+      {/* Grain overlay */}
+      <div className="hero-v2-grain" aria-hidden />
 
-      {/* Abstract shape – blagi tonal blob za depth */}
-      <div
-        className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-[min(80vw,520px)] h-[min(80vw,520px)] rounded-full opacity-20 dark:opacity-30 blur-[100px]"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, rgba(6, 182, 212, 0.15) 50%, transparent 70%)",
-        }}
-        aria-hidden
-      />
-      {/* Suptilni oblik lijevo – light i dark */}
-      <div
-        className="pointer-events-none absolute -left-[20%] top-1/3 w-[50vw] max-w-[400px] h-[50vw] max-h-[400px] rounded-full opacity-[0.07] dark:opacity-[0.06] blur-[80px]"
-        style={{
-          background: "radial-gradient(circle, rgba(37, 99, 235, 0.5) 0%, transparent 65%)",
-        }}
-        aria-hidden
-      />
-
-      <div className="relative z-10 mx-auto w-full max-w-container px-6">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Glavni sadržaj na surface card – elevation */}
+      <div className="relative z-10 mx-auto w-full max-w-hero px-6 sm:px-8">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          {/* Lijevo: tekst + 2 CTA */}
           <motion.div
-            className="hero-content-card p-6 sm:p-8 md:p-9"
+            className="flex flex-col"
             variants={container}
             initial="hidden"
             animate="visible"
+            custom={!!reducedMotion}
           >
             <motion.h1
               id="hero-title"
-              variants={item}
-              className="text-3xl font-bold leading-[1.15] tracking-tight text-white-text sm:text-4xl lg:text-[2.5rem] xl:text-[2.75rem]"
+              variants={item(!!reducedMotion)}
+              className="text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[2.5rem] xl:text-[2.75rem]"
             >
               {HERO.headlineShort}
             </motion.h1>
             <motion.p
-              variants={item}
-              className="mt-4 text-base sm:text-lg leading-relaxed text-text-secondary"
+              variants={item(!!reducedMotion)}
+              className="mt-4 text-base text-white/80 sm:text-lg leading-relaxed"
             >
               {HERO.subtitle}
             </motion.p>
             <motion.div
-              variants={item}
+              variants={item(!!reducedMotion)}
               className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4"
             >
-              <Button
+              <Link
                 href="/kontakt"
-                variant="primary"
-                size="lg"
-                className="hero-cta-primary group gap-2"
+                className="hero-v2-pill group inline-flex items-center justify-center gap-2 min-h-touch"
               >
-                <span className="hero-cta-text">{HERO.primaryCta}</span>
+                {HERO.primaryCta}
                 <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-0.5">
                   →
                 </span>
-              </Button>
-              <Button
+              </Link>
+              <Link
                 href="/portfolio"
-                variant="secondary"
-                size="md"
-                className="hero-cta-secondary"
+                className="hero-v2-link min-h-touch inline-flex items-center py-2 text-[15px] font-medium sm:ml-1"
               >
                 {HERO.secondaryCta}
-              </Button>
+              </Link>
             </motion.div>
-            <motion.p variants={item} className="mt-6 text-sm text-text-muted">
-              {HERO.trustCopy}
-            </motion.p>
-            <motion.ul
-              variants={item}
-              className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-text-secondary"
-              aria-hidden
-            >
-              {HERO.trustBenefits.map((b) => (
-                <li key={b} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  {b}
-                </li>
-              ))}
-            </motion.ul>
           </motion.div>
 
-          {/* Desna strana – vizual u kartici */}
+          {/* Desno: stacked website mockup – 3 sloja, bez kartica */}
           <motion.div
-            className="relative w-full"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="relative flex justify-center items-center min-h-[280px] sm:min-h-[320px] lg:min-h-[380px] order-first lg:order-none"
+            initial={reducedMotion ? false : { opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <div className="relative mx-auto max-w-[min(100%,600px)]">
-              <div className="hero-content-card overflow-hidden rounded-2xl border border-border-dark/50 shadow-[var(--hero-card-shadow)]">
-                <div className="relative aspect-[16/10] w-full">
-                  <Image
-                    src="/hero-right.png"
-                    alt="Laptop i telefon sa dashboardom, Lighthouse 90+, SEO Ready, Core Web Vitals"
-                    fill
-                    className="object-cover object-center"
-                    priority
-                    sizes="(max-width: 1023px) 100vw, 600px"
-                  />
+            {/* Glavni laptop/screen – sredina */}
+            <div
+              className="hero-v2-mockup-border hero-v2-mockup-glow hero-v2-float relative z-[2] w-full max-w-[min(100%,520px)] rounded-xl overflow-hidden bg-[#0f172a]/90 backdrop-blur-sm"
+            >
+              <div className="aspect-[16/10] relative">
+                <Image
+                  src="/hero-right.png"
+                  alt="Pregled web stranice na laptopu – Lighthouse 90+, SEO, Core Web Vitals"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                  sizes="(max-width: 1023px) 100vw, 520px"
+                />
+              </div>
+            </div>
+
+            {/* Overlay ekran 1 – lijevo iza, pod uglom */}
+            <div
+              className="absolute right-[8%] top-[8%] z-[1] w-[42%] max-w-[220px] -rotate-6"
+            >
+              <div className="hero-v2-mockup-border hero-v2-float-slow h-full rounded-lg overflow-hidden bg-[#1e293b]/80 backdrop-blur-md border border-white/[0.12] shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
+                <div className="aspect-[4/3] relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-800/60 to-slate-900/80 flex items-center justify-center">
+                    <div className="w-[70%] h-3 rounded bg-white/10" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Overlay ekran 2 – desno iza, pod uglom */}
+            <div
+              className="absolute left-[5%] bottom-[5%] z-[1] w-[38%] max-w-[200px] rotate-[4deg]"
+            >
+              <div className="hero-v2-mockup-border hero-v2-float h-full rounded-lg overflow-hidden bg-[#1e293b]/80 backdrop-blur-md border border-white/[0.12] shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
+                <div className="aspect-[4/3] relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-800/60 to-slate-900/80 flex items-center justify-center">
+                    <div className="flex gap-2">
+                      <div className="w-8 h-2 rounded bg-white/10" />
+                      <div className="w-12 h-2 rounded bg-white/10" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

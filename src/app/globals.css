@@ -268,3 +268,122 @@ a.link-text:focus-visible,
 .hero-cta-secondary:active {
   transform: translateY(0) scale(0.99);
 }
+
+/* ========== Hero V2 (mockup) – full-width dark, mesh/nebula/grain ========== */
+.hero-v2-bg {
+  background-color: #0B1220;
+  position: relative;
+  overflow: hidden;
+}
+.hero-v2-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 70% 20%, rgba(67, 56, 202, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 80% at 20% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 45%),
+    radial-gradient(ellipse 100% 40% at 50% 50%, rgba(99, 102, 241, 0.12) 0%, transparent 55%);
+  pointer-events: none;
+}
+.hero-v2-nebula {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.06) 45%,
+    rgba(99, 102, 241, 0.08) 50%,
+    rgba(59, 130, 246, 0.05) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+.hero-v2-grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Primary CTA pill + blur/glow hover */
+.hero-v2-pill {
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #4338ca 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+  transition: box-shadow 0.25s ease, transform 0.2s ease, filter 0.25s ease;
+}
+.hero-v2-pill:hover {
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.5), 0 8px 32px rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+}
+.hero-v2-pill:active {
+  transform: translateY(0);
+}
+.hero-v2-pill:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-v2-pill:hover { transform: none; }
+}
+
+/* Secondary CTA link with underline animation */
+.hero-v2-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0 2px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: color 0.2s ease, background-size 0.2s ease;
+}
+.hero-v2-link:hover {
+  color: #fff;
+  background-size: 100% 2px;
+}
+.hero-v2-link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Mockup stack – white border 10–15% opacity */
+.hero-v2-mockup-border {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+.hero-v2-mockup-glow {
+  filter: drop-shadow(0 0 24px rgba(99, 102, 241, 0.25));
+}
+
+/* prefer-reduced-motion: disable floating on mockups */
+.hero-v2-float {
+  animation: float 6s ease-in-out infinite;
+}
+.hero-v2-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-v2-float,
+  .hero-v2-float-slow {
+    animation: none;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}

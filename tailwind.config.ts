@@ -35,6 +35,7 @@ export default {
       },
       maxWidth: {
         container: "1120px",
+        "hero": "1280px",
       },
       spacing: {
         section: "6rem",
@@ -68,6 +69,8 @@ export default {
       animation: {
         "fade-in": "fadeIn 0.5s ease-out forwards",
         "check-pop": "checkPop 0.4s ease-out forwards",
+        float: "float 6s ease-in-out infinite",
+        "float-slow": "floatSlow 8s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -78,6 +81,14 @@ export default {
           "0%": { opacity: "0", transform: "scale(0.5)" },
           "50%": { transform: "scale(1.1)" },
           "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
+        floatSlow: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-6px)" },
         },
       },
     },
