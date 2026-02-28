@@ -42,7 +42,7 @@ export function Testimonials() {
           title={TESTIMONIALS.title}
         />
 
-        <div className="overflow-hidden" ref={emblaRef}>
+        <div className="overflow-hidden pt-4" ref={emblaRef}>
           <div className="flex gap-6 md:gap-8">
             {TESTIMONIALS.items.map((t) => (
               <div

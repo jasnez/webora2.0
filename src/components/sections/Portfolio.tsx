@@ -61,9 +61,9 @@ export function Portfolio() {
             {PORTFOLIO.items.map((p) => (
               <div
                 key={p.id}
-                className="flex-[0_0_100%] md:flex-[0_0_calc(50%-16px)] lg:flex-[0_0_calc(33.333%-22px)] min-w-0 h-full flex flex-col"
+                className="flex-[0_0_100%] md:flex-[0_0_calc(50%-16px)] lg:flex-[1_1_0] lg:min-w-0 min-h-0 flex flex-col"
               >
-                <div className="bg-surface border border-border-dark rounded-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 group card-interactive h-full flex flex-col active:scale-[0.99]">
+                <div className="bg-surface border border-border-dark rounded-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 group card-interactive h-full flex flex-col min-h-0 active:scale-[0.99]">
                   {/* Screenshot – hover zoom */}
                   <div className="aspect-[16/10] bg-bg-dark flex flex-col items-center justify-center p-4 overflow-hidden">
                     <div className="w-[85%] rounded-md overflow-hidden shadow-lg transition-transform duration-500 group-hover:scale-105">

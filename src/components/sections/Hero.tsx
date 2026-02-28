@@ -76,7 +76,7 @@ export function Hero() {
               </Link>
               <Link
                 href="/portfolio"
-                className="hero-v2-link min-h-touch inline-flex items-center py-2 text-[14px] font-medium text-white/70 hover:text-white sm:ml-1"
+                className="hero-v2-link min-h-touch inline-flex items-center py-2 text-[14px] font-medium text-white/70 hover:text-white sm:ml-6"
               >
                 {HERO.secondaryCta}
               </Link>

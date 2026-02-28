@@ -97,7 +97,7 @@ export function Contact() {
             transition={{ duration: 0.4 }}
           >
             {submitted ? (
-              <div className="rounded-2xl border border-border-dark bg-surface p-6 md:p-8 shadow-soft-lg h-full flex flex-col items-center justify-center text-center min-h-[320px]">
+              <div className="rounded-2xl border border-border-dark bg-surface p-6 md:p-8 shadow-soft-lg min-h-full flex flex-col items-center justify-center text-center">
                 <div className="w-14 h-14 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-4 animate-check-pop">
                   <Check className="w-7 h-7 text-success" strokeWidth={2.5} />
                 </div>
@@ -109,12 +109,12 @@ export function Contact() {
                 </p>
               </div>
             ) : (
-              <form action={handleSubmit} className="space-y-3.5 h-full flex flex-col" noValidate>
+              <form action={handleSubmit} className="h-full flex flex-col min-h-0 flex-1" noValidate>
                 <div className="absolute -left-[9999px] top-0" aria-hidden>
                   <label htmlFor="contact-website">Website</label>
                   <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
                 </div>
-                <div className="rounded-2xl border border-border-dark bg-surface p-6 md:p-8 shadow-soft-lg space-y-4 flex-1 flex flex-col min-h-0">
+                <div className="rounded-2xl border border-border-dark bg-surface p-6 md:p-8 shadow-soft-lg space-y-4 flex-1 flex flex-col min-h-full">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <label htmlFor="contact-name" className="block text-xs text-text-secondary mb-1.5">Ime i prezime *</label>
