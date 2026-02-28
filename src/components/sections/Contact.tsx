@@ -104,7 +104,7 @@ export function Contact() {
                 <p className="font-semibold text-success text-lg">
                   Hvala! Javit ćemo vam se u roku od 24 sata.
                 </p>
-                <p className="mt-2 text-sm text-text-secondary">
+                <p className="mt-2 text-base text-text-secondary">
                   Uobičajeni vremenski raspon odgovora je između 2 i 8 radnih sati.
                 </p>
               </div>
@@ -168,19 +168,19 @@ export function Contact() {
             <div className="rounded-2xl border border-border-dark bg-surface p-6 md:p-8 shadow-soft-lg h-full flex flex-col min-h-0">
               <h3 className="text-lg font-semibold text-white-text mb-6">Kontakt informacije</h3>
               <ul className="space-y-0">
-                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
+                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-base hover:text-white-text transition-colors">
                   <div className="w-10 h-10 rounded-lg bg-surface-dark/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">✉️</div>
                   <a href={`mailto:${SITE.email}`} className="min-h-touch inline-flex items-center py-1 hover:text-white-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">{SITE.email}</a>
                 </li>
-                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
+                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-base hover:text-white-text transition-colors">
                   <div className="w-10 h-10 rounded-lg bg-surface-dark/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">📞</div>
                   <span>{SITE.phone}</span>
                 </li>
-                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
+                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-base hover:text-white-text transition-colors">
                   <div className="w-10 h-10 rounded-lg bg-surface-dark/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">📍</div>
                   <span>{SITE.location}</span>
                 </li>
-                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
+                <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-base hover:text-white-text transition-colors">
                   <div className="w-10 h-10 rounded-lg bg-surface-dark/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">🕐</div>
                   <span>{SITE.workingHours}</span>
                 </li>
@@ -194,7 +194,7 @@ export function Contact() {
                 <h4 className="text-white-text font-semibold text-sm mb-3">Kako radimo</h4>
                 <ol className="space-y-2">
                   {CONTACT.howWeWork.map((step, i) => (
-                    <li key={i} className="flex gap-2 text-text-secondary text-sm">
+                    <li key={i} className="flex gap-2 text-text-secondary text-base">
                       <span className="text-accent font-mono text-xs">{i + 1}.</span>
                       {step}
                     </li>

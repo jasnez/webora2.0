@@ -86,7 +86,7 @@ export function Portfolio() {
                     <h3 className="text-base font-semibold text-white-text mb-1">
                       {p.title}
                     </h3>
-                    <p className="text-sm text-text-secondary mb-4 flex-1">{p.description}</p>
+                    <p className="text-base text-text-secondary mb-4 flex-1">{p.description}</p>
                     {/* 3 metrike */}
                     {p.metrics && p.metrics.length >= 3 && (
                       <div className="flex flex-wrap gap-2 mb-4">

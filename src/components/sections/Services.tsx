@@ -76,7 +76,7 @@ export function Services() {
                 {pkg.bullets.map((bullet) => (
                   <li
                     key={bullet}
-                    className="text-sm text-text-secondary flex items-center gap-2"
+                    className="text-base text-text-secondary flex items-center gap-2"
                   >
                     <span className="w-1 h-1 rounded-full bg-accent flex-shrink-0" />
                     {bullet}

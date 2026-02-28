@@ -69,7 +69,7 @@ export function FAQ() {
                   id={`faq-answer-${i}`}
                   role="region"
                   aria-labelledby={`faq-question-${i}`}
-                  className="mt-4 pt-4 border-t border-border-dark text-text-secondary text-sm leading-relaxed"
+                  className="mt-4 pt-4 border-t border-border-dark text-text-secondary text-base leading-relaxed"
                 >
                   {faq.answer}
                 </p>

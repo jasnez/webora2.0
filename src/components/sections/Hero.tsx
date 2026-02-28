@@ -57,7 +57,7 @@ export function Hero() {
             </motion.h1>
             <motion.p
               variants={item(!!reducedMotion)}
-              className="mt-4 text-base text-white/80 sm:text-lg leading-relaxed"
+              className="mt-4 text-base text-white/90 sm:text-lg leading-relaxed"
             >
               {HERO.subtitle}
             </motion.p>
@@ -76,7 +76,7 @@ export function Hero() {
               </Link>
               <Link
                 href="/portfolio"
-                className="hero-v2-link min-h-touch inline-flex items-center py-2 text-[14px] font-medium text-white/70 hover:text-white sm:ml-10"
+                className="hero-v2-link min-h-touch inline-flex items-center py-2 text-[14px] font-medium text-white/80 hover:text-white sm:ml-10"
               >
                 {HERO.secondaryCta}
               </Link>

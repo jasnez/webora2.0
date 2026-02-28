@@ -31,7 +31,7 @@ export function Process() {
               <h3 className="text-[15px] font-semibold text-white-text mb-1.5">
                 {step.title}
               </h3>
-              <p className="text-[13px] text-text-secondary leading-relaxed">
+              <p className="text-base text-text-secondary leading-relaxed">
                 {step.description}
               </p>
             </article>

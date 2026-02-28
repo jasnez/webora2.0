@@ -74,7 +74,7 @@ export function WhyUs() {
               <h3 className="text-lg font-semibold text-white-text mb-2">
                 {r.title}
               </h3>
-              <p className="text-sm text-text-secondary leading-relaxed flex-1">
+              <p className="text-base text-text-secondary leading-relaxed flex-1">
                 {r.description}
               </p>
             </motion.div>

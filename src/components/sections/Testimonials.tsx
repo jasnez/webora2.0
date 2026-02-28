@@ -58,7 +58,7 @@ export function Testimonials() {
                       />
                     ))}
                   </div>
-                  <p className="text-white-text leading-relaxed mb-4 flex-1">
+                  <p className="text-white-text text-base leading-relaxed mb-4 flex-1">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-3 pt-3 border-t border-border-dark">

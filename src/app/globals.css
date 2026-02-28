@@ -17,8 +17,8 @@
   --color-accent-cyan: #06b6d4;
   --color-success: #10b981;
   --color-white-text: #0f0a1e;
-  --color-text-secondary: #4c4863;
-  --color-text-muted: #6b6580;
+  --color-text-secondary: #3d3954;
+  --color-text-muted: #5a546e;
   --color-border-dark: #e2e0ec;
   /* CTA system – light mode (indigo za harmoniju s Hero) */
   --cta-primary-bg: #5558e3;
@@ -67,8 +67,8 @@
   --color-bg-alt: #212235;
   --color-surface-dark: #252836;
   --color-white-text: #f1f0f9;
-  --color-text-secondary: #a5a3c4;
-  --color-text-muted: #8b89a8;
+  --color-text-secondary: #b8b5d4;
+  --color-text-muted: #9d9bb8;
   --color-border-dark: rgba(255, 255, 255, 0.09);
   /* CTA — umjereni indigo, bez jakog glow-a */
   --cta-primary-bg: #5b5fc7;
@@ -96,6 +96,7 @@ body {
   background-color: var(--color-bg-base);
   color: var(--color-white-text);
   font-family: var(--font-outfit), system-ui, sans-serif;
+  font-weight: 500;
   line-height: var(--line-height-relaxed);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
