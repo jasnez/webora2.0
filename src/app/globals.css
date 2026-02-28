@@ -3,8 +3,14 @@
 @tailwind utilities;
 
 :root {
+  /* Section background system – light mode */
+  --color-bg-base: #f8fafc;
+  --color-bg-alt-a: #f1f5f9;
+  --color-bg-alt-b: #e8eef4;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  /* Legacy / body */
   --color-bg-dark: #f8fafc;
-  --color-bg-alt: #f1f5f9;
   --color-surface-dark: #ffffff;
   --color-accent: #2563eb;
   --color-accent-hover: #1d4ed8;
@@ -27,13 +33,20 @@
 }
 
 .dark {
-  --color-bg-dark: #0b0f19;
-  --color-bg-alt: #111827;
-  --color-surface-dark: #111827;
+  /* Section background system – dark mode (deep charcoal/slate, no flat black) */
+  --color-bg-base: #0f172a;
+  --color-bg-alt-a: #1e293b;
+  --color-bg-alt-b: #172033;
+  --color-surface: #1e293b;
+  --color-border: #334155;
+  /* Legacy */
+  --color-bg-dark: #0f172a;
+  --color-bg-alt: #1e293b;
+  --color-surface-dark: #1e293b;
   --color-white-text: #f9fafb;
   --color-text-secondary: #9ca3af;
   --color-text-muted: #6b7280;
-  --color-border-dark: #1f2937;
+  --color-border-dark: #334155;
 }
 
 html {
@@ -42,7 +55,7 @@ html {
 }
 
 body {
-  background-color: var(--color-bg-dark);
+  background-color: var(--color-bg-base);
   color: var(--color-white-text);
   font-family: var(--font-outfit), system-ui, sans-serif;
   line-height: var(--line-height-relaxed);
@@ -83,9 +96,27 @@ body {
   }
 }
 
-.section-bg-base { background-color: var(--color-bg-dark); transition: background-color 0.2s ease; }
-.section-bg-alt { background-color: var(--color-bg-alt); transition: background-color 0.2s ease; }
-.section-border { border-top: 1px solid var(--color-border-dark); transition: border-color 0.2s ease; }
+/* Section background system – design tokens */
+.section-bg-base {
+  background-color: var(--color-bg-base);
+  transition: background-color 0.2s ease;
+}
+.section-bg-alt-a {
+  background-color: var(--color-bg-alt-a);
+  transition: background-color 0.2s ease;
+}
+.section-bg-alt-b {
+  background-color: var(--color-bg-alt-b);
+  transition: background-color 0.2s ease;
+}
+/* Subtle 1px separator between sections */
+.section-separator {
+  border-top: 1px solid var(--color-border);
+  transition: border-color 0.2s ease;
+}
+/* Legacy alias – map to new tokens */
+.section-bg-alt { background-color: var(--color-bg-alt-a); transition: background-color 0.2s ease; }
+.section-border { border-top: 1px solid var(--color-border); transition: border-color 0.2s ease; }
 
 /* Subtle noise overlay (optional, use in hero) */
 .noise-overlay::after {

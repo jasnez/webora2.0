@@ -65,7 +65,7 @@ export function Contact() {
   return (
     <section
       id="kontakt"
-      className="relative section-pad section-bg-alt overflow-hidden scroll-mt-24 section-border"
+      className="relative section-pad section-bg-alt-a section-separator overflow-hidden scroll-mt-24"
       aria-labelledby="contact-heading"
     >
       <div
@@ -109,7 +109,7 @@ export function Contact() {
                   <label htmlFor="contact-website">Website</label>
                   <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
                 </div>
-                <div className="rounded-2xl border border-border-dark bg-surface-dark/80 p-6 md:p-8 shadow-soft-lg space-y-4">
+                <div className="rounded-2xl border border-border-dark bg-surface p-6 md:p-8 shadow-soft-lg space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <label htmlFor="contact-name" className="block text-xs text-text-secondary mb-1.5">Ime i prezime *</label>
@@ -160,28 +160,28 @@ export function Contact() {
             <h3 className="text-lg font-semibold text-white-text mb-5">Kontakt informacije</h3>
             <ul className="space-y-0">
               <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-base flex-shrink-0">✉️</div>
+                <div className="w-10 h-10 rounded-lg bg-surface/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">✉️</div>
                 <a href={`mailto:${SITE.email}`} className="hover:text-white-text">{SITE.email}</a>
               </li>
               <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-base flex-shrink-0">📞</div>
+                <div className="w-10 h-10 rounded-lg bg-surface/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">📞</div>
                 <span>{SITE.phone}</span>
               </li>
               <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-base flex-shrink-0">📍</div>
+                <div className="w-10 h-10 rounded-lg bg-surface/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">📍</div>
                 <span>{SITE.location}</span>
               </li>
               <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-base flex-shrink-0">🕐</div>
+                <div className="w-10 h-10 rounded-lg bg-surface/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">🕐</div>
                 <span>{SITE.workingHours}</span>
               </li>
             </ul>
-            <div className="h-px bg-white/[0.08] my-1.5 mb-5" />
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-card p-4 mb-5">
+            <div className="h-px bg-border-dark my-1.5 mb-5" />
+            <div className="bg-surface/80 border border-border-dark rounded-card p-4 mb-5">
               <p className="text-accent text-sm font-semibold mb-0.5">⚡ Brzi odgovor</p>
               <p className="text-text-muted text-xs leading-relaxed">Odgovaramo na svaki upit u roku od 24 sata, obično i brže.</p>
             </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-card p-4">
+            <div className="bg-surface/80 border border-border-dark rounded-card p-4">
               <h4 className="text-white-text font-semibold text-sm mb-3">Kako radimo</h4>
               <ol className="space-y-2">
                 {CONTACT.howWeWork.map((step, i) => (

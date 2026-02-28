@@ -7,7 +7,7 @@ export function Process() {
   return (
     <section
       id="proces"
-      className="section-pad section-bg-base section-border scroll-mt-24"
+      className="section-pad section-bg-base section-separator scroll-mt-24"
       aria-labelledby="process-heading"
     >
       <div className="max-w-container mx-auto px-6">

@@ -12,7 +12,11 @@ export default {
     extend: {
       colors: {
         "bg-dark": "var(--color-bg-dark)",
+        "bg-base": "var(--color-bg-base)",
+        "bg-alt-a": "var(--color-bg-alt-a)",
+        "bg-alt-b": "var(--color-bg-alt-b)",
         "surface-dark": "var(--color-surface-dark)",
+        surface: "var(--color-surface)",
         accent: "#2563EB",
         "accent-hover": "#1D4ED8",
         "accent-cyan": "#06B6D4",

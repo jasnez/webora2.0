@@ -3,7 +3,7 @@ import { SITE, NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="section-bg-base text-text-secondary mt-auto section-border">
+    <footer className="section-bg-base text-text-secondary mt-auto section-separator">
       <div className="max-w-container mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row justify-between gap-10 pb-8 border-b border-border-dark">
           <div className="max-w-[280px]">

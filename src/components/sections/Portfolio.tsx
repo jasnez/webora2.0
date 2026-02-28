@@ -38,7 +38,7 @@ export function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="relative section-bg-alt section-pad overflow-hidden scroll-mt-24"
+      className="relative section-bg-alt-b section-pad section-separator overflow-hidden scroll-mt-24"
       aria-labelledby="portfolio-heading"
     >
       <div
@@ -63,7 +63,7 @@ export function Portfolio() {
                 key={p.id}
                 className="flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-14px)] min-w-0"
               >
-                <div className="bg-surface-dark border border-border-dark rounded-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 group">
+                <div className="bg-surface border border-border-dark rounded-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 group">
                   {/* Screenshot – hover zoom */}
                   <div className="aspect-[16/10] bg-bg-dark flex flex-col items-center justify-center p-4 overflow-hidden">
                     <div className="w-[85%] rounded-md overflow-hidden shadow-lg transition-transform duration-500 group-hover:scale-105">
@@ -150,7 +150,7 @@ export function Portfolio() {
                 className={`block h-2 transition-all duration-200 ${
                   i === selectedIndex
                     ? "w-6 bg-accent rounded-[4px]"
-                    : "w-2 rounded-full bg-white/15 hover:bg-white/25"
+                    : "w-2 rounded-full bg-border-dark hover:bg-text-muted"
                 }`}
               />
             </button>

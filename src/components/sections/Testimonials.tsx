@@ -31,7 +31,7 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="section-pad section-bg-alt scroll-mt-24 section-border"
+      className="section-pad section-bg-base section-separator scroll-mt-24"
       aria-labelledby="testimonials-heading"
     >
       <div className="max-w-container mx-auto px-6">
@@ -49,7 +49,7 @@ export function Testimonials() {
                 key={t.initials}
                 className="flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-14px)] min-w-0"
               >
-                <div className="bg-bg-dark/60 border border-border-dark rounded-card p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/20">
+                <div className="bg-surface border border-border-dark rounded-card p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/20">
                   <div className="flex gap-1 mb-3" aria-hidden>
                     {Array.from({ length: t.rating }).map((_, i) => (
                       <Star
@@ -88,7 +88,7 @@ export function Testimonials() {
               className={`h-2 transition-all duration-200 cursor-pointer ${
                 i === selectedIndex
                   ? "w-6 bg-accent rounded-[4px]"
-                  : "w-2 rounded-full bg-white/15 hover:bg-white/25"
+                  : "w-2 rounded-full bg-border-dark hover:bg-text-muted"
               }`}
               aria-label={`Prikaži iskustvo ${i + 1}`}
             />

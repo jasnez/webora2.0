@@ -21,7 +21,7 @@ export function Card({
   return (
     <Component
       className={clsx(
-        "rounded-card bg-white border border-border p-6 md:p-8 transition-all duration-300",
+        "rounded-card bg-surface border border-border-dark p-6 md:p-8 transition-all duration-300",
         hover &&
           "hover:shadow-card-hover hover:-translate-y-1 hover:border-accent/20",
         className
