@@ -12,8 +12,8 @@
   /* Legacy / body */
   --color-bg-dark: #faf9fc;
   --color-surface-dark: #ffffff;
-  --color-accent: #4f46e5;
-  --color-accent-hover: #4338ca;
+  --color-accent: #5558e3;
+  --color-accent-hover: #4547c9;
   --color-accent-cyan: #06b6d4;
   --color-success: #10b981;
   --color-white-text: #0f0a1e;
@@ -21,24 +21,24 @@
   --color-text-muted: #6b6580;
   --color-border-dark: #e2e0ec;
   /* CTA system – light mode (indigo za harmoniju s Hero) */
-  --cta-primary-bg: #4f46e5;
-  --cta-primary-bg-hover: #4338ca;
-  --cta-primary-bg-active: #3730a3;
-  --cta-primary-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
-  --cta-primary-shadow-hover: 0 6px 20px rgba(79, 70, 229, 0.4);
-  --cta-secondary-border: #4f46e5;
-  --cta-secondary-text: #4f46e5;
-  --cta-secondary-bg-hover: rgba(79, 70, 229, 0.08);
+  --cta-primary-bg: #5558e3;
+  --cta-primary-bg-hover: #4547c9;
+  --cta-primary-bg-active: #393bb3;
+  --cta-primary-shadow: 0 4px 14px rgba(85, 88, 227, 0.28);
+  --cta-primary-shadow-hover: 0 6px 20px rgba(85, 88, 227, 0.32);
+  --cta-secondary-border: #5558e3;
+  --cta-secondary-text: #5558e3;
+  --cta-secondary-bg-hover: rgba(85, 88, 227, 0.07);
   --cta-ghost-text: #4c4863;
   --cta-ghost-bg-hover: rgba(79, 70, 229, 0.06);
   --cta-destructive-bg: #dc2626;
   --cta-destructive-bg-hover: #b91c1c;
   --cta-disabled-bg: #e2e0ec;
   --cta-disabled-text: #8b85a0;
-  --link-color: #4f46e5;
-  --link-underline: #4f46e5;
-  --link-hover-underline: #4338ca;
-  --focus-ring: 2px solid #4f46e5;
+  --link-color: #5558e3;
+  --link-underline: #5558e3;
+  --link-hover-underline: #4547c9;
+  --focus-ring: 2px solid #5558e3;
   --focus-ring-offset: 2px;
   --max-container: 1120px;
   --hero-card-bg: rgba(255, 255, 255, 0.85);
@@ -56,39 +56,34 @@
 }
 
 .dark {
-  /* Section background system – dark mode (indigo/purple family, suptilna tranzicija s Hero) */
-  --color-bg-base: #1e1b4b;
-  --color-bg-alt-a: #252042;
-  --color-bg-alt-b: #2d2a52;
-  --color-surface: #2d2a52;
-  --color-border: rgba(255, 255, 255, 0.08);
+  /* Sekcije — slate s blagim indigo (profesionalnije, manje intenzivno) */
+  --color-bg-base: #1a1b2e;
+  --color-bg-alt-a: #212235;
+  --color-bg-alt-b: #282a3d;
+  --color-surface: #252836;
+  --color-border: rgba(255, 255, 255, 0.07);
   /* Legacy */
-  --color-bg-dark: #1e1b4b;
-  --color-bg-alt: #252042;
-  --color-surface-dark: #2d2a52;
-  --color-white-text: #f5f3ff;
-  --color-text-secondary: #c4b5fd;
-  --color-text-muted: #a78bfa;
-  --color-border-dark: rgba(255, 255, 255, 0.1);
-  /* CTA system – dark mode (indigo/violet glow) */
-  --cta-primary-bg: #6366f1;
-  --cta-primary-bg-hover: #818cf8;
-  --cta-primary-bg-active: #4f46e5;
-  --cta-primary-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
-  --cta-primary-shadow-hover: 0 6px 28px rgba(129, 140, 248, 0.45);
-  --cta-secondary-border: #818cf8;
-  --cta-secondary-text: #c4b5fd;
-  --cta-secondary-bg-hover: rgba(99, 102, 241, 0.18);
-  --cta-ghost-text: #a78bfa;
-  --cta-ghost-bg-hover: rgba(255, 255, 255, 0.08);
-  --cta-destructive-bg: #ef4444;
-  --cta-destructive-bg-hover: #f87171;
-  --cta-disabled-bg: #2d2a52;
-  --cta-disabled-text: #6b6580;
-  --link-color: #c4b5fd;
-  --link-underline: #818cf8;
-  --link-hover-underline: #c4b5fd;
-  --focus-ring: 2px solid #818cf8;
+  --color-bg-dark: #1a1b2e;
+  --color-bg-alt: #212235;
+  --color-surface-dark: #252836;
+  --color-white-text: #f1f0f9;
+  --color-text-secondary: #a5a3c4;
+  --color-text-muted: #8b89a8;
+  --color-border-dark: rgba(255, 255, 255, 0.09);
+  /* CTA — umjereni indigo, bez jakog glow-a */
+  --cta-primary-bg: #5b5fc7;
+  --cta-primary-bg-hover: #6d71d4;
+  --cta-primary-bg-active: #4f52b8;
+  --cta-primary-shadow: 0 4px 18px rgba(91, 95, 199, 0.32);
+  --cta-primary-shadow-hover: 0 6px 22px rgba(109, 113, 212, 0.38);
+  --cta-secondary-border: #6d71d4;
+  --cta-secondary-text: #a5a3e8;
+  --cta-secondary-bg-hover: rgba(91, 95, 199, 0.14);
+  --cta-ghost-text: #8b89a8;
+  --link-color: #a5a3e8;
+  --link-underline: #6d71d4;
+  --link-hover-underline: #a5a3e8;
+  --focus-ring: 2px solid #6d71d4;
   --focus-ring-offset: 2px;
 }
 
@@ -110,10 +105,22 @@ body {
   outline-offset: 2px;
 }
 
+/* Skip link – vidljiv na fokus za keyboard korisnike (global :focus-visible već daje outline) */
+.skip-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 /* CTA / Interaction system – timing */
 .cta-transition {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out,
     box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-transition {
+    transition-duration: 0.01ms;
+  }
 }
 
 /* In-text links – hover underline, brand color */
@@ -199,7 +206,7 @@ a.link-text:focus-visible,
   height: 80px;
   background: linear-gradient(
     to bottom,
-    rgba(30, 27, 75, 0.4) 0%,
+    rgba(26, 27, 46, 0.5) 0%,
     transparent 100%
   );
   pointer-events: none;
@@ -207,7 +214,7 @@ a.link-text:focus-visible,
 .dark .section-after-hero::before {
   background: linear-gradient(
     to bottom,
-    rgba(30, 27, 75, 0.5) 0%,
+    rgba(26, 27, 46, 0.6) 0%,
     transparent 100%
   );
 }

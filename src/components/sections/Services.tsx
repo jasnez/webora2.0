@@ -102,7 +102,7 @@ export function Services() {
               aria-selected={activeIndex === i}
               aria-label={`Slajd ${i + 1}`}
               onClick={() => scrollTo(i)}
-              className={`h-2 rounded-full transition-all duration-200 ${
+              className={`min-h-touch min-w-[44px] flex items-center justify-center rounded-full transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                 activeIndex === i ? "w-6 bg-accent" : "w-2 bg-border-dark hover:bg-text-muted"
               }`}
             />

@@ -23,7 +23,7 @@ export function Footer() {
             <ul className="space-y-1">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="min-h-touch flex items-center py-2 text-[13px] text-text-secondary hover:text-white-text transition-colors">
+                  <Link href={link.href} className="min-h-touch flex items-center py-2 text-[13px] text-text-secondary hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">
                     {link.label}
                   </Link>
                 </li>
@@ -34,7 +34,7 @@ export function Footer() {
             <h3 className="text-[11px] uppercase tracking-wider text-text-muted mb-3.5">Kontakt</h3>
             <ul className="space-y-2 text-[13px] text-text-secondary">
               <li>
-                <a href={`mailto:${SITE.email}`} className="min-h-touch inline-flex items-center py-2 hover:text-white-text transition-colors">
+                <a href={`mailto:${SITE.email}`} className="min-h-touch inline-flex items-center py-2 hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">
                   {SITE.email}
                 </a>
               </li>
@@ -48,7 +48,7 @@ export function Footer() {
               <ul className="flex gap-3">
                 {SOCIAL_LINKS.map((link) => (
                   <li key={link.href}>
-                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white-text transition-colors">
+                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="min-h-touch min-w-[44px] inline-flex items-center justify-center text-text-secondary hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">
                       {link.label}
                     </a>
                   </li>
@@ -61,7 +61,7 @@ export function Footer() {
           <span>© {new Date().getFullYear()} {SITE.name}. Sva prava zadržana.</span>
           <div className="flex items-center gap-4">
             {SITE.privacyUrl && (
-              <Link href={SITE.privacyUrl} className="min-h-touch inline-flex items-center py-2 hover:text-white-text transition-colors">
+              <Link href={SITE.privacyUrl} className="min-h-touch inline-flex items-center py-2 hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">
                 Privacy policy
               </Link>
             )}

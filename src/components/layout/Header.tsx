@@ -45,7 +45,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`min-h-touch inline-flex items-center px-3 py-2 rounded-button text-[13.5px] transition-colors duration-200 ${
+              className={`min-h-touch inline-flex items-center px-3 py-2 rounded-button text-[13.5px] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                 isActive
                   ? "text-white-text font-medium bg-white/10"
                   : "text-text-secondary hover:text-white-text"
@@ -58,7 +58,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="min-h-touch min-w-[44px] flex items-center justify-center rounded-button text-white-text hover:bg-white/10 transition-colors"
+          className="min-h-touch min-w-[44px] flex items-center justify-center rounded-button text-white-text hover:bg-white/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           aria-label={theme === "dark" ? "Prebaci na svijetlu temu" : "Prebaci na tamnu temu"}
         >
           {theme === "dark" ? <Sun className="w-5 h-5" aria-hidden /> : <Moon className="w-5 h-5" aria-hidden />}
@@ -73,7 +73,7 @@ export function Header() {
 
       <button
         type="button"
-        className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-button text-white-text hover:bg-white/10 transition-colors"
+        className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-button text-white-text hover:bg-white/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
@@ -96,7 +96,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="min-h-touch flex items-center py-3 text-text-secondary hover:text-white-text font-medium transition-colors border-b border-border-dark/50 last:border-0"
+                  className="min-h-touch flex items-center py-3 text-text-secondary hover:text-white-text font-medium transition-colors border-b border-border-dark/50 last:border-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
@@ -105,7 +105,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="min-h-touch flex items-center gap-2 py-3 text-text-secondary hover:text-white-text font-medium transition-colors border-b border-border-dark/50"
+                className="min-h-touch flex items-center gap-2 py-3 text-text-secondary hover:text-white-text font-medium transition-colors border-b border-border-dark/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button"
                 aria-label={theme === "dark" ? "Prebaci na svijetlu temu" : "Prebaci na tamnu temu"}
               >
                 {theme === "dark" ? <Sun className="w-5 h-5" aria-hidden /> : <Moon className="w-5 h-5" aria-hidden />}

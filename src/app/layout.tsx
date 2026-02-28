@@ -18,21 +18,20 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
     default:
-      "Webora – Web development studio | Brze, sigurne i SEO-optimizovane stranice",
+      "Izrada web stranica BiH | Web development i SEO — Webora",
     template: "%s | Webora",
   },
   description:
-    "Webora izrađuje moderne, brze i sigurne web stranice uz Next.js tehnologiju. Fokusirani smo na performanse, tehnički SEO i konverzije za mala i srednja preduzeća.",
+    "Profesionalna izrada web stranica u Bosni i Hercegovini. Brze, sigurne i SEO-optimizirane stranice za mala i srednja preduzeća. Besplatna procjena.",
   keywords: [
-    "web development",
-    "Next.js",
-    "SEO optimizacija",
-    "web stranice BiH",
-    "izrada web stranica",
-    "web dizajn",
-    "React",
-    "Bosna i Hercegovina",
-    "web developer BiH",
+    "izrada web stranica BiH",
+    "web development BiH",
+    "izrada web stranica Sarajevo",
+    "SEO optimizacija BiH",
+    "poslovne web stranice",
+    "Next.js web studio",
+    "web dizajn Bosna i Hercegovina",
+    "brze web stranice",
   ],
   authors: [{ name: "Webora" }],
   creator: "Webora",
@@ -44,23 +43,23 @@ export const metadata: Metadata = {
     locale: "bs_BA",
     url: SITE.url,
     siteName: SITE.name,
-    title: "Webora – Web development studio",
+    title: "Izrada web stranica BiH | Web development i SEO — Webora",
     description:
-      "Brze, sigurne i SEO-optimizovane web stranice za profesionalce i mala preduzeća.",
+      "Profesionalna izrada web stranica u BiH. Brze, sigurne i SEO-optimizirane stranice za poslovanje. Besplatna procjena.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Webora Web Development Studio",
+        alt: "Webora — izrada web stranica i web development BiH",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webora – Web development studio",
+    title: "Izrada web stranica BiH | Webora",
     description:
-      "Brze, sigurne i SEO-optimizovane web stranice uz Next.js.",
+      "Brze, sigurne i SEO-optimizirane web stranice za BiH. Besplatna procjena.",
     images: ["/og-image.png"],
   },
   robots: {

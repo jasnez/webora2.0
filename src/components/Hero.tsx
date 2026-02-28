@@ -1,35 +1,36 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { HERO } from "@/lib/constants";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden scroll-mt-24" id="hero" aria-labelledby="hero-title">
-      {/* Starry night base: indigo → purple gradient */}
-      <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#0f0a1e] via-[#1e1b4b] via-40% to-[#2e1065] to-[#4c1d95]" />
+      {/* Starry night base: tamni indigo/slate → blagi purple (manje intenzivno) */}
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-[#13111c] via-[#1a1929] via-40% to-[#1e1d2e] to-[#252238]" />
 
-      {/* Soft radial glows for depth */}
+      {/* Meki radijalni glowovi — smanjena zasićenost */}
       <div
         aria-hidden
-        className="absolute inset-0 opacity-90"
+        className="absolute inset-0 opacity-80"
         style={{
           background:
-            "radial-gradient(ellipse 100% 80% at 20% 20%, rgba(99, 102, 241, 0.22), transparent 50%), radial-gradient(ellipse 80% 60% at 80% 60%, rgba(139, 92, 246, 0.18), transparent 50%), radial-gradient(ellipse 60% 40% at 50% 90%, rgba(168, 85, 247, 0.12), transparent 45%)",
+            "radial-gradient(ellipse 100% 80% at 20% 20%, rgba(99, 102, 241, 0.12), transparent 50%), radial-gradient(ellipse 80% 60% at 80% 60%, rgba(139, 92, 246, 0.08), transparent 50%), radial-gradient(ellipse 60% 40% at 50% 90%, rgba(120, 113, 248, 0.06), transparent 45%)",
         }}
       />
 
-      {/* Star field – SVG pattern */}
+      {/* Star field – suptilan */}
       <div
         aria-hidden
-        className="absolute inset-0 opacity-70"
+        className="absolute inset-0 opacity-50"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='%23fff' opacity='0.9'%3E%3Ccircle cx='20' cy='40' r='0.8'/%3E%3Ccircle cx='80' cy='120' r='0.6'/%3E%3Ccircle cx='160' cy='30' r='1'/%3E%3Ccircle cx='240' cy='100' r='0.7'/%3E%3Ccircle cx='320' cy='60' r='0.5'/%3E%3Ccircle cx='380' cy='180' r='0.9'/%3E%3Ccircle cx='60' cy='220' r='0.6'/%3E%3Ccircle cx='140' cy='280' r='0.8'/%3E%3Ccircle cx='220' cy='200' r='0.5'/%3E%3Ccircle cx='300' cy='320' r='0.7'/%3E%3Ccircle cx='100' cy='350' r='0.6'/%3E%3Ccircle cx='180' cy='380' r='0.4'/%3E%3Ccircle cx='260' cy='260' r='0.9'/%3E%3Ccircle cx='340' cy='240' r='0.5'/%3E%3C/g%3E%3Cg fill='%23c4b5fd' opacity='0.5'%3E%3Ccircle cx='40' cy='160' r='0.6'/%3E%3Ccircle cx='200' cy='140' r='0.5'/%3E%3Ccircle cx='360' cy='300' r='0.6'/%3E%3C/g%3E%3C/svg%3E")`,
           backgroundSize: "400px 400px",
         }}
       />
 
-      {/* Nebula sweep */}
-      <div className="absolute -inset-x-24 top-24 h-[420px] -rotate-6 bg-[radial-gradient(closest-side,rgba(255,255,255,0.06),transparent_70%)] blur-2xl opacity-80" />
+      {/* Nebula sweep — blagi */}
+      <div className="absolute -inset-x-24 top-24 h-[420px] -rotate-6 bg-[radial-gradient(closest-side,rgba(255,255,255,0.04),transparent_70%)] blur-2xl opacity-60" />
 
       {/* Grain */}
       <div className="noise absolute inset-0 opacity-[0.12]" />
@@ -40,16 +41,11 @@ export default function Hero() {
           {/* Left */}
           <div className="max-w-xl">
             <h1 id="hero-title" className="text-balance text-4xl font-semibold tracking-tight text-white md:text-6xl leading-[1.06]">
-              Pretvaramo posjetioce u klijente
-              <span className="bg-gradient-to-r from-white via-indigo-200 to-purple-300 bg-clip-text text-transparent">
-                {" "}
-                uz profesionalne web stranice.
-              </span>
+              {HERO.headlineShort}
             </h1>
 
             <p className="mt-6 text-pretty text-base leading-7 text-white/70 md:text-lg">
-              Next.js web stranice bez kompromisa — brze, sigurne i optimizirane
-              za konverziju.
+              Brze, sigurne i SEO-optimizirane web stranice za mala i srednja preduzeća. Besplatna procjena bez obaveze.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -58,7 +54,7 @@ export default function Hero() {
                 className="group relative inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white min-h-[44px]"
               >
                 <span className="absolute inset-0 rounded-full bg-white/10 backdrop-blur-md ring-1 ring-white/15 shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_12px_40px_rgba(99,102,241,0.25)] transition group-hover:shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_18px_60px_rgba(139,92,246,0.35)]" />
-                <span className="relative">Rezerviraj besplatnu konsultaciju</span>
+                <span className="relative">{HERO.primaryCta}</span>
               </Link>
 
               <Link
@@ -66,7 +62,7 @@ export default function Hero() {
                 className="group relative inline-flex items-center gap-2 rounded-full px-2 py-2 text-sm font-medium text-white/80 hover:text-white min-h-[44px]"
               >
                 <span className="relative">
-                  Pogledaj portfolio
+                  {HERO.secondaryCta}
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-white/70 transition-all duration-300 group-hover:w-full" />
                 </span>
                 <span className="text-white/50 transition group-hover:text-white/80">→</span>
@@ -78,7 +74,7 @@ export default function Hero() {
           <div className="relative">
             <div
               aria-hidden
-              className="absolute -inset-10 rounded-[48px] bg-[radial-gradient(closest-side,rgba(139,92,246,0.2),transparent_70%)] blur-2xl"
+              className="absolute -inset-10 rounded-[48px] bg-[radial-gradient(closest-side,rgba(99,102,241,0.12),transparent_70%)] blur-2xl"
             />
 
             <div className="relative h-[360px] md:h-[440px]">

@@ -12,11 +12,11 @@ export const SITE = {
   city: "Sarajevo",
   country: "BiH",
   workingHours: "Pon–Pet, 09:00–17:00",
-  tagline: "Web stranice koje pretvaraju posjete u upite.",
+  tagline: "Web stranice koje donose upite i povjerenje.",
   shortDescription:
-    "Dizajn, Next.js razvoj i tehnički SEO optimizovani za brzinu, sigurnost i rast poslovanja.",
+    "Izrada web stranica i web development u BiH — Next.js, SEO i brzina za rast poslovanja.",
   footerDescription:
-    "Web development studio specijaliziran za React i Next.js. Brze stranice, bez kompromisa.",
+    "Studio za izradu web stranica u BiH. Brze, sigurne stranice i tehnički SEO.",
   madeWith: "Napravljeno sa ❤️ u BiH",
   privacyUrl: "/privacy",
 } as const;
@@ -36,37 +36,37 @@ export const NAV_LINKS = [
 
 export const CTA = {
   primary: "Zatraži besplatnu procjenu",
-  secondary: "Pogledaj studije slučaja",
-  contact: "Započni projekat",
+  secondary: "Pogledaj reference",
+  contact: "Pošalji upit",
   backHome: "Nazad na početnu",
   learnMore: "Saznaj više",
 } as const;
 
-/** Hero sekcija – benefit-oriented, vrijednost za posjetitelja */
+/** Hero — benefit + ključna riječ za SEO */
 export const HERO = {
-  title: "Profesionalne web stranice za više upita i kredibiliteta online.",
-  headlineShort: "Profesionalne web stranice za više upita i kredibiliteta online.",
+  title: "Izrada web stranica u BiH koje donose upite i kredibilitet.",
+  headlineShort: "Izrada web stranica u BiH koje donose upite i kredibilitet.",
   subtitle:
-    "Brza isporuka · SEO optimizirano · Mobilno optimizirano",
+    "Brza isporuka · SEO optimizirano · Mobilno prilagođeno",
   primaryCta: "Zatraži besplatnu procjenu",
-  secondaryCta: "Pogledaj portfolio",
-  trustCopy: "Odgovaramo u roku od 24h · Bez obaveza",
+  secondaryCta: "Pogledaj reference",
+  trustCopy: "Odgovor u roku od 24 sata · Bez obaveze",
   trustBenefits: [
     "Brzina i performanse",
     "SEO optimizacija",
-    "Bez obaveza",
+    "Bez obaveze",
   ],
   metricBadges: [
     { icon: "⚡", label: "Lighthouse 90+" },
-    { icon: "🔐", label: "Enterprise sigurnost" },
-    { icon: "📈", label: "SEO optimizacija" },
+    { icon: "🔐", label: "Sigurnost" },
+    { icon: "📈", label: "SEO" },
   ],
 } as const;
 
-/** Usluge – 3 paketa */
+/** Usluge — jasno za SEO i korisnika */
 export const SERVICES = {
-  title: "Šta radimo",
-  subtitle: "Jasni paketi prilagođeni vašim ciljevima.",
+  title: "Usluge izrade web stranica",
+  subtitle: "Jasni paketi za poslovne stranice, SEO i custom projekte.",
   packages: [
     {
       id: "poslovna",
@@ -74,25 +74,25 @@ export const SERVICES = {
       icon: "🌐",
       bullets: [
         "5–10 stranica",
-        "SEO osnovna optimizacija",
+        "Osnovna SEO optimizacija",
         "Kontakt forma",
-        "CMS ako je potreban",
+        "CMS po želji",
       ],
     },
     {
       id: "seo-perf",
-      title: "SEO + Performance paket",
+      title: "SEO i performanse",
       icon: "📊",
       bullets: [
         "Tehnički SEO audit",
-        "Optimizacija brzine",
-        "Schema implementacija",
-        "Analytics setup",
+        "Ubrzanje stranice",
+        "Schema markup",
+        "Analytics",
       ],
     },
     {
       id: "custom",
-      title: "Custom Web Rješenja",
+      title: "Custom web rješenja",
       icon: "⚙️",
       bullets: [
         "Web aplikacije",
@@ -103,42 +103,42 @@ export const SERVICES = {
   ],
 } as const;
 
-/** Proces rada */
+/** Proces — transparentno za povjerenje */
 export const PROCESS = {
   title: "Kako radimo",
-  subtitle: "Transparentan proces od prvog poziva do lansiranja.",
+  subtitle: "Od prvog razgovora do objave — jasno i na vrijeme.",
   steps: [
     {
       step: 1,
       title: "Konsultacija",
       description:
-        "Razgovaramo o vašim ciljevima, publici i viziji. Analiziramo konkurenciju i definišemo strukturu sajta.",
+        "Razgovaramo o ciljevima, publici i viziji. Analiza konkurencije i predlog strukture stranice.",
     },
     {
       step: 2,
       title: "Dizajn i razvoj",
       description:
-        "Kreiramo dizajn i kodiramo sajt. Vi pratite napredak i dajete feedback u svakoj fazi.",
+        "Dizajn i razvoj stranice. Pratite napredak i dajete povratne informacije u svakoj fazi.",
     },
     {
       step: 3,
       title: "Testiranje",
       description:
-        "Testiramo na svim uređajima i preglednicima. Optimiziramo brzinu i SEO prije objave.",
+        "Testiranje na uređajima i preglednicima. Optimizacija brzine i SEO prije objave.",
     },
     {
       step: 4,
       title: "Objava i podrška",
       description:
-        "Lansiramo sajt i pružamo podršku. Pratimo performanse i pomažemo s budućim ažuriranjima.",
+        "Objava stranice i kratka podrška nakon lansiranja. Pomoć pri budućim ažuriranjima.",
     },
   ],
 } as const;
 
-/** Portfolio projekti – sa metrikama */
+/** Portfolio — reference za povjerenje */
 export const PORTFOLIO = {
-  title: "Naši radovi",
-  subtitle: "Projekti koji govore za sebe.",
+  title: "Reference",
+  subtitle: "Projekti za različite grane — od prava do ugostiteljstva.",
   items: [
     {
       id: "advokat-vk",
@@ -193,36 +193,36 @@ export const PORTFOLIO = {
   ],
 } as const;
 
-/** Zašto Webora – 4 diferencijacije */
+/** Zašto Webora — diferencijacija */
 export const WHY_US = {
-  title: "Zašto Webora?",
+  title: "Zašto Webora",
   items: [
     {
       title: "Brzina bez kompromisa",
-      description: "Bez plugin overloada i WP bloata.",
+      description: "Moderna tehnologija bez nepotrebnog opterećenja.",
       icon: "⚡",
     },
     {
       title: "Sigurnost na prvom mjestu",
-      description: "Next.js + server-side kontrola.",
+      description: "Next.js i kontrola na strani servera.",
       icon: "🔐",
     },
     {
       title: "Mjerljivi rezultati",
-      description: "Analytics, konverzije i performance tracking.",
+      description: "Analytics, konverzije i praćenje performansi.",
       icon: "📊",
     },
     {
       title: "Direktna komunikacija",
-      description: "Bez posrednika, bez outsourcinga.",
+      description: "Bez posrednika, podrška na našem jeziku.",
       icon: "🤝",
     },
   ],
 } as const;
 
-/** Testimonials – grad + industrija */
+/** Testimonials — povjerenje */
 export const TESTIMONIALS = {
-  title: "Šta kažu naši klijenti",
+  title: "Šta kažu klijenti",
   items: [
     {
       quote:
@@ -272,47 +272,47 @@ export const TESTIMONIALS = {
   ],
 } as const;
 
-/** FAQ */
+/** FAQ — SEO i jasnoća */
 export const FAQ = {
-  title: "Česta pitanja",
+  title: "Česta pitanja o izradi web stranica",
   items: [
     {
       question: "Koliko košta izrada web stranice?",
       answer:
-        "Cijena zavisi od složenosti projekta. Kontaktirajte nas za besplatnu procjenu — rado ćemo razgovarati o vašim potrebama i budžetu.",
+        "Cijena ovisi o opsegu projekta. Nudimo besplatnu procjenu — razgovaramo o vašim potrebama i budžetu bez obaveze.",
     },
     {
       question: "Koliko traje izrada?",
       answer:
-        "Tipičan poslovni sajt je gotov za 2-4 sedmice, zavisno od složenosti i brzine dostave sadržaja. Složeniji projekti mogu trajati 4-8 sedmica.",
+        "Tipična poslovna stranica 2–4 tjedna, ovisno o složenosti i dostavi sadržaja. Složeniji projekti 4–8 tjedana.",
     },
     {
       question: "Šta je uključeno u cijenu?",
       answer:
-        "Dizajn, razvoj, responsivnost, SEO optimizacija, testiranje, objava i kratki period post-launch podrške. Domena i hosting se obračunavaju zasebno.",
+        "Dizajn, razvoj, responzivnost, osnovna SEO optimizacija, testiranje, objava i kratka podrška nakon objave. Domena i hosting se mogu ugovoriti zasebno.",
     },
     {
-      question: "Zašto React/Next.js umjesto WordPressa?",
+      question: "Zašto Next.js umjesto WordPressa?",
       answer:
-        "WordPress je dobar za blogove, ali za poslovne stranice React/Next.js donosi značajno bolju brzinu, sigurnost i SEO performanse. Nema plugin konflikata, nema mjesečnih pretplata, nema sigurnosnih rupa.",
+        "Za poslovne stranice Next.js nudi bolju brzinu, sigurnost i SEO. Bez konflikata plugina i redovnih sigurnosnih zakrpa.",
     },
     {
-      question: "Da li mogu sam ažurirati sadržaj?",
+      question: "Mogu li sam ažurirati sadržaj?",
       answer:
-        "Da. Možemo integrirati jednostavan CMS (content management system) kao što je Sanity ili Payload, tako da možete sami mijenjati tekstove i slike bez poznavanja koda.",
+        "Da. Možemo uključiti jednostavan CMS tako da tekstove i slike možete mijenjati bez poznavanja koda.",
     },
     {
-      question: "Da li radite sa klijentima van BiH?",
-      answer: "Apsolutno. Radimo remote sa klijentima iz cijele regije i šire.",
+      question: "Radite li s klijentima izvan BiH?",
+      answer: "Da. Radimo remote s klijentima iz regije i šire.",
     },
   ],
 } as const;
 
-/** Kontakt forma */
+/** Kontakt */
 export const CONTACT = {
   title: "Započnimo razgovor",
-  subtitle: "Javite se — odgovaramo u roku od 24 sata.",
-  submitLabel: "Započni projekat",
+  subtitle: "Pošaljite upit — odgovaramo u roku od 24 sata.",
+  submitLabel: "Pošalji upit",
   projectTypes: [
     "Nova web stranica",
     "Redizajn",
@@ -321,7 +321,7 @@ export const CONTACT = {
   ] as const,
   formAction: "https://formspree.io/f/YOUR_FORM_ID",
   howWeWork: [
-    "Kratki uvodni poziv (15 min)",
+    "Kratki uvodni razgovor (15 min)",
     "Procjena i plan",
     "Implementacija",
   ],

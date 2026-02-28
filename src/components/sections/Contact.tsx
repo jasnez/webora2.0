@@ -7,6 +7,9 @@ import { SITE, CONTACT } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 
+const inputFocus =
+  "outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(85,88,227,0.2)] focus-visible:border-accent focus-visible:shadow-[0_0_0_3px_rgba(85,88,227,0.2)] placeholder:text-text-muted disabled:opacity-60 disabled:cursor-not-allowed";
+
 export function Contact() {
   const [pending, startTransition] = useTransition();
   const [submitted, setSubmitted] = useState(false);
@@ -114,21 +117,21 @@ export function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <label htmlFor="contact-name" className="block text-xs text-text-secondary mb-1.5">Ime i prezime *</label>
-                    <input id="contact-name" name="name" type="text" required placeholder="Vaše ime" disabled={pending} className="w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted disabled:opacity-60 disabled:cursor-not-allowed" />
+                    <input id="contact-name" name="name" type="text" required placeholder="Vaše ime" disabled={pending} className={`w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm ${inputFocus}`} />
                   </div>
                   <div>
                     <label htmlFor="contact-email" className="block text-xs text-text-secondary mb-1.5">Email *</label>
-                    <input id="contact-email" name="email" type="email" required placeholder="vas@email.com" disabled={pending} className="w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted disabled:opacity-60 disabled:cursor-not-allowed" />
+                    <input id="contact-email" name="email" type="email" required placeholder="vas@email.com" disabled={pending} className={`w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm ${inputFocus}`} />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <label htmlFor="contact-phone" className="block text-xs text-text-secondary mb-1.5">Telefon</label>
-                    <input id="contact-phone" name="phone" type="tel" placeholder="+387..." disabled={pending} className="w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted disabled:opacity-60 disabled:cursor-not-allowed" />
+                    <input id="contact-phone" name="phone" type="tel" placeholder="+387..." disabled={pending} className={`w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm ${inputFocus}`} />
                   </div>
                   <div>
                     <label htmlFor="contact-type" className="block text-xs text-text-secondary mb-1.5">Tip projekta</label>
-                    <select id="contact-type" name="projectType" disabled={pending} className="w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] disabled:opacity-60 disabled:cursor-not-allowed">
+                    <select id="contact-type" name="projectType" disabled={pending} className={`w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm ${inputFocus}`}>
                       {CONTACT.projectTypes.map((type) => (
                         <option key={type} value={type} className="bg-surface-dark text-text-secondary">{type}</option>
                       ))}
@@ -137,7 +140,7 @@ export function Contact() {
                 </div>
                 <div>
                   <label htmlFor="contact-message" className="block text-xs text-text-secondary mb-1.5">Poruka *</label>
-                  <textarea id="contact-message" name="message" required rows={4} placeholder="Opišite vaš projekat..." disabled={pending} className="w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted resize-none h-[110px] disabled:opacity-60 disabled:cursor-not-allowed" />
+                  <textarea id="contact-message" name="message" required rows={4} placeholder="Opišite vaš projekat..." disabled={pending} className={`w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm resize-none h-[110px] ${inputFocus}`} />
                 </div>
                 {error && <p className="text-red-400 text-sm">{error}</p>}
                 <Button
@@ -163,7 +166,7 @@ export function Contact() {
             <ul className="space-y-0">
               <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
                 <div className="w-10 h-10 rounded-lg bg-surface/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">✉️</div>
-                <a href={`mailto:${SITE.email}`} className="hover:text-white-text">{SITE.email}</a>
+                <a href={`mailto:${SITE.email}`} className="min-h-touch inline-flex items-center py-1 hover:text-white-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">{SITE.email}</a>
               </li>
               <li className="flex gap-3.5 items-center mb-4 text-text-secondary text-sm hover:text-white-text transition-colors">
                 <div className="w-10 h-10 rounded-lg bg-surface/80 border border-border-dark flex items-center justify-center text-base flex-shrink-0">📞</div>

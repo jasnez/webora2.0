@@ -85,10 +85,10 @@ export function Testimonials() {
               key={i}
               type="button"
               onClick={() => emblaApi?.scrollTo(i)}
-              className={`h-2 transition-all duration-200 cursor-pointer ${
+              className={`min-h-touch min-w-[44px] flex items-center justify-center rounded-full transition-all duration-200 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                 i === selectedIndex
                   ? "w-6 bg-accent rounded-[4px]"
-                  : "w-2 rounded-full bg-border-dark hover:bg-text-muted"
+                  : "w-2 bg-border-dark hover:bg-text-muted"
               }`}
               aria-label={`Prikaži iskustvo ${i + 1}`}
             />

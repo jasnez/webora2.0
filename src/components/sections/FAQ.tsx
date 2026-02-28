@@ -23,10 +23,10 @@ export function FAQ() {
             id="faq-heading"
             className="text-3xl md:text-4xl font-bold tracking-tight text-white-text mb-3"
           >
-            Česta pitanja
+            {FAQ_DATA.title}
           </h2>
           <p className="text-text-secondary text-lg">
-            Odgovori na najčešća pitanja o našim uslugama.
+            Odgovori na najčešća pitanja o izradi web stranica i našim uslugama.
           </p>
         </div>
 
