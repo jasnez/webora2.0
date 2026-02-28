@@ -57,11 +57,11 @@ export function Portfolio() {
         />
 
         <div className="overflow-hidden" ref={emblaRef} role="region" aria-roledescription="carousel" aria-label="Portfolio projekti">
-          <div className="flex gap-6 md:gap-8">
+          <div className="flex gap-6 md:gap-8 items-stretch">
             {PORTFOLIO.items.map((p) => (
               <div
                 key={p.id}
-                className="flex-[0_0_100%] md:flex-[0_0_calc(50%-16px)] lg:flex-[1_1_0] lg:min-w-0 min-h-0 flex flex-col"
+                className="flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-22px)] min-w-0 flex flex-col"
               >
                 <div className="bg-surface border border-border-dark rounded-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 group card-interactive h-full flex flex-col min-h-0 active:scale-[0.99]">
                   {/* Screenshot – hover zoom */}
