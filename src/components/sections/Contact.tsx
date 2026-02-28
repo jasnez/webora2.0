@@ -12,9 +12,27 @@ export function Contact() {
   const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(formData: FormData) {
-    /* Honeypot – ako je popunjen, ne šalji */
     if (formData.get("website")) return;
     setError(null);
+    const name = (formData.get("name") as string)?.trim();
+    const email = (formData.get("email") as string)?.trim();
+    const message = (formData.get("message") as string)?.trim();
+    if (!name) {
+      setError("Ime i prezime je obavezno.");
+      return;
+    }
+    if (!email) {
+      setError("Email je obavezan.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Unesite ispravan email.");
+      return;
+    }
+    if (!message) {
+      setError("Poruka je obavezna.");
+      return;
+    }
     startTransition(async () => {
       try {
         const res = await fetch(CONTACT.formAction, {
@@ -47,7 +65,7 @@ export function Contact() {
   return (
     <section
       id="kontakt"
-      className="relative section-pad bg-bg-dark overflow-hidden scroll-mt-24"
+      className="relative section-pad section-bg-alt overflow-hidden scroll-mt-24 section-border"
       aria-labelledby="contact-heading"
     >
       <div
@@ -66,7 +84,7 @@ export function Contact() {
           title={CONTACT.title}
           subtitle={CONTACT.subtitle}
         />
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-[72px] items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -87,29 +105,29 @@ export function Contact() {
               </div>
             ) : (
               <form action={handleSubmit} className="space-y-3.5" noValidate>
-                {/* Honeypot – sakriven */}
                 <div className="absolute -left-[9999px] top-0" aria-hidden>
                   <label htmlFor="contact-website">Website</label>
                   <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div className="rounded-2xl border border-border-dark bg-surface-dark/80 p-6 md:p-8 shadow-soft-lg space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <label htmlFor="contact-name" className="block text-xs text-text-secondary mb-1.5">Ime i prezime *</label>
-                    <input id="contact-name" name="name" type="text" required placeholder="Vaše ime" disabled={pending} className="w-full py-3 px-4 bg-white/[0.04] border border-white/[0.08] rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted disabled:opacity-60 disabled:cursor-not-allowed" />
+                    <input id="contact-name" name="name" type="text" required placeholder="Vaše ime" disabled={pending} className="w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted disabled:opacity-60 disabled:cursor-not-allowed" />
                   </div>
                   <div>
                     <label htmlFor="contact-email" className="block text-xs text-text-secondary mb-1.5">Email *</label>
-                    <input id="contact-email" name="email" type="email" required placeholder="vas@email.com" disabled={pending} className="w-full py-3 px-4 bg-white/[0.04] border border-white/[0.08] rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted disabled:opacity-60 disabled:cursor-not-allowed" />
+                    <input id="contact-email" name="email" type="email" required placeholder="vas@email.com" disabled={pending} className="w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted disabled:opacity-60 disabled:cursor-not-allowed" />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <label htmlFor="contact-phone" className="block text-xs text-text-secondary mb-1.5">Telefon</label>
-                    <input id="contact-phone" name="phone" type="tel" placeholder="+387..." disabled={pending} className="w-full py-3 px-4 bg-white/[0.04] border border-white/[0.08] rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted disabled:opacity-60 disabled:cursor-not-allowed" />
+                    <input id="contact-phone" name="phone" type="tel" placeholder="+387..." disabled={pending} className="w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted disabled:opacity-60 disabled:cursor-not-allowed" />
                   </div>
                   <div>
                     <label htmlFor="contact-type" className="block text-xs text-text-secondary mb-1.5">Tip projekta</label>
-                    <select id="contact-type" name="projectType" disabled={pending} className="w-full py-3 px-4 bg-white/[0.04] border border-white/[0.08] rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] disabled:opacity-60 disabled:cursor-not-allowed">
+                    <select id="contact-type" name="projectType" disabled={pending} className="w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] disabled:opacity-60 disabled:cursor-not-allowed">
                       {CONTACT.projectTypes.map((type) => (
                         <option key={type} value={type} className="bg-surface-dark text-text-secondary">{type}</option>
                       ))}
@@ -118,16 +136,17 @@ export function Contact() {
                 </div>
                 <div>
                   <label htmlFor="contact-message" className="block text-xs text-text-secondary mb-1.5">Poruka *</label>
-                  <textarea id="contact-message" name="message" required rows={4} placeholder="Opišite vaš projekat..." disabled={pending} className="w-full py-3 px-4 bg-white/[0.04] border border-white/[0.08] rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted resize-none h-[110px] disabled:opacity-60 disabled:cursor-not-allowed" />
+                  <textarea id="contact-message" name="message" required rows={4} placeholder="Opišite vaš projekat..." disabled={pending} className="w-full py-3 px-4 bg-surface-dark/60 border border-border-dark rounded-button text-white-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] placeholder:text-text-muted resize-none h-[110px] disabled:opacity-60 disabled:cursor-not-allowed" />
                 </div>
                 {error && <p className="text-red-400 text-sm">{error}</p>}
                 <button
                   type="submit"
                   disabled={pending}
-                  className="w-full py-3.5 mt-1.5 bg-accent hover:bg-accent-hover text-white rounded-button font-semibold text-[15px] shadow-cta hover:shadow-cta-hover transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-accent"
+                  className="w-full min-h-touch py-3.5 mt-1.5 bg-accent hover:bg-accent-hover text-white rounded-button font-semibold text-[15px] shadow-cta hover:shadow-cta-hover transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-accent"
                 >
                   {pending ? "Šaljem..." : CONTACT.submitLabel}
                 </button>
+                </div>
               </form>
             )}
           </motion.div>

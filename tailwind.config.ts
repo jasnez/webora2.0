@@ -11,18 +11,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        /* Premium Tech Authority palette */
-        "bg-dark": "#0B0F19",
-        "surface-dark": "#111827",
+        "bg-dark": "var(--color-bg-dark)",
+        "surface-dark": "var(--color-surface-dark)",
         accent: "#2563EB",
         "accent-hover": "#1D4ED8",
         "accent-cyan": "#06B6D4",
         success: "#10B981",
-        "white-text": "#F9FAFB",
-        "text-secondary": "#9CA3AF",
-        "text-muted": "#6B7280",
-        "border-dark": "#1F2937",
-        /* Legacy / light mode */
+        "white-text": "var(--color-white-text)",
+        "text-secondary": "var(--color-text-secondary)",
+        "text-muted": "var(--color-text-muted)",
+        "border-dark": "var(--color-border-dark)",
         primary: "#166534",
         surface: "#F8FAFC",
         "text-primary": "#0F172A",
@@ -51,10 +49,14 @@ export default {
         card: "16px",
         button: "12px",
       },
+      minHeight: { touch: "44px" },
       boxShadow: {
         soft: "0 2px 15px -3px rgba(15, 23, 42, 0.07), 0 10px 20px -2px rgba(15, 23, 42, 0.04)",
         "soft-lg":
           "0 10px 40px -10px rgba(15, 23, 42, 0.12), 0 4px 15px -3px rgba(15, 23, 42, 0.06)",
+        "card-hover":
+          "0 20px 50px -12px rgba(0, 0, 0, 0.2), 0 8px 20px -6px rgba(0, 0, 0, 0.1)",
+        "nav-scrolled": "0 4px 24px -4px rgba(0,0,0,0.35)",
         "cta": "0 4px 14px rgba(37, 99, 235, 0.4)",
         "cta-hover": "0 6px 20px rgba(37, 99, 235, 0.5)",
       },

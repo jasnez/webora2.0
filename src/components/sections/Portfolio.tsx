@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { PORTFOLIO } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -37,7 +38,7 @@ export function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="relative bg-bg-dark section-pad overflow-hidden scroll-mt-24"
+      className="relative section-bg-alt section-pad overflow-hidden scroll-mt-24"
       aria-labelledby="portfolio-heading"
     >
       <div
@@ -55,14 +56,14 @@ export function Portfolio() {
           subtitle={PORTFOLIO.subtitle}
         />
 
-        <div className="overflow-hidden" ref={emblaRef}>
+        <div className="overflow-hidden" ref={emblaRef} role="region" aria-roledescription="carousel" aria-label="Portfolio projekti">
           <div className="flex gap-5">
             {PORTFOLIO.items.map((p) => (
               <div
                 key={p.id}
                 className="flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-14px)] min-w-0"
               >
-                <div className="bg-surface-dark border border-border-dark rounded-card overflow-hidden hover:border-accent/30 transition-all duration-300 group">
+                <div className="bg-surface-dark border border-border-dark rounded-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 group">
                   {/* Screenshot – hover zoom */}
                   <div className="aspect-[16/10] bg-bg-dark flex flex-col items-center justify-center p-4 overflow-hidden">
                     <div className="w-[85%] rounded-md overflow-hidden shadow-lg transition-transform duration-500 group-hover:scale-105">
@@ -126,20 +127,43 @@ export function Portfolio() {
           </div>
         </div>
 
-        <div className="flex justify-center gap-2.5 mt-7">
+        <div className="flex items-center justify-center gap-4 mt-8">
+          <button
+            type="button"
+            onClick={() => emblaApi?.scrollPrev()}
+            className="min-h-touch min-w-[44px] flex items-center justify-center rounded-button border border-border-dark bg-surface-dark text-white-text hover:bg-white/10 hover:border-accent/50 transition-all"
+            aria-label="Prethodni slajd"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <div className="flex gap-2.5">
           {scrollSnaps.map((_, i) => (
             <button
               key={i}
               type="button"
               onClick={() => emblaApi?.scrollTo(i)}
-              className={`h-2 transition-all duration-200 cursor-pointer ${
-                i === selectedIndex
-                  ? "w-6 bg-accent rounded-[4px]"
-                  : "w-2 rounded-full bg-white/15 hover:bg-white/25"
-              }`}
+              className="min-h-touch min-w-[44px] flex items-center justify-center rounded-full transition-colors duration-200 cursor-pointer"
               aria-label={`Pogledaj slajd ${i + 1}`}
-            />
+              aria-current={i === selectedIndex ? "true" : undefined}
+            >
+              <span
+                className={`block h-2 transition-all duration-200 ${
+                  i === selectedIndex
+                    ? "w-6 bg-accent rounded-[4px]"
+                    : "w-2 rounded-full bg-white/15 hover:bg-white/25"
+                }`}
+              />
+            </button>
           ))}
+          </div>
+          <button
+            type="button"
+            onClick={() => emblaApi?.scrollNext()}
+            className="min-h-touch min-w-[44px] flex items-center justify-center rounded-button border border-border-dark bg-surface-dark text-white-text hover:bg-white/10 hover:border-accent/50 transition-all"
+            aria-label="Sljedeći slajd"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </section>

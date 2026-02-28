@@ -45,11 +45,17 @@ export const CTA = {
 /** Hero sekcija – usklađeno sa vizualom */
 export const HERO = {
   title: "Izrada web stranica koje donose rezultate.",
+  headlineShort: "Web stranice koje donose rezultate.",
   subtitle:
     "Moderni web sajtovi za profesionalce i male biznise koji žele više upita i kredibiliteta online.",
   primaryCta: "Zatraži besplatnu procjenu",
   secondaryCta: "Pogledaj portfolio",
   trustCopy: "Odgovaramo u roku od 24h · Bez obaveza",
+  trustBenefits: [
+    "Brzina i performanse",
+    "SEO optimizacija",
+    "Bez obaveza",
+  ],
   metricBadges: [
     { icon: "⚡", label: "Lighthouse 90+" },
     { icon: "🔐", label: "Enterprise sigurnost" },

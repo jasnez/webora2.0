@@ -3,9 +3,9 @@ import { SITE, NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="bg-bg-dark text-text-secondary mt-auto border-t border-border-dark">
-      <div className="max-w-container mx-auto px-6 py-11">
-        <div className="flex flex-col md:flex-row justify-between gap-10 pb-7 border-b border-border-dark">
+    <footer className="section-bg-base text-text-secondary mt-auto section-border">
+      <div className="max-w-container mx-auto px-6 py-12">
+        <div className="flex flex-col md:flex-row justify-between gap-10 pb-8 border-b border-border-dark">
           <div className="max-w-[280px]">
             <Link href="/" className="text-xl font-bold text-white-text flex items-center gap-1.5">
               {SITE.name}
@@ -20,10 +20,10 @@ export function Footer() {
           </div>
           <div>
             <h3 className="text-[11px] uppercase tracking-wider text-text-muted mb-3.5">Navigacija</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="block text-[13px] text-text-secondary hover:text-white-text transition-colors">
+                  <Link href={link.href} className="min-h-touch flex items-center py-2 text-[13px] text-text-secondary hover:text-white-text transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -34,7 +34,7 @@ export function Footer() {
             <h3 className="text-[11px] uppercase tracking-wider text-text-muted mb-3.5">Kontakt</h3>
             <ul className="space-y-2 text-[13px] text-text-secondary">
               <li>
-                <a href={`mailto:${SITE.email}`} className="hover:text-white-text transition-colors">
+                <a href={`mailto:${SITE.email}`} className="min-h-touch inline-flex items-center py-2 hover:text-white-text transition-colors">
                   {SITE.email}
                 </a>
               </li>
@@ -61,7 +61,7 @@ export function Footer() {
           <span>© {new Date().getFullYear()} {SITE.name}. Sva prava zadržana.</span>
           <div className="flex items-center gap-4">
             {SITE.privacyUrl && (
-              <Link href={SITE.privacyUrl} className="hover:text-white-text transition-colors">
+              <Link href={SITE.privacyUrl} className="min-h-touch inline-flex items-center py-2 hover:text-white-text transition-colors">
                 Privacy policy
               </Link>
             )}

@@ -23,7 +23,7 @@ export function Card({
       className={clsx(
         "rounded-card bg-white border border-border p-6 md:p-8 transition-all duration-300",
         hover &&
-          "hover:shadow-soft-lg hover:-translate-y-1 hover:border-accent/20",
+          "hover:shadow-card-hover hover:-translate-y-1 hover:border-accent/20",
         className
       )}
       initial={{ opacity: 0, y: 16 }}

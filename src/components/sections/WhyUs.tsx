@@ -44,7 +44,7 @@ export function WhyUs() {
   return (
     <section
       id="zasto-mi"
-      className="bg-surface-dark section-pad relative scroll-mt-24 border-t border-border-dark"
+      className="section-bg-base section-pad relative scroll-mt-24 section-border"
       aria-labelledby="why-heading"
     >
       <div className="max-w-container mx-auto px-6">
@@ -64,7 +64,7 @@ export function WhyUs() {
               ref={(el) => {
                 cardRefs.current[i] = el;
               }}
-              className="flex-shrink-0 snap-center w-[85vw] min-w-[280px] max-w-[340px] md:w-auto md:min-w-0 md:max-w-none bg-bg-dark/50 border border-border-dark rounded-card p-6 transition-all duration-300 hover:shadow-soft-lg hover:scale-[1.02] hover:border-accent/30 group"
+              className="flex-shrink-0 snap-center w-[85vw] min-w-[280px] max-w-[340px] md:w-auto md:min-w-0 md:max-w-none bg-bg-dark/50 border border-border-dark rounded-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30 group"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}

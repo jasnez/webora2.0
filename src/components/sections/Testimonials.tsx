@@ -31,7 +31,7 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="section-pad bg-surface-dark scroll-mt-24 border-t border-border-dark"
+      className="section-pad section-bg-alt scroll-mt-24 section-border"
       aria-labelledby="testimonials-heading"
     >
       <div className="max-w-container mx-auto px-6">
@@ -49,7 +49,7 @@ export function Testimonials() {
                 key={t.initials}
                 className="flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-14px)] min-w-0"
               >
-                <div className="bg-bg-dark/60 border border-border-dark rounded-card p-6 h-full flex flex-col transition-all duration-300 hover:shadow-soft-lg hover:border-accent/20">
+                <div className="bg-bg-dark/60 border border-border-dark rounded-card p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/20">
                   <div className="flex gap-1 mb-3" aria-hidden>
                     {Array.from({ length: t.rating }).map((_, i) => (
                       <Star

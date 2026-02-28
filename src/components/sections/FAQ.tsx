@@ -10,7 +10,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="section-pad bg-bg-dark scroll-mt-24 border-t border-border-dark"
+      className="section-pad section-bg-base scroll-mt-24 section-border"
       aria-labelledby="faq-heading"
     >
       <div className="max-w-container mx-auto px-6">
@@ -43,10 +43,10 @@ export function FAQ() {
                   setOpen(open === i ? null : i);
                 }
               }}
-              className={`bg-surface-dark border rounded-card p-6 cursor-pointer transition-all duration-300 ${
+              className={`bg-surface-dark border rounded-card p-6 cursor-pointer transition-all duration-300 hover:-translate-y-0.5 ${
                 open === i
                   ? "border-accent shadow-cta"
-                  : "border-border-dark hover:border-accent/50 hover:shadow-soft"
+                  : "border-border-dark hover:border-accent/50 hover:shadow-card-hover"
               }`}
               aria-expanded={open === i}
             >

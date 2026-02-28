@@ -8,28 +8,36 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="hero-podloga relative flex min-h-[85vh] flex-col justify-center overflow-hidden scroll-mt-24 py-12 md:py-16 lg:py-24 noise-overlay"
+      className="hero-podloga relative flex min-h-[80vh] flex-col justify-center overflow-hidden scroll-mt-24 py-12 md:py-16 lg:py-24 noise-overlay"
       aria-labelledby="hero-title"
     >
       <div className="pointer-events-none absolute inset-0 hero-particles" aria-hidden />
 
+      {/* Gradient blob – ne generički vizual */}
+      <div
+        className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-[min(80vw,520px)] h-[min(80vw,520px)] rounded-full opacity-30 blur-[100px]"
+        style={{
+          background: "radial-gradient(circle, rgba(37, 99, 235, 0.5) 0%, rgba(6, 182, 212, 0.2) 50%, transparent 70%)",
+        }}
+        aria-hidden
+      />
+
       <div className="relative z-10 mx-auto w-full max-w-container px-6">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Lijeva kolona: naslov, podnaslov, CTA */}
           <div>
             <h1
               id="hero-title"
-              className="text-4xl font-bold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[2.75rem] xl:text-[3rem]"
+              className="text-4xl font-bold leading-[1.12] tracking-tight text-white-text sm:text-5xl lg:text-[2.75rem] xl:text-[3rem]"
             >
-              {HERO.title}
+              {HERO.headlineShort}
             </h1>
-            <p className="mt-4 max-w-lg text-lg leading-relaxed text-gray-400">
+            <p className="mt-5 max-w-lg text-lg leading-relaxed text-text-secondary">
               {HERO.subtitle}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
               <Link
                 href="/kontakt"
-                className="group inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-semibold text-white shadow-lg transition-all duration-200 hover:scale-[1.02]"
+                className="group inline-flex items-center justify-center gap-2 rounded-xl px-7 py-4 font-semibold text-white shadow-lg transition-all duration-200 hover:scale-[1.02] min-h-touch text-base"
                 style={{
                   background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
                   boxShadow: "0 4px 14px rgba(37, 99, 235, 0.45)",
@@ -40,17 +48,32 @@ export function Hero() {
                   &gt;
                 </span>
               </Link>
-              <Link
-                href="/portfolio"
-                className="inline-flex items-center gap-2 rounded-xl border border-gray-500/40 bg-gray-100 px-6 py-3.5 font-semibold text-gray-800 transition-all duration-200 hover:bg-gray-200"
-              >
-                {HERO.secondaryCta}
-              </Link>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/usluge"
+                  className="min-h-touch inline-flex items-center rounded-xl border border-border-dark bg-white/10 px-5 py-3 font-medium text-white-text hover:bg-white/15 transition-all"
+                >
+                  Usluge
+                </Link>
+                <Link
+                  href="/portfolio"
+                  className="min-h-touch inline-flex items-center rounded-xl border border-border-dark bg-white/10 px-5 py-3 font-medium text-white-text hover:bg-white/15 transition-all"
+                >
+                  {HERO.secondaryCta}
+                </Link>
+              </div>
             </div>
-            <p className="mt-5 text-sm text-gray-500">{HERO.trustCopy}</p>
+            <p className="mt-6 text-sm text-text-muted">{HERO.trustCopy}</p>
+            <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-text-secondary" aria-hidden>
+              {HERO.trustBenefits.map((b) => (
+                <li key={b} className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                  {b}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Desna kolona: slika (laptop, telefon, badgeovi, glow) */}
           <div className="relative w-full">
             <div className="relative mx-auto max-w-[min(100%,600px)]">
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-soft-lg backdrop-blur-sm ring-1 ring-white/5">

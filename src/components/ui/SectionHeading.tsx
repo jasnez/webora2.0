@@ -29,15 +29,15 @@ export function SectionHeading({
     ? `text-sm uppercase tracking-widest font-medium mb-3 flex items-center gap-2.5 ${isLeft ? "text-accent justify-start" : "text-accent justify-center"}`
     : `text-sm uppercase tracking-widest font-medium mb-3 flex items-center gap-2.5 ${isLeft ? "text-accent justify-start" : "text-accent justify-center"}`;
   const titleClass = isDark
-    ? "font-display font-bold text-white-text text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight"
-    : "font-display font-bold text-slate-900 text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight";
+    ? "font-display font-bold text-white-text text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight leading-[1.2]"
+    : "font-display font-bold text-slate-900 text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight leading-[1.2]";
   const subtitleClass = isDark
-    ? "mt-3 text-lg text-text-secondary leading-relaxed"
-    : "mt-3 text-lg text-slate-500 leading-relaxed";
+    ? "mt-4 text-lg text-text-secondary leading-[1.65]"
+    : "mt-4 text-lg text-slate-500 leading-[1.65]";
 
   return (
     <motion.div
-      className={`${isLeft ? "text-left max-w-3xl mb-12 md:mb-16" : "text-center max-w-3xl mx-auto mb-12 md:mb-16"} ${className}`}
+      className={`${isLeft ? "text-left max-w-3xl mb-14 md:mb-20" : "text-center max-w-3xl mx-auto mb-14 md:mb-20"} ${className}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}

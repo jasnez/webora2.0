@@ -45,7 +45,7 @@ export function Services() {
   return (
     <section
       id="usluge"
-      className="section-pad bg-bg-dark scroll-mt-24"
+      className="section-pad section-bg-alt scroll-mt-24"
       aria-labelledby="services-heading"
     >
       <div className="max-w-container mx-auto px-6">
@@ -66,7 +66,7 @@ export function Services() {
               ref={(el) => {
                 cardRefs.current[i] = el;
               }}
-              className="group relative flex-shrink-0 snap-center w-[85vw] min-w-[280px] max-w-[340px] md:w-auto md:min-w-0 md:max-w-none bg-surface-dark border border-border-dark rounded-card p-6 transition-all duration-300 hover:shadow-soft-lg hover:scale-[1.02] hover:border-accent/30"
+              className="group relative flex-shrink-0 snap-center w-[85vw] min-w-[280px] max-w-[340px] md:w-auto md:min-w-0 md:max-w-none bg-surface-dark border border-border-dark rounded-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-accent/30"
             >
               <div className="text-2xl mb-4">{pkg.icon}</div>
               <h3 className="text-lg font-semibold text-white-text mb-4">
