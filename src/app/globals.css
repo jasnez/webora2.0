@@ -387,3 +387,34 @@ a.link-text:focus-visible,
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+
+/* Subtle noise overlay (Hero – components/Hero.tsx) */
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Floating mockups (respect reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .mockup-float-slow {
+    animation: mockupFloatSlow 8s ease-in-out infinite;
+  }
+  .mockup-float-mid {
+    animation: mockupFloatMid 6.5s ease-in-out infinite;
+  }
+  .mockup-float-fast {
+    animation: mockupFloatFast 5.5s ease-in-out infinite;
+  }
+}
+@keyframes mockupFloatSlow {
+  0%, 100% { transform: translateY(0px) rotate(10deg); }
+  50% { transform: translateY(-10px) rotate(10deg); }
+}
+@keyframes mockupFloatMid {
+  0%, 100% { transform: translateY(0px) rotate(-4deg); }
+  50% { transform: translateY(-12px) rotate(-4deg); }
+}
+@keyframes mockupFloatFast {
+  0%, 100% { transform: translateY(0px) rotate(2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
