@@ -27,7 +27,7 @@ test("PricingSection exists with packages, copy, and layout", () => {
   assert.match(content, /grid-cols-1/);
   assert.match(content, /md:grid-cols-3/);
   assert.match(content, /gap-6/);
-  assert.match(content, /items-start/);
+  assert.match(content, /items-stretch/);
   assert.match(content, /scale-105/);
   assert.match(content, /border-brand-500/);
 });
