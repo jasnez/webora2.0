@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { PORTFOLIO } from "@/lib/constants";
+import { projects } from "@/data/portfolio";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const dotPatternStyle = {
@@ -58,7 +59,7 @@ export function Portfolio() {
 
         <div className="overflow-hidden" ref={emblaRef} role="region" aria-roledescription="carousel" aria-label="Portfolio projekti">
           <div className="flex gap-6 md:gap-8 items-stretch">
-            {PORTFOLIO.items.map((p) => (
+            {projects.map((p) => (
               <div
                 key={p.id}
                 className="flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-22px)] min-w-0 flex flex-col"
@@ -72,7 +73,7 @@ export function Portfolio() {
                         <span className="w-1.5 h-1.5 rounded-full bg-yellow-500/80" />
                         <span className="w-1.5 h-1.5 rounded-full bg-green-500/80" />
                         <span className="ml-2 bg-white/5 rounded px-1.5 py-0.5 text-[9px] text-text-muted font-mono truncate max-w-[120px]">
-                          {p.url === "#" ? "example.com" : p.url.startsWith("http") ? new URL(p.url).hostname : "example.com"}
+                          {p.url ? new URL(p.url).hostname : "wip"}
                         </span>
                       </div>
                       <div className="h-20 bg-bg-dark p-2.5 flex flex-col gap-1">
@@ -86,23 +87,22 @@ export function Portfolio() {
                     <h3 className="text-base font-semibold text-white-text mb-1">
                       {p.title}
                     </h3>
-                    <p className="text-base text-text-secondary mb-4 flex-1">{p.description}</p>
-                    {/* 3 metrike */}
-                    {p.metrics && p.metrics.length >= 3 && (
+                    <p className="text-base text-text-secondary mb-4 flex-1">{p.solution}</p>
+                    {p.metrics && p.metrics.length > 0 && (
                       <div className="flex flex-wrap gap-2 mb-4">
                         {p.metrics.map((m) => (
                           <span
-                            key={m}
+                            key={`${p.id}-${m.label}`}
                             className="px-2.5 py-1 bg-success/10 border border-success/30 rounded-lg text-xs font-medium text-success"
                           >
-                            {m}
+                            {m.label}: {m.value}
                           </span>
                         ))}
                       </div>
                     )}
                     <div className="flex justify-between items-center">
                       <div className="flex gap-1.5">
-                        {p.technologies.map((t) => (
+                        {p.tags.map((t) => (
                           <span
                             key={t}
                             className="px-2 py-0.5 bg-white/5 border border-white/10 rounded-full text-[10px] text-text-secondary font-mono"
@@ -111,14 +111,20 @@ export function Portfolio() {
                           </span>
                         ))}
                       </div>
-                      <Link
-                        href={p.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="link-text text-sm font-medium"
-                      >
-                        Pogledaj →
-                      </Link>
+                      {p.url ? (
+                        <Link
+                          href={p.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="link-text text-sm font-medium"
+                        >
+                          Pogledaj →
+                        </Link>
+                      ) : (
+                        <span className="text-sm font-medium text-text-muted">
+                          U izradi
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>

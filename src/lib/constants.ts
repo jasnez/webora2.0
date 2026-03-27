@@ -138,59 +138,7 @@ export const PROCESS = {
 /** Portfolio — reference za povjerenje */
 export const PORTFOLIO = {
   title: "Reference",
-  subtitle: "Projekti za različite grane — od prava do ugostiteljstva.",
-  items: [
-    {
-      id: "advokat-vk",
-      title: "Advokat Velika Kladuša",
-      description: "Web prezentacija za advokatsku kancelariju.",
-      url: "https://www.advokatvelikakladusa.ba",
-      technologies: ["Next.js", "Tailwind"],
-      category: "Poslovne stranice",
-      image: "",
-      metrics: ["+38% više upita", "1.9s LCP", "95 Lighthouse"],
-    },
-    {
-      id: "klinika-zdravlje",
-      title: "Klinika Zdravlje",
-      description: "Moderna stranica za privatnu kliniku.",
-      url: "#",
-      technologies: ["Next.js", "React"],
-      category: "Zdravstvo",
-      image: "",
-      metrics: ["+25% konverzija", "2.1s LCP", "92 Lighthouse"],
-    },
-    {
-      id: "restoran-dolina",
-      title: "Restoran Dolina",
-      description: "Elegantna stranica sa digitalnim menijima.",
-      url: "#",
-      technologies: ["Next.js", "Tailwind"],
-      category: "Ugostiteljstvo",
-      image: "",
-      metrics: ["+40% rezervacija", "1.7s LCP", "94 Lighthouse"],
-    },
-    {
-      id: "autoservis-pro",
-      title: "AutoServis Pro",
-      description: "Landing page za auto servis sa booking-om.",
-      url: "#",
-      technologies: ["React", "GSAP"],
-      category: "Usluge",
-      image: "",
-      metrics: ["+30% upita", "2.0s LCP", "93 Lighthouse"],
-    },
-    {
-      id: "studio-forma",
-      title: "Studio Forma",
-      description: "Portfolio za arhitektonski studio.",
-      url: "#",
-      technologies: ["Next.js", "Three.js"],
-      category: "Arhitektura",
-      image: "",
-      metrics: ["+50% engagement", "2.2s LCP", "91 Lighthouse"],
-    },
-  ],
+  subtitle: "Odabrani live projekti i vlastiti projekt u izradi.",
 } as const;
 
 /** Zašto Webora — diferencijacija */
