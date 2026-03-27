@@ -13,7 +13,7 @@ test("PortfolioSection exists with requested heading, grid, and CTA", () => {
   const content = readFileSync(sectionPath, "utf-8");
 
   assert.match(content, /Projekti koje sam realizovao/);
-  assert.match(content, /Imate projekat na umu\? Razgovarajmo\./);
+  assert.match(content, /Imate projekat na umu\?/);
   assert.match(content, /Razgovarajmo/);
   assert.match(content, /href="\/kontakt"/);
   assert.match(content, /grid-cols-1/);
@@ -31,7 +31,9 @@ test("PortfolioSection applies live/wip states and conditional metrics/link rend
   assert.match(content, /project\.status === "live".*hover:-translate-y-1/s);
   assert.match(content, /project\.status === "wip".*opacity-60 pointer-events-none/s);
   assert.match(content, /Uskoro/);
-  assert.match(content, /project\.metrics &&/);
+  assert.match(content, /project\.metrics \?\?/);
+  assert.match(content, /min-h-\[52px\]/);
+  assert.match(content, /invisible/);
   assert.match(content, /project\.status === "live".*project\.url/s);
   assert.match(content, /Pogledaj stranicu →/);
 });

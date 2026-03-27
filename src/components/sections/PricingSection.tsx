@@ -100,7 +100,7 @@ export function PricingSection() {
           <p className="section-label mb-3 md:mb-4">Cijene</p>
           <h2
             id="pricing-heading"
-            className="heading-2 mx-auto max-w-[34rem] text-center text-white-text lg:whitespace-nowrap"
+            className="heading-2 mx-auto max-w-[34rem] text-center text-white-text lg:w-max lg:max-w-none lg:whitespace-nowrap"
           >
             Jednostavni paketi — bez komplikacija
           </h2>

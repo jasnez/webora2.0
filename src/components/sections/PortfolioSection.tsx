@@ -57,16 +57,22 @@ export function PortfolioSection() {
                   </p>
                 </div>
 
-                {project.metrics && (
-                  <div className="mb-4 flex gap-4">
-                    {project.metrics.map((m) => (
-                      <div key={m.label} className="text-center">
-                        <p className="text-base font-bold text-neutral-900 dark:text-white-text">{m.value}</p>
+                <div className="mb-4 flex min-h-[52px] gap-4">
+                  {(project.metrics ?? [{ label: "", value: "" }, { label: "", value: "" }]).map(
+                    (m, idx) => (
+                      <div
+                        key={m.label || `placeholder-${project.id}-${idx}`}
+                        className={clsx("text-center", !m.label && "invisible")}
+                        aria-hidden={!m.label}
+                      >
+                        <p className="text-base font-bold text-neutral-900 dark:text-white-text">
+                          {m.value}
+                        </p>
                         <p className="text-xs text-neutral-400">{m.label}</p>
                       </div>
-                    ))}
-                  </div>
-                )}
+                    ),
+                  )}
+                </div>
 
                 <div className="mb-4 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
@@ -92,7 +98,7 @@ export function PortfolioSection() {
         </div>
 
         <div className="text-center">
-          <p className="body-lg mb-4">Imate projekat na umu? Razgovarajmo.</p>
+          <p className="body-lg mb-4">Imate projekat na umu?</p>
           <Button href="/kontakt" variant="primary" size="lg">
             Razgovarajmo
           </Button>
