@@ -138,33 +138,6 @@ export const PORTFOLIO = {
   subtitle: "Odabrani live projekti i vlastiti projekt u izradi.",
 } as const;
 
-/** Zašto Webora — diferencijacija */
-export const WHY_US = {
-  title: "Zašto Webora",
-  items: [
-    {
-      title: "Brzina bez kompromisa",
-      description: "Moderna tehnologija bez nepotrebnog opterećenja.",
-      icon: "⚡",
-    },
-    {
-      title: "Sigurnost na prvom mjestu",
-      description: "Next.js i kontrola na strani servera.",
-      icon: "🔐",
-    },
-    {
-      title: "Mjerljivi rezultati",
-      description: "Analytics, konverzije i praćenje performansi.",
-      icon: "📊",
-    },
-    {
-      title: "Direktna komunikacija",
-      description: "Bez posrednika, podrška na našem jeziku.",
-      icon: "🤝",
-    },
-  ],
-} as const;
-
 /** Testimonials — povjerenje */
 export const TESTIMONIALS = {
   title: "Šta kažu klijenti",

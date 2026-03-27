@@ -5,7 +5,6 @@ import { PricingSection } from "@/components/sections/PricingSection";
 import { Process } from "@/components/sections/Process";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-import { WhyUs } from "@/components/sections/WhyUs";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
@@ -19,7 +18,6 @@ export default function HomePage() {
       <PricingSection />
       <PortfolioSection />
       <Process />
-      <WhyUs />
       <TestimonialsSection />
       <FAQ />
       <FinalCTA />
