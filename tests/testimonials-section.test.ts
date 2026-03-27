@@ -8,7 +8,7 @@ const dataPath = resolve(root, "src/data/testimonials.ts");
 const sectionPath = resolve(root, "src/components/sections/TestimonialsSection.tsx");
 const pagePath = resolve(root, "src/app/page.tsx");
 
-test("testimonials data uses typed interface and is empty by default", () => {
+test("testimonials data uses typed interface and has temporary placeholders", () => {
   assert.equal(existsSync(dataPath), true);
   const content = readFileSync(dataPath, "utf-8");
 
@@ -16,7 +16,10 @@ test("testimonials data uses typed interface and is empty by default", () => {
   assert.match(content, /name:\s*string/);
   assert.match(content, /company:\s*string/);
   assert.match(content, /initials:\s*string/);
-  assert.match(content, /export const testimonials:\s*Testimonial\[\]\s*=\s*\[\s*\]/);
+  assert.match(content, /export const testimonials:\s*Testimonial\[\]\s*=\s*\[/);
+  assert.match(content, /id:\s*"placeholder-1"/);
+  assert.match(content, /id:\s*"placeholder-2"/);
+  assert.match(content, /id:\s*"placeholder-3"/);
 });
 
 test("TestimonialsSection returns null when no testimonials", () => {
