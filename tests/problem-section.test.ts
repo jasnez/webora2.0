@@ -31,7 +31,7 @@ test("ProblemSection exists with required copy and structure", () => {
     content,
     /Vaša web stranica nije samo informacija[\s\S]*ona je vaša reputacija/,
   );
-  assert.match(content, /✗/);
+  assert.match(content, /XCircle/);
   assert.match(content, /gap-4/);
   assert.match(content, /max-w-\[700px\]/);
   assert.match(content, /text-left md:text-center/);

@@ -1,3 +1,4 @@
+import { XCircle } from "lucide-react";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 
@@ -29,20 +30,22 @@ export function ProblemSection() {
           </h2>
 
           <ul
-            className="mb-10 flex flex-col gap-4 rounded-2xl border border-neutral-200/90 bg-white/90 p-5 text-left shadow-sm dark:border-border-dark dark:bg-surface/40 dark:shadow-none sm:p-6 md:gap-[1.125rem]"
+            className="mb-10 w-full overflow-hidden rounded-2xl border border-neutral-200/95 bg-white text-left shadow-[0_2px_12px_rgba(15,23,42,0.06)] dark:border-border-dark dark:bg-surface dark:shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
             role="list"
           >
             {problems.map((p, i) => (
-              <li key={i} className="flex gap-3.5 sm:items-center sm:gap-4">
-                <span
-                  className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-sm font-bold leading-none text-red-600 dark:bg-red-500/15 dark:text-red-400 sm:mt-0"
+              <li
+                key={i}
+                className="flex gap-4 border-b border-neutral-100 px-5 py-4 last:border-b-0 dark:border-border-dark/70 sm:gap-5 sm:px-6 sm:py-5"
+              >
+                <XCircle
+                  className="mt-0.5 h-6 w-6 shrink-0 text-red-600 dark:text-red-400"
+                  strokeWidth={2}
                   aria-hidden
-                >
-                  ✗
-                </span>
-                <span className="min-w-0 text-[1.0625rem] leading-relaxed text-neutral-700 dark:text-text-secondary">
+                />
+                <p className="min-w-0 flex-1 text-base font-medium leading-relaxed text-neutral-800 dark:text-white-text">
                   {p}
-                </span>
+                </p>
               </li>
             ))}
           </ul>
