@@ -33,17 +33,17 @@ test("hero section includes proof strip items", () => {
   assert.match(content, /Made in BiH/);
 });
 
-test("hero image uses priority and mobile hidden class", () => {
+test("hero image uses priority and responsive sizing", () => {
   const content = readFileSync(heroSectionPath, "utf-8");
   assert.match(content, /src="\/portfolio\/advokat-hero\.png"/);
   assert.match(content, /priority/);
-  assert.match(content, /hidden md:block/);
+  assert.match(content, /sizes=/);
+  assert.match(content, /aspect-\[16\/10\]/);
 });
 
-test("homepage uses HeroSection in main wrapper", () => {
+test("homepage uses HeroSection (layout provides main)", () => {
   const content = readFileSync(homePagePath, "utf-8");
   assert.match(content, /import \{ HeroSection \} from "@\/components\/sections\/HeroSection"/);
-  assert.match(content, /<main>/);
   assert.match(content, /<HeroSection \/>/);
 });
 
