@@ -100,7 +100,7 @@ export function PricingSection() {
           <p className="section-label mb-3 md:mb-4">Cijene</p>
           <h2
             id="pricing-heading"
-            className="heading-2 mx-auto max-w-[34rem] text-balance text-white-text lg:whitespace-nowrap"
+            className="heading-2 mx-auto max-w-[34rem] text-center text-white-text lg:whitespace-nowrap"
           >
             Jednostavni paketi — bez komplikacija
           </h2>
@@ -139,17 +139,13 @@ export function PricingSection() {
                     {pkg.tagline}
                   </p>
                   <div className="my-4">
-                    <span className="text-4xl font-bold text-white-text md:text-5xl">
+                    <span className="text-3xl font-semibold text-white-text md:text-4xl">
                       {pkg.price}
                     </span>
                     <span className="ml-1 text-lg font-medium opacity-70 text-text-secondary">
                       KM
                     </span>
                   </div>
-                  <p className="mb-6 text-xs uppercase tracking-widest opacity-50 text-text-muted">
-                    jednokratno
-                  </p>
-
                   <div
                     className="mb-6 border-t border-white/10"
                     role="separator"

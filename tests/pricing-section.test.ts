@@ -20,7 +20,7 @@ test("PricingSection: SaaS layout, cards, highlighted tier, legal copy", () => {
   assert.match(content, /od 1\.200/);
   assert.match(content, /od 3\.000/);
   assert.match(content, /NAJPOPULARNIJE/);
-  assert.match(content, /jednokratno/);
+  assert.doesNotMatch(content, /jednokratno/);
   assert.match(
     content,
     /Sve cijene su okvirne\. Finalna cijena zavisi od zahtjeva projekta/,
