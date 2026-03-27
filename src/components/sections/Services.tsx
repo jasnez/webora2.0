@@ -84,7 +84,7 @@ export function Services() {
                 ))}
               </ul>
               <Link
-                href="/usluge"
+                href={`/usluge#${pkg.id}`}
                 className="link-text inline-flex items-center gap-1.5 text-sm font-medium group/link"
               >
                 {CTA.learnMore}

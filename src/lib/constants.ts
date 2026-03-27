@@ -77,7 +77,7 @@ export const SERVICES = {
       ],
     },
     {
-      id: "seo-perf",
+      id: "seo",
       title: "SEO i performanse",
       icon: "📊",
       bullets: [
