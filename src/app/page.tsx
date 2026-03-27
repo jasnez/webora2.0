@@ -3,7 +3,7 @@ import { ProblemSection } from "@/components/sections/ProblemSection";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { Process } from "@/components/sections/Process";
-import { Portfolio } from "@/components/sections/Portfolio";
+import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
@@ -17,7 +17,7 @@ export default function HomePage() {
       <BenefitsSection />
       <PricingSection />
       <Process />
-      <Portfolio />
+      <PortfolioSection />
       <WhyUs />
       <Testimonials />
       <FAQ />
