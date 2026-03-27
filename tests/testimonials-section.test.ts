@@ -28,9 +28,11 @@ test("TestimonialsSection returns null when no testimonials", () => {
 
   assert.match(content, /if\s*\(testimonials\.length === 0\)\s*return null/);
   assert.match(content, /Šta kažu klijenti/);
-  assert.match(content, /grid-cols-1/);
-  assert.match(content, /md:grid-cols-2/);
-  assert.match(content, /gap-6/);
+  assert.match(content, /useEmblaCarousel/);
+  assert.match(content, /overflow-hidden/);
+  assert.match(content, /aria-roledescription="carousel"/);
+  assert.match(content, /flex-\[0_0_100%\]/);
+  assert.match(content, /md:flex-\[0_0_calc\(50%-12px\)\]/);
 });
 
 test("homepage uses TestimonialsSection", () => {
