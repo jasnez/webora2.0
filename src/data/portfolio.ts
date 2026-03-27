@@ -21,7 +21,7 @@ export const projects: PortfolioProject[] = [
     client: "Advokatska kancelarija",
     industry: "Pravo",
     url: "https://www.advokatvelikakladusa.ba",
-    image: "/portfolio/advokat-kladusa.svg",
+    image: "/portfolio/advokat-kladusa.jpg",
     imageAlt: "Screenshot stranice Advokat Velika Kladuša",
     problem:
       "Kancelarija nije imala online prisustvo - klijenti tražili kontakt direktno",
@@ -40,7 +40,7 @@ export const projects: PortfolioProject[] = [
     client: "Content agencija",
     industry: "Digitalne usluge",
     url: "https://www.virtuall-np.com",
-    image: "/portfolio/virtuall-np.svg",
+    image: "/portfolio/virtuall-np.jpg",
     imageAlt: "Screenshot stranice VirtuALL NP",
     problem:
       "Agencija nudila kompleksne usluge bez jasne online prezentacije",
