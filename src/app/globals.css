@@ -3,6 +3,31 @@
 @tailwind utilities;
 
 :root {
+  --color-brand: #2563eb;
+  --color-brand-dark: #1d4ed8;
+  --color-text: #111827;
+  --color-muted: #6b7280;
+  --color-surface: #f8f9fa;
+  --color-border: #e5e7eb;
+  --section-gap: 96px;
+  --section-gap-sm: 64px;
+  --container-pad: 24px;
+  --container-pad-md: 80px;
+}
+
+/* Utility klase */
+.section-spacing { @apply py-16 md:py-24; }
+.container-width { @apply max-w-[1200px] mx-auto px-6 md:px-20; }
+.prose-width { @apply max-w-[640px] mx-auto; }
+.heading-width { @apply max-w-[760px] mx-auto; }
+.heading-1 { @apply text-5xl md:text-6xl font-bold leading-tight; }
+.heading-2 { @apply text-4xl md:text-5xl font-bold leading-snug; }
+.heading-3 { @apply text-2xl md:text-3xl font-semibold leading-snug; }
+.body-lg { @apply text-lg leading-relaxed text-neutral-500; }
+.body-base { @apply text-base leading-relaxed text-neutral-500; }
+.section-label { @apply text-sm font-semibold uppercase tracking-widest text-neutral-500; }
+
+:root {
   /* Section background system – light mode (suptilan indigo tint za harmoniju s Hero) */
   --color-bg-base: #faf9fc;
   --color-bg-alt-a: #f3f1f9;
@@ -151,7 +176,7 @@ a.link-text:focus-visible,
 }
 
 .skip-link {
-  @apply absolute left-4 -top-12 z-[100] rounded-button bg-accent px-4 py-3 text-white transition-all focus:top-4 min-h-[44px] inline-flex items-center;
+  @apply absolute left-4 -top-12 z-[100] rounded-md bg-brand-500 px-4 py-3 text-white transition-all focus:top-4 min-h-[44px] inline-flex items-center;
 }
 
 .scrollbar-hide {

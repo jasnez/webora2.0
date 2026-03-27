@@ -38,7 +38,7 @@ export function Hero() {
       {/* Grain overlay */}
       <div className="hero-v2-grain" aria-hidden />
 
-      <div className="relative z-10 mx-auto w-full max-w-hero px-6 sm:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-content px-6 sm:px-8">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Lijevo: tekst + 2 CTA */}
           <motion.div
@@ -92,7 +92,7 @@ export function Hero() {
           >
             {/* Glavni laptop/screen – sredina */}
             <div
-              className="hero-v2-mockup-border hero-v2-mockup-glow hero-v2-float relative z-[2] w-full max-w-[min(100%,520px)] rounded-xl overflow-hidden bg-[#0f172a]/90 backdrop-blur-sm"
+              className="hero-v2-mockup-border hero-v2-mockup-glow hero-v2-float relative z-[2] w-full max-w-[min(100%,520px)] rounded-xl overflow-hidden bg-slate-900/90 backdrop-blur-sm"
             >
               <div className="aspect-[16/10] relative">
                 <Image
@@ -110,7 +110,7 @@ export function Hero() {
             <div
               className="absolute right-[8%] top-[8%] z-[1] w-[42%] max-w-[220px] -rotate-6"
             >
-              <div className="hero-v2-mockup-border hero-v2-float-slow h-full rounded-lg overflow-hidden bg-[#1e293b]/80 backdrop-blur-md border border-white/[0.12] shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
+              <div className="hero-v2-mockup-border hero-v2-float-slow h-full rounded-lg overflow-hidden bg-slate-800/80 backdrop-blur-md border border-white/10 shadow-2xl">
                 <div className="aspect-[4/3] relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-800/60 to-slate-900/80 flex items-center justify-center">
                     <div className="w-[70%] h-3 rounded bg-white/10" />
@@ -123,7 +123,7 @@ export function Hero() {
             <div
               className="absolute left-[5%] bottom-[5%] z-[1] w-[38%] max-w-[200px] rotate-[4deg]"
             >
-              <div className="hero-v2-mockup-border hero-v2-float h-full rounded-lg overflow-hidden bg-[#1e293b]/80 backdrop-blur-md border border-white/[0.12] shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
+              <div className="hero-v2-mockup-border hero-v2-float h-full rounded-lg overflow-hidden bg-slate-800/80 backdrop-blur-md border border-white/10 shadow-2xl">
                 <div className="aspect-[4/3] relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-800/60 to-slate-900/80 flex items-center justify-center">
                     <div className="flex gap-2">
