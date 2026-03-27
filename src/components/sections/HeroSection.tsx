@@ -29,7 +29,7 @@ export function HeroSection() {
             <div className="flex flex-col gap-6">
               <h1
                 id="hero-heading"
-                className="heading-1 max-w-[540px] text-white-text"
+                className="max-w-[540px] text-4xl font-bold leading-tight tracking-tight text-white-text md:text-5xl"
               >
                 Web stranice koje vaš biznis čine ozbiljnim
                 <span className="text-accent"> — i dovode nove klijente</span>
