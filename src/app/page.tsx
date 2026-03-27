@@ -6,7 +6,7 @@ import { Process } from "@/components/sections/Process";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { WhyUs } from "@/components/sections/WhyUs";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
 
@@ -20,7 +20,7 @@ export default function HomePage() {
       <PortfolioSection />
       <Process />
       <WhyUs />
-      <Testimonials />
+      <TestimonialsSection />
       <FAQ />
       <FinalCTA />
       <Contact />
