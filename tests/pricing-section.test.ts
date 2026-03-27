@@ -14,10 +14,11 @@ test("PricingSection: SaaS layout, cards, highlighted tier, legal copy", () => {
   assert.match(content, /export function PricingSection/);
   assert.match(content, /id="paketi"/);
   assert.match(content, /Jednostavni paketi — bez komplikacija/);
+  assert.match(content, /lg:whitespace-nowrap/);
   assert.match(content, /od 600/);
   assert.match(content, /\bKM\b/);
   assert.match(content, /od 1\.200/);
-  assert.match(content, /od 2\.000/);
+  assert.match(content, /od 3\.000/);
   assert.match(content, /NAJPOPULARNIJE/);
   assert.match(content, /jednokratno/);
   assert.match(
@@ -42,12 +43,10 @@ test("PricingSection: SaaS layout, cards, highlighted tier, legal copy", () => {
   assert.match(content, /bg-neutral-900/);
 });
 
-test("PricingSection: comparison table, trust line, unsure CTA", () => {
+test("PricingSection: trust line and unsure CTA", () => {
   const content = readFileSync(pricingPath, "utf-8");
-  assert.match(content, /<table[\s>]/);
-  assert.match(content, /Starter/);
-  assert.match(content, /Growth/);
-  assert.match(content, /Premium/);
+  assert.doesNotMatch(content, /<table[\s>]/);
+  assert.doesNotMatch(content, /Funkcija/);
   assert.match(content, /Bez skrivenih troškova/);
   assert.match(content, /Podrška uključena/);
   assert.match(content, /Brza isporuka/);

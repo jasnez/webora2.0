@@ -63,7 +63,7 @@ const packages: Package[] = [
     id: "growth",
     title: "Growth",
     tagline: "Rast leadova i jasna strategija",
-    price: "od 2.000",
+    price: "od 3.000",
     outcomes: [
       "Sve prednosti Profesionalnog paketa",
       "Landing stranice za kampanje i ponude",
@@ -77,83 +77,11 @@ const packages: Package[] = [
   },
 ];
 
-const comparisonRows: {
-  label: string;
-  starter: boolean;
-  growth: boolean;
-  premium: boolean;
-}[] = [
-  {
-    label: "Profesionalan prvi utisak",
-    starter: true,
-    growth: true,
-    premium: true,
-  },
-  {
-    label: "Izvrsno na mobitelu",
-    starter: true,
-    growth: true,
-    premium: true,
-  },
-  {
-    label: "Custom dizajn i brend",
-    starter: false,
-    growth: true,
-    premium: true,
-  },
-  {
-    label: "SEO i lokalna vidljivost",
-    starter: true,
-    growth: true,
-    premium: true,
-  },
-  {
-    label: "Struktura za više upita",
-    starter: false,
-    growth: true,
-    premium: true,
-  },
-  {
-    label: "CMS / jednostavno uređivanje",
-    starter: false,
-    growth: true,
-    premium: true,
-  },
-  {
-    label: "Landing stranice i kampanje",
-    starter: false,
-    growth: false,
-    premium: true,
-  },
-  {
-    label: "Strategija sadržaja",
-    starter: false,
-    growth: false,
-    premium: true,
-  },
-];
-
 const trustItems = [
   "Bez skrivenih troškova",
   "Podrška uključena",
   "Brza isporuka",
 ];
-
-function CellCheck({ included }: { included: boolean }) {
-  return (
-    <td className="px-3 py-3 text-center">
-      {included ? (
-        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-accent/15 text-accent">
-          <Check className="h-4 w-4" strokeWidth={2.5} aria-hidden />
-        </span>
-      ) : (
-        <span className="text-neutral-300 dark:text-neutral-600" aria-hidden>
-          —
-        </span>
-      )}
-    </td>
-  );
-}
 
 export function PricingSection() {
   return (
@@ -172,7 +100,7 @@ export function PricingSection() {
           <p className="section-label mb-3 md:mb-4">Cijene</p>
           <h2
             id="pricing-heading"
-            className="heading-2 mx-auto max-w-[34rem] text-balance text-white-text"
+            className="heading-2 mx-auto max-w-[34rem] text-balance text-white-text lg:whitespace-nowrap"
           >
             Jednostavni paketi — bez komplikacija
           </h2>
@@ -211,7 +139,7 @@ export function PricingSection() {
                     {pkg.tagline}
                   </p>
                   <div className="my-4">
-                    <span className="text-4xl font-extrabold text-white-text md:text-5xl">
+                    <span className="text-4xl font-bold text-white-text md:text-5xl">
                       {pkg.price}
                     </span>
                     <span className="ml-1 text-lg font-medium opacity-70 text-text-secondary">
@@ -267,48 +195,8 @@ export function PricingSection() {
           Procjena je besplatna.
         </p>
 
-        {/* Comparison */}
-        <div className="mx-auto mt-14 max-w-[1200px] overflow-x-auto rounded-2xl border border-white/10 bg-neutral-900/50 shadow-card">
-          <table className="w-full min-w-[520px] border-collapse text-sm">
-            <thead>
-              <tr className="border-b border-white/10 bg-white/5">
-                <th className="px-4 py-4 text-left font-semibold text-white-text">
-                  Funkcija
-                </th>
-                <th className="px-3 py-4 text-center font-semibold text-white-text">
-                  Starter
-                </th>
-                <th className="px-3 py-4 text-center font-semibold text-white-text">
-                  Growth
-                </th>
-                <th className="px-3 py-4 text-center font-semibold text-white-text">
-                  Premium
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparisonRows.map((row) => (
-                <tr
-                  key={row.label}
-                  className="border-b border-white/10 last:border-0"
-                >
-                  <th
-                    scope="row"
-                    className="px-4 py-3 text-left font-normal text-text-secondary"
-                  >
-                    {row.label}
-                  </th>
-                  <CellCheck included={row.starter} />
-                  <CellCheck included={row.growth} />
-                  <CellCheck included={row.premium} />
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
         {/* Trust */}
-        <ul className="mx-auto mt-10 flex max-w-[1200px] flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium text-text-secondary">
+        <ul className="mx-auto mt-12 flex max-w-[1200px] flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium text-text-secondary">
           {trustItems.map((t) => (
             <li key={t} className="flex items-center gap-2">
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent/15 text-accent">
