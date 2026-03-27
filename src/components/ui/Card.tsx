@@ -1,53 +1,35 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { clsx } from "clsx";
 
 interface CardProps {
   children: React.ReactNode;
-  className?: string;
   hover?: boolean;
-  as?: "div" | "article" | "section";
+  href?: string;
+  className?: string;
+  padding?: boolean;
 }
 
 export function Card({
   children,
-  className = "",
-  hover = true,
-  as: Wrapper = "div",
+  hover = false,
+  href,
+  className,
+  padding = true,
 }: CardProps) {
-  const Component = motion[Wrapper];
-
-  return (
-    <Component
-      className={clsx(
-        "rounded-card bg-surface border border-border-dark p-6 md:p-8 transition-all duration-300",
-        hover &&
-          "hover:shadow-card-hover hover:-translate-y-1 hover:border-accent/20",
-        className
-      )}
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-30px" }}
-      transition={{ duration: 0.35 }}
-    >
-      {children}
-    </Component>
+  const classes = clsx(
+    "bg-white border border-neutral-200 rounded-xl shadow-card",
+    hover &&
+      "transition-transform duration-200 hover:-translate-y-1 hover:shadow-hover cursor-pointer",
+    padding && "p-6",
+    className,
   );
-}
 
-interface CardIconProps {
-  children: React.ReactNode;
-  className?: string;
-}
+  if (href) {
+    return (
+      <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    );
+  }
 
-export function CardIcon({ children, className = "" }: CardIconProps) {
-  return (
-    <div
-      className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent mb-5 ${className}`}
-      aria-hidden
-    >
-      {children}
-    </div>
-  );
+  return <div className={classes}>{children}</div>;
 }
