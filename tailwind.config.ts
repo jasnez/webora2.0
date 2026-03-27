@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -24,6 +25,19 @@ const config: Config = {
           700: "#374151",
           900: "#111827",
         },
+        // Legacy aliases mapped to CSS variables for compatibility
+        accent: "var(--color-accent)",
+        "accent-hover": "var(--color-accent-hover)",
+        "bg-base": "var(--color-bg-base)",
+        "bg-dark": "var(--color-bg-dark)",
+        "bg-alt-a": "var(--color-bg-alt-a)",
+        "bg-alt-b": "var(--color-bg-alt-b)",
+        surface: "var(--color-surface)",
+        "surface-dark": "var(--color-surface-dark)",
+        "white-text": "var(--color-white-text)",
+        "text-secondary": "var(--color-text-secondary)",
+        "text-muted": "var(--color-text-muted)",
+        "border-dark": "var(--color-border-dark)",
       },
       spacing: {
         "2": "8px",
@@ -55,6 +69,8 @@ const config: Config = {
         prose: "640px",
         heading: "760px",
         content: "1200px",
+        container: "1200px",
+        hero: "1200px",
       },
       borderRadius: {
         sm: "4px",
@@ -62,10 +78,18 @@ const config: Config = {
         md: "8px",
         lg: "12px",
         xl: "16px",
+        button: "12px",
+        card: "16px",
+      },
+      minHeight: {
+        touch: "44px",
       },
       boxShadow: {
         card: "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)",
         hover: "0 4px 12px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06)",
+        cta: "var(--cta-primary-shadow)",
+        "cta-hover": "var(--cta-primary-shadow-hover)",
+        "nav-scrolled": "0 4px 24px -4px rgba(0,0,0,0.35)",
       },
     },
   },
