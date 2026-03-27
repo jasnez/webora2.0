@@ -7,7 +7,7 @@ const root = resolve(__dirname, "..");
 const pricingPath = resolve(root, "src/components/sections/PricingSection.tsx");
 const homePagePath = resolve(root, "src/app/page.tsx");
 
-test("PricingSection exists with packages, copy, and layout", () => {
+test("PricingSection: SaaS layout, cards, highlighted tier, legal copy", () => {
   assert.equal(existsSync(pricingPath), true);
   const content = readFileSync(pricingPath, "utf-8");
 
@@ -17,19 +17,35 @@ test("PricingSection exists with packages, copy, and layout", () => {
   assert.match(content, /od 500 KM/);
   assert.match(content, /od 1\.200 KM/);
   assert.match(content, /od 2\.000 KM/);
-  assert.match(content, /Najpopularniji/);
+  assert.match(content, /Najpopularnije/);
+  assert.match(content, /jednokratno/);
   assert.match(
     content,
     /Sve cijene su okvirne\. Finalna cijena zavisi od zahtjeva projekta/,
   );
   assert.match(content, /Procjena je besplatna/);
   assert.match(content, /href="\/kontakt"/);
+  assert.match(content, /max-w-\[(1100|1200)px\]/);
   assert.match(content, /grid-cols-1/);
   assert.match(content, /md:grid-cols-3/);
-  assert.match(content, /gap-6/);
-  assert.match(content, /items-stretch/);
+  assert.match(content, /rounded-2xl/);
+  assert.match(content, /p-8/);
+  assert.match(content, /hover:-translate-y-1/);
   assert.match(content, /scale-105/);
   assert.match(content, /border-brand-500/);
+});
+
+test("PricingSection: comparison table, trust line, unsure CTA", () => {
+  const content = readFileSync(pricingPath, "utf-8");
+  assert.match(content, /<table[\s>]/);
+  assert.match(content, /Starter/);
+  assert.match(content, /Growth/);
+  assert.match(content, /Premium/);
+  assert.match(content, /Bez skrivenih troškova/);
+  assert.match(content, /Podrška uključena/);
+  assert.match(content, /Brza isporuka/);
+  assert.match(content, /Niste sigurni koji paket odabrati/);
+  assert.match(content, /Kontaktirajte nas/);
 });
 
 test("homepage renders PricingSection between BenefitsSection and Process", () => {
