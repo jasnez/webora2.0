@@ -42,12 +42,12 @@ test("ProblemSection uses muted background (neutral-50 via Section)", () => {
   assert.match(content, /bg="muted"/);
 });
 
-test("homepage renders ProblemSection after HeroSection and before Services", () => {
+test("homepage renders ProblemSection after HeroSection and before BenefitsSection", () => {
   const content = readFileSync(homePagePath, "utf-8");
   assert.match(content, /import \{ ProblemSection \} from "@\/components\/sections\/ProblemSection"/);
   const heroIdx = content.indexOf("<HeroSection />");
   const problemIdx = content.indexOf("<ProblemSection />");
-  const servicesIdx = content.indexOf("<Services />");
-  assert.ok(heroIdx !== -1 && problemIdx !== -1 && servicesIdx !== -1);
-  assert.ok(heroIdx < problemIdx && problemIdx < servicesIdx);
+  const benefitsIdx = content.indexOf("<BenefitsSection />");
+  assert.ok(heroIdx !== -1 && problemIdx !== -1 && benefitsIdx !== -1);
+  assert.ok(heroIdx < problemIdx && problemIdx < benefitsIdx);
 });

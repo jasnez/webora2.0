@@ -1,6 +1,6 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
-import { Services } from "@/components/sections/Services";
+import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { Process } from "@/components/sections/Process";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { WhyUs } from "@/components/sections/WhyUs";
@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ProblemSection />
-      <Services />
+      <BenefitsSection />
       <Process />
       <Portfolio />
       <WhyUs />
