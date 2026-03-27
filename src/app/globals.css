@@ -188,14 +188,8 @@ a.link-text:focus-visible,
 
 /* Section padding: 96px desktop, 64px tablet, 48px mobile */
 .section-pad {
-  padding-top: 48px;
-  padding-bottom: 48px;
-}
-@media (min-width: 768px) {
-  .section-pad {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 @media (min-width: 1024px) {
   .section-pad {

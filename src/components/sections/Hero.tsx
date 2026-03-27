@@ -33,10 +33,8 @@ export function Hero() {
       className="hero-v2-bg relative flex min-h-[85vh] flex-col justify-center overflow-hidden scroll-mt-24 py-8 sm:py-12 md:py-16 lg:py-20 pb-12 md:pb-20 lg:pb-24"
       aria-labelledby="hero-title"
     >
-      {/* Nebula sweep preko sredine */}
-      <div className="hero-v2-nebula" aria-hidden />
-      {/* Grain overlay */}
-      <div className="hero-v2-grain" aria-hidden />
+      {/* Keep texture subtle to prioritize message */}
+      <div className="hero-v2-grain opacity-40" aria-hidden />
 
       <div className="relative z-10 mx-auto w-full max-w-content px-6 sm:px-8">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
@@ -110,7 +108,7 @@ export function Hero() {
             <div
               className="absolute right-[8%] top-[8%] z-[1] w-[42%] max-w-[220px] -rotate-6"
             >
-              <div className="hero-v2-mockup-border hero-v2-float-slow h-full rounded-lg overflow-hidden bg-slate-800/80 backdrop-blur-md border border-white/10 shadow-2xl">
+              <div className="hero-v2-mockup-border h-full rounded-lg overflow-hidden bg-slate-800/80 backdrop-blur-md border border-white/10 shadow-xl">
                 <div className="aspect-[4/3] relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-800/60 to-slate-900/80 flex items-center justify-center">
                     <div className="w-[70%] h-3 rounded bg-white/10" />
@@ -123,7 +121,7 @@ export function Hero() {
             <div
               className="absolute left-[5%] bottom-[5%] z-[1] w-[38%] max-w-[200px] rotate-[4deg]"
             >
-              <div className="hero-v2-mockup-border hero-v2-float h-full rounded-lg overflow-hidden bg-slate-800/80 backdrop-blur-md border border-white/10 shadow-2xl">
+              <div className="hero-v2-mockup-border h-full rounded-lg overflow-hidden bg-slate-800/80 backdrop-blur-md border border-white/10 shadow-xl">
                 <div className="aspect-[4/3] relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-800/60 to-slate-900/80 flex items-center justify-center">
                     <div className="flex gap-2">

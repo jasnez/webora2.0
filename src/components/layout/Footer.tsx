@@ -17,19 +17,19 @@ export function Footer() {
               {SITE.name}
               <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-cta" aria-hidden />
             </Link>
-            <p className="mt-2.5 text-[13px] text-text-muted leading-relaxed">
+            <p className="mt-2.5 text-sm text-text-secondary leading-relaxed">
               {SITE.footerDescription}
             </p>
-            <p className="mt-4 text-[12px] text-text-muted">
+            <p className="mt-4 text-sm text-text-secondary">
               {SITE.city}, {SITE.country}
             </p>
           </div>
           <div>
-            <h3 className="text-[11px] uppercase tracking-wider text-text-muted mb-3.5">Navigacija</h3>
+            <h3 className="text-xs uppercase tracking-wider text-text-secondary mb-3.5">Navigacija</h3>
             <ul className="space-y-1">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="min-h-touch flex items-center py-2 text-[13px] text-text-secondary hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">
+                  <Link href={link.href} className="min-h-touch flex items-center py-2 text-sm text-text-secondary hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">
                     {link.label}
                   </Link>
                 </li>
@@ -37,8 +37,8 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-[11px] uppercase tracking-wider text-text-muted mb-3.5">Kontakt</h3>
-            <ul className="space-y-2 text-[13px] text-text-secondary">
+            <h3 className="text-xs uppercase tracking-wider text-text-secondary mb-3.5">Kontakt</h3>
+            <ul className="space-y-2 text-sm text-text-secondary">
               <li>
                 <a href={`mailto:${CONTACT.email}`} className="min-h-touch inline-flex items-center py-2 hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">
                   {CONTACT.email}
@@ -84,7 +84,7 @@ export function Footer() {
             </div>
           )}
         </div>
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-5 text-[12px] text-text-muted">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-5 text-sm text-text-secondary">
           <span>© {new Date().getFullYear()} {SITE.name}. Sva prava zadržana.</span>
           <div className="flex items-center gap-4">
             {SITE.privacyUrl && (
