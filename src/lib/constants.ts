@@ -7,7 +7,7 @@ export const SITE = {
   name: "Webora",
   url: "https://www.webora.ba",
   email: "info@webora.ba",
-  phone: "+387 XX XXX XXX",
+  phone: "+387 62 341 256",
   location: "Bosna i Hercegovina",
   city: "Sarajevo",
   country: "BiH",
@@ -21,10 +21,7 @@ export const SITE = {
   privacyUrl: "/privacy",
 } as const;
 
-export const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
-  { label: "Twitter", href: "https://twitter.com", icon: "twitter" },
-] as const;
+export const SOCIAL_LINKS = [] as const;
 
 export const NAV_LINKS = [
   { label: "Početna", href: "/" },
@@ -258,7 +255,7 @@ export const FAQ = {
 } as const;
 
 /** Kontakt */
-export const CONTACT = {
+export const CONTACT_SECTION = {
   title: "Započnimo razgovor",
   subtitle: "Pošaljite upit — odgovaramo u roku od 24 sata.",
   submitLabel: "Pošalji upit",

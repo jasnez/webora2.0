@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { SITE, NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
+import { SITE, NAV_LINKS } from "@/lib/constants";
+import { CONTACT } from "@/config/contact";
+
+const socialLinks = [
+  { label: "LinkedIn", href: CONTACT.linkedin },
+  { label: "Twitter", href: CONTACT.twitter },
+].filter((link): link is { label: string; href: string } => Boolean(link.href));
 
 export function Footer() {
   return (
@@ -34,19 +40,40 @@ export function Footer() {
             <h3 className="text-[11px] uppercase tracking-wider text-text-muted mb-3.5">Kontakt</h3>
             <ul className="space-y-2 text-[13px] text-text-secondary">
               <li>
-                <a href={`mailto:${SITE.email}`} className="min-h-touch inline-flex items-center py-2 hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">
-                  {SITE.email}
+                <a href={`mailto:${CONTACT.email}`} className="min-h-touch inline-flex items-center py-2 hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">
+                  {CONTACT.email}
                 </a>
               </li>
-              <li>{SITE.phone}</li>
-              <li>{SITE.location}</li>
+              {CONTACT.phone && (
+                <li>
+                  <a
+                    href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}
+                    className="min-h-touch inline-flex items-center py-2 hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button"
+                  >
+                    {CONTACT.phone}
+                  </a>
+                </li>
+              )}
+              {CONTACT.whatsapp && (
+                <li>
+                  <a
+                    href={`https://wa.me/${CONTACT.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-h-touch inline-flex items-center py-2 hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button"
+                  >
+                    Pišite na WhatsApp
+                  </a>
+                </li>
+              )}
+              <li>{CONTACT.location}</li>
             </ul>
           </div>
-          {SOCIAL_LINKS.length > 0 && (
+          {socialLinks.length > 0 && (
             <div>
               <h3 className="text-[11px] uppercase tracking-wider text-text-muted mb-3.5">Pratite nas</h3>
               <ul className="flex gap-3">
-                {SOCIAL_LINKS.map((link) => (
+                {socialLinks.map((link) => (
                   <li key={link.href}>
                     <a href={link.href} target="_blank" rel="noopener noreferrer" className="min-h-touch min-w-[44px] inline-flex items-center justify-center text-text-secondary hover:text-white-text transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-button">
                       {link.label}

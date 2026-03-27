@@ -5,7 +5,12 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyCta } from "@/components/layout/StickyCta";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { SITE, SOCIAL_LINKS } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
+import { CONTACT } from "@/config/contact";
+
+const socialProfiles = [CONTACT.linkedin, CONTACT.twitter].filter(
+  (href): href is string => Boolean(href),
+);
 
 const outfit = Outfit({
   subsets: ["latin", "latin-ext"],
@@ -92,7 +97,7 @@ const jsonLdOrganization = {
     addressLocality: SITE.city,
     addressCountry: "BA",
   },
-  sameAs: SOCIAL_LINKS.map((s) => s.href),
+  sameAs: socialProfiles,
 };
 
 const jsonLdWebSite = {
