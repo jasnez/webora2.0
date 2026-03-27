@@ -5,6 +5,8 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { projects } from "@/data/portfolio";
 
+const metricSlots = ["LCP", "Lighthouse"] as const;
+
 export function PortfolioSection() {
   return (
     <Section bg="white" id="portfolio" className="scroll-mt-24 section-separator dark:bg-bg-base">
@@ -57,21 +59,37 @@ export function PortfolioSection() {
                   </p>
                 </div>
 
-                <div className="mb-4 flex min-h-[52px] gap-4">
-                  {(project.metrics ?? [{ label: "", value: "" }, { label: "", value: "" }]).map(
-                    (m, idx) => (
+                <div className="mb-4 grid min-h-[74px] grid-cols-2 gap-3">
+                  {metricSlots.map((slot) => {
+                    const metric = project.metrics?.find((m) => m.label === slot) ?? null;
+
+                    return (
                       <div
-                        key={m.label || `placeholder-${project.id}-${idx}`}
-                        className={clsx("text-center", !m.label && "invisible")}
-                        aria-hidden={!m.label}
+                        key={`${project.id}-${slot}`}
+                        className={clsx(
+                          "rounded-lg border px-3 py-2 text-center transition-colors",
+                          metric
+                            ? "border-neutral-200 bg-neutral-50/80 dark:border-border-dark dark:bg-bg-alt-a"
+                            : "border-dashed border-neutral-200/80 bg-transparent dark:border-border-dark/70",
+                        )}
                       >
-                        <p className="text-base font-bold text-neutral-900 dark:text-white-text">
-                          {m.value}
+                        <p
+                          className={clsx(
+                            "text-base font-semibold",
+                            metric
+                              ? "text-neutral-900 dark:text-white-text"
+                              : "text-transparent select-none",
+                          )}
+                          aria-hidden={!metric}
+                        >
+                          {metric?.value ?? "00"}
                         </p>
-                        <p className="text-xs text-neutral-400">{m.label}</p>
+                        <p className="text-[11px] uppercase tracking-wide text-neutral-400">
+                          {slot}
+                        </p>
                       </div>
-                    ),
-                  )}
+                    );
+                  })}
                 </div>
 
                 <div className="mb-4 flex flex-wrap gap-2">

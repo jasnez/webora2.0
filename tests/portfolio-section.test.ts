@@ -31,9 +31,9 @@ test("PortfolioSection applies live/wip states and conditional metrics/link rend
   assert.match(content, /project\.status === "live".*hover:-translate-y-1/s);
   assert.match(content, /project\.status === "wip".*opacity-60 pointer-events-none/s);
   assert.match(content, /Uskoro/);
-  assert.match(content, /project\.metrics \?\?/);
-  assert.match(content, /min-h-\[52px\]/);
-  assert.match(content, /invisible/);
+  assert.match(content, /metricSlots/);
+  assert.match(content, /min-h-\[74px\]/);
+  assert.match(content, /border-dashed/);
   assert.match(content, /project\.status === "live".*project\.url/s);
   assert.match(content, /Pogledaj stranicu →/);
 });
@@ -47,11 +47,11 @@ test("homepage uses PortfolioSection component", () => {
   assert.match(content, /<PortfolioSection \/>/);
 });
 
-test("portfolio data includes 2 live and 1 wip; metrics only on advokat", () => {
+test("portfolio data includes 2 live and 1 wip; wip keeps metrics null", () => {
   const content = readFileSync(dataPath, "utf-8");
   assert.match(content, /status: "live"/);
   assert.match(content, /status: "wip"/);
   assert.match(content, /id: "advokat-kladusa"[\s\S]*metrics:\s*\[/);
-  assert.match(content, /id: "virtuall-np"[\s\S]*metrics:\s*null/);
+  assert.match(content, /id: "virtuall-np"[\s\S]*metrics:\s*\[/);
   assert.match(content, /id: "webora"[\s\S]*metrics:\s*null/);
 });

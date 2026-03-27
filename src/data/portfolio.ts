@@ -47,7 +47,10 @@ export const projects: PortfolioProject[] = [
     solution: "Moderan sajt sa jasnom strukturom usluga, procesom i paketima",
     result: null,
     tags: ["Next.js", "Tailwind CSS"],
-    metrics: null,
+    metrics: [
+      { label: "LCP", value: "1.99s" },
+      { label: "Lighthouse", value: "99" },
+    ],
     status: "live",
   },
   {
